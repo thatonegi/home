@@ -1,7 +1,7 @@
 <advancedsettings>
      <loglevel hide="false">2</loglevel>
      <playcountminimumpercent>95</playcountminimumpercent>
-     <skiploopfilter>0</skiploopfilter>
+     <skiploopfilter>8</skiploopfilter>
      <nodvdrom>true</nodvdrom>
      <songinfoduration>120</songinfoduration>
      <fanartres>720</fanartres>
@@ -32,7 +32,8 @@
 
      <cache>
 	     <buffermode>1</buffermode>
-	     <memorysize>104857600</memorysize>
+	     <!-- memorysize>104857600</memorysizei -->
+	     <memorysize>209715200</memorysize>
 	     <readfactor>20</readfactor>
      </cache>
 
