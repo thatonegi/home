@@ -1,0 +1,67 @@
+<advancedsettings>
+     <loglevel hide="false">2</loglevel>
+     <playcountminimumpercent>95</playcountminimumpercent>
+     <skiploopfilter>0</skiploopfilter>
+     <nodvdrom>true</nodvdrom>
+     <songinfoduration>120</songinfoduration>
+     <fanartres>720</fanartres>
+     <splash>false</splash>
+     <imageres>540</imageres>
+     <guires>540</guires>
+     <imagescalingalgorithm>fast_bilinear</imagescalingalgorithm>
+     <showexitbutton>true</showexitbutton>
+
+     <!-- MySQL Library
+     <videodatabase>
+       <type>mysql</type>
+       <host>192.168.1.100</host>
+       <port>3306</port>
+       <user>xbmc</user>
+       <pass>xbmc</pass>
+     </videodatabase>
+     -->
+
+     <!-- Streaming Optimization -->
+     <network>
+       <!--buffermode>1</buffermode>
+       <cachemembuffersize>52428800</cachemembuffersize>
+       <readbufferfactor>20</readbufferfactor -->
+       <curlclienttimeout>10</curlclienttimeout>
+       <curllowspeedtime>10</curllowspeedtime>
+     </network> 
+
+     <cache>
+	     <buffermode>1</buffermode>
+	     <memorysize>104857600</memorysize>
+	     <readfactor>20</readfactor>
+     </cache>
+
+     <samba>
+	     <statfiles>false</statfiles>
+	     <clienttimeout>30</clienttimeout>
+     </samba>
+
+     <musiclibrary>
+	     <backgroundupdate>true</backgroundupdate>
+     </musiclibrary>
+
+     <!-- Video Library Tweaks -->
+     <videolibrary>
+       <cleanonupdate>true</cleanonupdate>
+       <importwatchedstate>true</importwatchedstate>
+       <hideallitems>true</hideallitems>
+       <hideemptyseries>true</hideemptyseries>
+     </videolibrary>
+
+     <videoscanner>
+       <ignoreerrors>true</ignoreerrors>
+     </videoscanner>
+
+     <!-- Playback Tweaks -->
+     <video>
+       <timeseekforward>15</timeseekforward>
+       <timeseekbackward>-15</timeseekbackward>
+       <subsdelayrange>240</subsdelayrange>
+       <busydialogdelayms>750</busydialogdelayms>
+     </video>
+</advancedsettings>
