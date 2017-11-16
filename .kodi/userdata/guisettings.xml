@@ -87,7 +87,7 @@
         <addonnotifications default="true">true</addonnotifications>
         <addonupdates default="true">0</addonupdates>
         <settinglevel>2</settinglevel>
-        <systemtotaluptime>75075</systemtotaluptime>
+        <systemtotaluptime>76186</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -421,8 +421,8 @@
         <setting type="string" name="skin.confluence.HomeVideosButton1">plugin.video.exodus</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton2">plugin.video.youtube</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton3">plugin.video.nbcsnliveextra</setting>
-        <setting type="string" name="skin.confluence.HomeVideosButton4">plugin.video.velocity</setting>
-        <setting type="string" name="skin.confluence.HomeVideosButton5">plugin.video.ustvnow.tva</setting>
+        <setting type="string" name="skin.confluence.HomeVideosButton4">plugin.video.ustvnow.tva</setting>
+        <setting type="string" name="skin.confluence.HomeVideosButton5"></setting>
         <setting type="string" name="skin.confluence.HomeMusicButton1">plugin.audio.npr</setting>
         <setting type="string" name="skin.confluence.HomeMusicButton2">script.xbmc.pandora</setting>
         <setting type="string" name="skin.confluence.HomeMusicButton3">plugin.audio.prime_music</setting>

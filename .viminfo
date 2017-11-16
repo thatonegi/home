@@ -9,8 +9,8 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-:q
 :w
+:q
 :q!
 
 # Search String History (newest to oldest):
@@ -23,29 +23,57 @@
 
 # Registers:
 "0	LINE	0
-	192.168.0.100	reliant
-""1	LINE	0
-	export PATH=${HOME}/scripts:$PATH:$JAVA_HOME/bin:$ADB_HOME:$ANDROID_STUDIO/bin
+		     <memorysize>104857600</memorysize>
+"1	LINE	0
+	${color #88a3cc}Networking:
 "2	LINE	0
-	TPLink 192.168.15.0
+	export PATH=${HOME}/scripts:$PATH:$JAVA_HOME/bin:$ADB_HOME:$ANDROID_STUDIO/bin
 "3	LINE	0
 	TPLink 192.168.15.0
-"-	CHAR	0
-	m
+"4	LINE	0
+	TPLink 192.168.15.0
+""-	CHAR	0
+	5
 
 # File marks:
-'0  159  0  ~/.bashrc
-'1  149  0  ~/.bashrc
-'2  145  0  ~/.bashrc
-'3  139  26  ~/.bashrc
-'4  158  0  ~/.bashrc
-'5  132  0  ~/.bashrc
-'6  142  29  ~/.bashrc
-'7  129  25  ~/.bashrc
-'8  25  0  ~/.bashrc
-'9  45  22  ~/.bashrc
+'0  74  115  ~/.config/conky/conky.conf
+'1  76  128  ~/.config/conky/conky.conf
+'2  75  88  ~/.config/conky/conky.conf
+'3  62  74  ~/.config/conky/conky.conf
+'4  45  1  ~/.config/conky/conky.conf
+'5  68  38  ~/.config/conky/conky.conf
+'6  61  26  ~/.config/conky/conky.conf
+'7  53  67  ~/.config/conky/conky.conf
+'8  54  67  ~/.config/conky/conky.conf
+'9  63  16  ~/.config/conky/conky.conf
 
 # Jumplist (newest first):
+-'  74  115  ~/.config/conky/conky.conf
+-'  76  128  ~/.config/conky/conky.conf
+-'  75  88  ~/.config/conky/conky.conf
+-'  62  74  ~/.config/conky/conky.conf
+-'  45  1  ~/.config/conky/conky.conf
+-'  68  38  ~/.config/conky/conky.conf
+-'  53  0  ~/.config/conky/conky.conf
+-'  61  26  ~/.config/conky/conky.conf
+-'  56  0  ~/.config/conky/conky.conf
+-'  54  67  ~/.config/conky/conky.conf
+-'  63  16  ~/.config/conky/conky.conf
+-'  1  0  ~/.config/conky/conky.conf
+-'  1  19  /etc/resolv.conf
+-'  28  0  ~/bin/wiload.sh
+-'  19  59  ~/bin/wiload.sh
+-'  1  5  ~/.git/COMMIT_EDITMSG
+-'  56  0  ~/.kodi/userdata/advancedsettings.xml
+-'  36  26  ~/.kodi/userdata/advancedsettings.xml
+-'  1  0  ~/.kodi/userdata/advancedsettings.xml
+-'  1  0  ~/.kodi/userdata/profiles.xml
+-'  1  0  ~/.kodi/userdata/favourites.xml
+-'  8  0  ~/.kodi/userdata/guisettings.xml
+-'  1  0  ~/.kodi/userdata/guisettings.xml
+-'  2  0  ~/.git/COMMIT_EDITMSG
+-'  3  0  ~/.git/MERGE_MSG
+-'  1  0  ~/.git/MERGE_MSG
 -'  159  0  ~/.bashrc
 -'  145  0  ~/.bashrc
 -'  149  0  ~/.bashrc
@@ -61,10 +89,9 @@
 -'  128  15  ~/.bashrc
 -'  134  6  ~/.bashrc
 -'  1  0  ~/.bashrc
--'  19  59  ~/bin/wiload.sh
 -'  5  15  /etc/networks
 -'  4  0  /etc/networks
--'  3  0  /etc/resolv.conf
+-'  4  0  /etc/resolv.conf
 -'  18  2  ~/bin/wiload.sh
 -'  29  82  ~/bin/wiload.sh
 -'  2  0  /etc/hosts
@@ -72,7 +99,6 @@
 -'  32  57  ~/bin/wiload.sh
 -'  1  0  ~/bin/wiload.sh
 -'  1  0  /etc/networks
--'  1  0  /etc/resolv.conf
 -'  1  27  ~/.xinitrc
 -'  1  27  ~/.xinitrc
 -'  1  27  ~/.xinitrc
@@ -119,33 +145,92 @@
 -'  1  27  ~/.xinitrc
 -'  1  27  ~/.xinitrc
 -'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  1  27  ~/.xinitrc
--'  2  0  /etc/hosts
--'  1  0  /etc/hosts
--'  2  17  /etc/resolv.conf
--'  3  0  /etc/resolv.conf
--'  5  15  /etc/networks
--'  4  0  /etc/networks
--'  3  0  /etc/resolv.conf
--'  2  0  /etc/hosts
--'  1  0  /etc/hosts
 
 # History of marks within files (newest to oldest):
+
+> ~/.config/conky/conky.conf
+	"	74	115
+	^	74	116
+	.	74	115
+	+	62	27
+	+	62	1
+	+	54	89
+	+	62	24
+	+	63	16
+	+	62	39
+	+	51	14
+	+	53	19
+	+	54	67
+	+	62	0
+	+	61	27
+	+	62	0
+	+	68	22
+	+	69	0
+	+	70	0
+	+	69	16
+	+	70	16
+	+	68	38
+	+	62	74
+	+	75	75
+	+	74	73
+	+	76	128
+	+	74	86
+	+	75	88
+	+	74	84
+	+	75	86
+	+	76	179
+	+	75	121
+	+	74	115
+
+> /etc/resolv.conf
+	"	1	19
+	^	1	20
+	.	1	19
+	+	4	17
+	+	3	23
+	+	1	19
+
+> ~/bin/wiload.sh
+	"	28	0
+	^	19	1
+	.	28	0
+	+	31	0
+	+	32	0
+	+	29	82
+	+	29	0
+	+	18	0
+	+	19	0
+	+	28	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	5
+	^	1	6
+	.	1	5
+	+	1	5
+
+> ~/.kodi/userdata/advancedsettings.xml
+	"	56	0
+	^	4	22
+	.	4	21
+	+	36	0
+	+	35	46
+	+	36	26
+	+	4	21
+
+> ~/.kodi/userdata/profiles.xml
+	"	1	0
+
+> ~/.kodi/userdata/favourites.xml
+	"	1	0
+
+> ~/.kodi/userdata/guisettings.xml
+	"	8	0
+
+> ~/.git/MERGE_MSG
+	"	3	0
+	^	3	0
+	.	2	13
+	+	2	13
 
 > ~/.bashrc
 	"	159	0
@@ -169,30 +254,12 @@
 	+	143	0
 	+	149	0
 
-> ~/bin/wiload.sh
-	"	19	59
-	^	19	60
-	.	19	59
-	+	31	0
-	+	32	0
-	+	29	82
-	+	29	0
-	+	18	0
-	+	19	59
-
 > /etc/networks
 	"	5	15
 	^	5	16
 	.	5	15
 	+	4	19
 	+	5	15
-
-> /etc/resolv.conf
-	"	3	0
-	^	2	24
-	.	2	23
-	+	3	17
-	+	2	23
 
 > /etc/hosts
 	"	2	0
