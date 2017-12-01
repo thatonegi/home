@@ -9,13 +9,6 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-export HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=1000
-export HISTFILESIZE=200000
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -140,6 +133,11 @@ export LESSEDIT='%E ?lt+%lt. -- %f'
 export LESSOPEN="|/usr/bin/lesspipe %s"
 export LESSCLOSE="/usr/bin/lesspipe %s %s"
 export LESS="-ceFgh12iqswXy12"
+export TLDR_REPOSITORY=${HOME}/git-repos/tldr/tldr
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
+export HISTFILESIZE=200000
+export HISTOIGNORE="&:lo:[bf]g:exit:ls:du:df:wiload.sh:pwd:clear:mount:umount:"
 
 # Android settings
 export ADB_HOME=${HOME}/android/platform-tools

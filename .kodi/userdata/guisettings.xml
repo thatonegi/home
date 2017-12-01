@@ -87,7 +87,7 @@
         <addonnotifications default="true">true</addonnotifications>
         <addonupdates default="true">0</addonupdates>
         <settinglevel>2</settinglevel>
-        <systemtotaluptime>76186</systemtotaluptime>
+        <systemtotaluptime>84003</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -332,7 +332,7 @@
         <showunwatchedplots default="true">true</showunwatchedplots>
         <tvshowsincludeallseasonsandspecials default="true">0</tvshowsincludeallseasonsandspecials>
         <tvshowsselectfirstunwatcheditem default="true">0</tvshowsselectfirstunwatcheditem>
-        <updateonstartup>true</updateonstartup>
+        <updateonstartup default="true">false</updateonstartup>
     </videolibrary>
     <videoplayer>
         <adjustrefreshrate default="true">0</adjustrefreshrate>
@@ -371,7 +371,7 @@
         <blankdisplays default="true">false</blankdisplays>
         <fakefullscreen default="true">true</fakefullscreen>
         <limitedrange default="true">false</limitedrange>
-        <monitor>eDP1</monitor>
+        <monitor>HDMI1</monitor>
         <preferedstereoscopicmode default="true">100</preferedstereoscopicmode>
         <resolution default="true">16</resolution>
         <screen default="true">0</screen>
@@ -417,17 +417,17 @@
         <setting type="bool" name="skin.confluence.ShowWeatherFanart">true</setting>
         <setting type="bool" name="skin.confluence.WeatherScript_Enable">false</setting>
         <setting type="bool" name="skin.confluence.View509HideInfo">false</setting>
-        <setting type="string" name="skin.confluence.CustomBackgroundPath">special://home/media/SKINDEFAULT.jpg</setting>
+        <setting type="string" name="skin.confluence.CustomBackgroundPath">special://home/media/OGQ/Nirmal Tamang_Amazing Triple Falls Glacier ,Montana USA_YkBnSWtadA.jpg</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton1">plugin.video.exodus</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton2">plugin.video.youtube</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton3">plugin.video.nbcsnliveextra</setting>
         <setting type="string" name="skin.confluence.HomeVideosButton4">plugin.video.ustvnow.tva</setting>
-        <setting type="string" name="skin.confluence.HomeVideosButton5"></setting>
+        <setting type="string" name="skin.confluence.HomeVideosButton5">plugin.video.alluc.api</setting>
         <setting type="string" name="skin.confluence.HomeMusicButton1">plugin.audio.npr</setting>
         <setting type="string" name="skin.confluence.HomeMusicButton2">script.xbmc.pandora</setting>
         <setting type="string" name="skin.confluence.HomeMusicButton3">plugin.audio.prime_music</setting>
-        <setting type="string" name="skin.confluence.HomeMusicButton4">plugin.audio.di.fm</setting>
-        <setting type="string" name="skin.confluence.HomeMusicButton5">plugin.audio.soundcloud</setting>
+        <setting type="string" name="skin.confluence.HomeMusicButton4">plugin.audio.soundcloud</setting>
+        <setting type="string" name="skin.confluence.HomeMusicButton5"></setting>
         <setting type="string" name="skin.confluence.HomePictureButton1"></setting>
         <setting type="string" name="skin.confluence.HomePictureButton2"></setting>
         <setting type="string" name="skin.confluence.HomePictureButton3"></setting>
@@ -656,6 +656,342 @@
                 <bottom>360</bottom>
             </overscan>
         </resolution>
+        <resolution>
+            <description>1360x768@ 60.37 - Full Screen</description>
+            <subtitles>741</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>60.366131</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x12c</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1360</right>
+                <bottom>768</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1360x768 @ 60.37Hz</description>
+            <subtitles>741</subtitles>
+            <pixelratio>1.003922</pixelratio>
+            <refreshrate>60.366131</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x49</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1360</right>
+                <bottom>768</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080 @ 60.00Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>0.749584</pixelratio>
+            <refreshrate>60.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf4</xrandrid>
+            <overscan>
+                <left>57</left>
+                <top>148</top>
+                <right>1861</right>
+                <bottom>934</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080 @ 50.00Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>50.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf5</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1920</right>
+                <bottom>1080</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080 @ 59.94Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>59.940201</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf6</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1920</right>
+                <bottom>1080</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080i @ 30.00Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>30.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf8</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1920</right>
+                <bottom>1080</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080i @ 25.00Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>25.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf9</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1920</right>
+                <bottom>1080</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1920x1080i @ 29.97Hz</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>29.970100</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xfa</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1920</right>
+                <bottom>1080</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1280x1024 @ 60.02Hz</description>
+            <subtitles>988</subtitles>
+            <pixelratio>1.422222</pixelratio>
+            <refreshrate>60.019741</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xfb</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1280</right>
+                <bottom>1024</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1280x720 @ 60.61Hz</description>
+            <subtitles>694</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>60.606060</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xfc</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1280</right>
+                <bottom>720</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1280x720 @ 60.00Hz</description>
+            <subtitles>694</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>60.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xfd</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1280</right>
+                <bottom>720</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1280x720 @ 50.00Hz</description>
+            <subtitles>694</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>50.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xfe</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1280</right>
+                <bottom>720</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1280x720 @ 59.94Hz</description>
+            <subtitles>694</subtitles>
+            <pixelratio>1.000000</pixelratio>
+            <refreshrate>59.940201</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xff</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1280</right>
+                <bottom>720</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 1024x768 @ 60.00Hz</description>
+            <subtitles>741</subtitles>
+            <pixelratio>1.333333</pixelratio>
+            <refreshrate>60.003841</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xea</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>1024</right>
+                <bottom>768</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 800x600 @ 60.32Hz</description>
+            <subtitles>579</subtitles>
+            <pixelratio>1.333333</pixelratio>
+            <refreshrate>60.316540</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xed</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>800</right>
+                <bottom>600</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x576 @ 50.00Hz</description>
+            <subtitles>555</subtitles>
+            <pixelratio>1.422222</pixelratio>
+            <refreshrate>50.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x100</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>576</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x576i @ 25.00Hz</description>
+            <subtitles>555</subtitles>
+            <pixelratio>1.422222</pixelratio>
+            <refreshrate>25.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x101</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>576</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x480 @ 60.00Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.185185</pixelratio>
+            <refreshrate>60.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x102</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x480 @ 59.94Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.185185</pixelratio>
+            <refreshrate>59.940060</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x103</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x480i @ 30.00Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.185185</pixelratio>
+            <refreshrate>30.001110</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x104</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 720x480i @ 29.97Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.185185</pixelratio>
+            <refreshrate>29.970030</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x105</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>720</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 640x480 @ 60.00Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.333333</pixelratio>
+            <refreshrate>60.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0x106</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>640</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>HDMI1: 640x480 @ 59.94Hz</description>
+            <subtitles>463</subtitles>
+            <pixelratio>1.333333</pixelratio>
+            <refreshrate>59.940479</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf0</xrandrid>
+            <overscan>
+                <left>0</left>
+                <top>0</top>
+                <right>640</right>
+                <bottom>480</bottom>
+            </overscan>
+        </resolution>
+        <resolution>
+            <description>1920x1080@ 60.00 - Full Screen</description>
+            <subtitles>1042</subtitles>
+            <pixelratio>0.896712</pixelratio>
+            <refreshrate>60.000000</refreshrate>
+            <output>HDMI1</output>
+            <xrandrid>0xf4</xrandrid>
+            <overscan>
+                <left>238</left>
+                <top>140</top>
+                <right>1682</right>
+                <bottom>937</bottom>
+            </overscan>
+        </resolution>
     </resolutions>
     <defaultvideosettings>
         <deinterlacemode>1</deinterlacemode>
@@ -723,7 +1059,7 @@
             <sortattributes>0</sortattributes>
         </programs>
         <videofiles>
-            <viewmode>66036</viewmode>
+            <viewmode>66041</viewmode>
             <sortmethod>1</sortmethod>
             <sortorder>1</sortorder>
             <sortattributes>1</sortattributes>
@@ -779,6 +1115,6 @@
     </viewstates>
     <audio>
         <mute>false</mute>
-        <fvolumelevel>1.000000</fvolumelevel>
+        <fvolumelevel>0.960000</fvolumelevel>
     </audio>
 </settings>

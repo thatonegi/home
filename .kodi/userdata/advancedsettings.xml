@@ -1,6 +1,6 @@
 <advancedsettings>
      <loglevel hide="false">2</loglevel>
-     <playcountminimumpercent>95</playcountminimumpercent>
+     <playcountminimumpercent>75</playcountminimumpercent>
      <skiploopfilter>8</skiploopfilter>
      <nodvdrom>true</nodvdrom>
      <songinfoduration>120</songinfoduration>
@@ -11,22 +11,28 @@
      <imagescalingalgorithm>fast_bilinear</imagescalingalgorithm>
      <showexitbutton>true</showexitbutton>
 
-     <!-- MySQL Library
      <videodatabase>
-       <type>mysql</type>
-       <host>192.168.1.100</host>
-       <port>3306</port>
-       <user>xbmc</user>
-       <pass>xbmc</pass>
+     	     <type>mysql</type>
+     	     <host>127.0.0.1</host>
+    	     <port>3306</port>
+   	     <user>kodi</user>
+     	     <pass>letmein</pass>
      </videodatabase>
-     -->
+     
+     <musicdatabase>
+	     <type>mysql</type>
+	     <host>127.0.0.1</host>
+	     <port>3306</port>
+	     <user>kodi</user>
+	     <pass>letmein</pass>
+     </musicdatabase>
 
      <!-- Streaming Optimization -->
      <network>
        <!--buffermode>1</buffermode>
        <cachemembuffersize>52428800</cachemembuffersize>
        <readbufferfactor>20</readbufferfactor -->
-       <curlclienttimeout>10</curlclienttimeout>
+       <curlclienttimeout>40</curlclienttimeout>
        <curllowspeedtime>10</curllowspeedtime>
      </network> 
 
@@ -48,10 +54,11 @@
 
      <!-- Video Library Tweaks -->
      <videolibrary>
-       <cleanonupdate>true</cleanonupdate>
-       <importwatchedstate>true</importwatchedstate>
-       <hideallitems>true</hideallitems>
-       <hideemptyseries>true</hideemptyseries>
+	     <importresumepoint>true</importresumepoint>
+      	     <cleanonupdate>true</cleanonupdate>
+      	     <importwatchedstate>true</importwatchedstate>
+      	     <hideallitems>true</hideallitems>
+             <hideemptyseries>true</hideemptyseries>
      </videolibrary>
 
      <videoscanner>
