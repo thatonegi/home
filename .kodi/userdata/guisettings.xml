@@ -70,7 +70,7 @@
         <epgupdate default="true">120</epgupdate>
         <hidenoinfoavailable default="true">true</hidenoinfoavailable>
         <ignoredbforclient default="true">false</ignoredbforclient>
-        <preventupdateswhileplayingtv default="true">false</preventupdateswhileplayingtv>
+        <preventupdateswhileplayingtv>true</preventupdateswhileplayingtv>
         <selectaction default="true">2</selectaction>
     </epg>
     <filelists>
@@ -87,7 +87,7 @@
         <addonnotifications default="true">true</addonnotifications>
         <addonupdates default="true">0</addonupdates>
         <settinglevel>2</settinglevel>
-        <systemtotaluptime>84003</systemtotaluptime>
+        <systemtotaluptime>89402</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -311,7 +311,7 @@
         <font default="true">arial.ttf</font>
         <height default="true">28</height>
         <languages default="true">English</languages>
-        <movie default="true"></movie>
+        <movie>service.subtitles.opensubtitles_by_opensubtitles</movie>
         <overrideassfonts default="true">false</overrideassfonts>
         <parsecaptions default="true">false</parsecaptions>
         <pauseonsearch default="true">true</pauseonsearch>
@@ -371,7 +371,7 @@
         <blankdisplays default="true">false</blankdisplays>
         <fakefullscreen default="true">true</fakefullscreen>
         <limitedrange default="true">false</limitedrange>
-        <monitor>HDMI1</monitor>
+        <monitor>eDP1</monitor>
         <preferedstereoscopicmode default="true">100</preferedstereoscopicmode>
         <resolution default="true">16</resolution>
         <screen default="true">0</screen>
@@ -398,7 +398,7 @@
         <setting type="bool" name="skin.confluence.homepageWeatherinfo">false</setting>
         <setting type="bool" name="skin.confluence.homepageMusicinfo">false</setting>
         <setting type="bool" name="skin.confluence.homepageVideoinfo">false</setting>
-        <setting type="bool" name="skin.confluence.HomeMenuNoMovieButton">true</setting>
+        <setting type="bool" name="skin.confluence.HomeMenuNoMovieButton">false</setting>
         <setting type="bool" name="skin.confluence.HomeMenuNoTVShowButton">false</setting>
         <setting type="bool" name="skin.confluence.HomeMenuNoWeatherButton">true</setting>
         <setting type="bool" name="skin.confluence.HomeMenuNoPicturesButton">true</setting>
@@ -1059,7 +1059,7 @@
             <sortattributes>0</sortattributes>
         </programs>
         <videofiles>
-            <viewmode>66041</viewmode>
+            <viewmode>66036</viewmode>
             <sortmethod>1</sortmethod>
             <sortorder>1</sortorder>
             <sortattributes>1</sortattributes>
@@ -1089,8 +1089,8 @@
             <sortattributes>0</sortattributes>
         </videonavmusicvideos>
         <videonavseasons>
-            <viewmode>65536</viewmode>
-            <sortmethod>1</sortmethod>
+            <viewmode>66036</viewmode>
+            <sortmethod>27</sortmethod>
             <sortorder>1</sortorder>
             <sortattributes>0</sortattributes>
         </videonavseasons>
@@ -1115,6 +1115,6 @@
     </viewstates>
     <audio>
         <mute>false</mute>
-        <fvolumelevel>0.960000</fvolumelevel>
+        <fvolumelevel>1.000000</fvolumelevel>
     </audio>
 </settings>

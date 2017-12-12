@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#umask 022
+umask 022
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -66,7 +66,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -115,8 +115,6 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
-umask 022
-
 export LS_OPTIONS='--group-directories-first --color=auto'
 export TMOUT=900
 export EDITOR=/usr/bin/vim
@@ -138,6 +136,8 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
 export HISTFILESIZE=200000
 export HISTOIGNORE="&:lo:[bf]g:exit:ls:du:df:wiload.sh:pwd:clear:mount:umount:"
+export LPDEST=PDF
+export PRINTER=PDF
 
 # Android settings
 export ADB_HOME=${HOME}/android/platform-tools

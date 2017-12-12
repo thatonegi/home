@@ -1,12 +1,12 @@
 <advancedsettings>
-     <loglevel hide="false">2</loglevel>
+     <loglevel hide="false">1</loglevel>
      <playcountminimumpercent>75</playcountminimumpercent>
      <skiploopfilter>8</skiploopfilter>
      <nodvdrom>true</nodvdrom>
      <songinfoduration>120</songinfoduration>
      <fanartres>720</fanartres>
      <splash>false</splash>
-     <imageres>540</imageres>
+     <imageres>720</imageres>
      <guires>540</guires>
      <imagescalingalgorithm>fast_bilinear</imagescalingalgorithm>
      <showexitbutton>true</showexitbutton>
@@ -29,27 +29,30 @@
 
      <!-- Streaming Optimization -->
      <network>
-       <!--buffermode>1</buffermode>
-       <cachemembuffersize>52428800</cachemembuffersize>
-       <readbufferfactor>20</readbufferfactor -->
-       <curlclienttimeout>40</curlclienttimeout>
-       <curllowspeedtime>10</curllowspeedtime>
+       <curlclienttimeout>20</curlclienttimeout>
+       <curllowspeedtime>15</curllowspeedtime>
+       <curlretries>2</curlretries>
      </network> 
 
      <cache>
-	     <buffermode>1</buffermode>
-	     <!-- memorysize>104857600</memorysizei -->
+	     <!-- <memorysize>104857600</memorysize> -->
+	     <buffermode>2</buffermode>		<!-- Buffer only true internet filesystems -->
 	     <memorysize>209715200</memorysize>
 	     <readfactor>20</readfactor>
      </cache>
 
      <samba>
 	     <statfiles>false</statfiles>
-	     <clienttimeout>30</clienttimeout>
+	     <clienttimeout>20</clienttimeout>
      </samba>
-
+     
      <musiclibrary>
-	     <backgroundupdate>true</backgroundupdate>
+	     <artistseperators>
+		     <seperator>:</seperator>
+		     <seperator> feat. </seperator>
+		     <seperator> ft. </seperator>
+	     </artistseperators>
+	     <dateadded>1</dateadded>
      </musiclibrary>
 
      <!-- Video Library Tweaks -->
@@ -57,8 +60,6 @@
 	     <importresumepoint>true</importresumepoint>
       	     <cleanonupdate>true</cleanonupdate>
       	     <importwatchedstate>true</importwatchedstate>
-      	     <hideallitems>true</hideallitems>
-             <hideemptyseries>true</hideemptyseries>
      </videolibrary>
 
      <videoscanner>
@@ -67,8 +68,6 @@
 
      <!-- Playback Tweaks -->
      <video>
-       <timeseekforward>15</timeseekforward>
-       <timeseekbackward>-15</timeseekbackward>
        <subsdelayrange>240</subsdelayrange>
        <busydialogdelayms>750</busydialogdelayms>
      </video>
