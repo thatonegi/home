@@ -114,7 +114,8 @@ fi
 if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
-
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export LS_OPTIONS='--group-directories-first --color=auto'
 export TMOUT=900
 export EDITOR=/usr/bin/vim
@@ -135,7 +136,7 @@ export TLDR_REPOSITORY=${HOME}/git-repos/tldr/tldr
 export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
 export HISTFILESIZE=200000
-export HISTOIGNORE="&:lo:[bf]g:exit:ls:du:df:wiload.sh:pwd:clear:mount:umount:"
+export HISTIGNORE="&:lo:[bf]g:exit:ls:du:df:wiload.sh:pwd:clear:mount:umount:"
 export LPDEST=PDF
 export PRINTER=PDF
 
@@ -146,9 +147,6 @@ export STUDIO_VM_OPTIONS=${HOME}/studio.vmoptions
 export STUDIO_JDK=${JDK_HOME}
 export PATH=${HOME}/scripts:$PATH:$JAVA_HOME/bin:$ADB_HOME:$ANDROID_STUDIO/bin
 
-set -o noclobber
-set -o ignoreeof
-
 shopt -s autocd
 shopt -s cdable_vars
 shopt -s cdspell
@@ -158,6 +156,8 @@ shopt -s cmdhist
 shopt -s dirspell
 shopt -s histappend
 
+set -o noclobber
+set -o ignoreeof
 
 bump () {
 	$mypid := `ps aux | grep $1 | grep -v grep | awk '{print $2}'`

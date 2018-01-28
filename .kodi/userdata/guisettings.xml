@@ -87,7 +87,7 @@
         <addonnotifications default="true">true</addonnotifications>
         <addonupdates default="true">0</addonupdates>
         <settinglevel>2</settinglevel>
-        <systemtotaluptime>89402</systemtotaluptime>
+        <systemtotaluptime>97401</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -444,6 +444,7 @@
         <setting type="string" name="skin.confluence.HomeProgramButton6"></setting>
         <setting type="string" name="skin.confluence.WeatherFanartDir"></setting>
         <setting type="string" name="skin.confluence.WeatherScript_Label"></setting>
+        <setting type="string" name="skin.confluence.Home_Custom_Back_TV_Folder"></setting>
     </skinsettings>
     <resolutions>
         <resolution>
@@ -1115,6 +1116,6 @@
     </viewstates>
     <audio>
         <mute>false</mute>
-        <fvolumelevel>1.000000</fvolumelevel>
+        <fvolumelevel>0.883072</fvolumelevel>
     </audio>
 </settings>
