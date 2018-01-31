@@ -40,7 +40,7 @@ $
 # Registers:
 "0	LINE	0
 	sudo /etc/init.d/networking stop
-""1	LINE	0
+"1	LINE	0
 	
 "2	LINE	0
 	#alias l='ls -CF'
@@ -58,22 +58,27 @@ $
 	    #alias vdir='vdir --color=auto'
 "9	LINE	0
 	    #alias dir='dir --color=auto'
-"-	CHAR	0
-	#
+""-	CHAR	0
+	8
 
 # File marks:
-'0  158  0  ~/.bashrc
-'1  7  0  ~/bin/3kerns.sh
-'2  4  0  /etc/hosts
-'3  132  45  ~/.bashrc
-'4  1  6  ~/.git/COMMIT_EDITMSG
-'5  121  17  ~/.bashrc
-'6  1  0  ~/.bashre
-'7  33  61  ~/bin/wiload.sh
-'8  19  0  ~/bin/wiload.sh
-'9  47  4  ~/bin/wiload.sh
+'0  3  15  /etc/aliases
+'1  67  16  /etc/sysctl.conf
+'2  1  6  ~/.git/COMMIT_EDITMSG
+'3  158  0  ~/.bashrc
+'4  7  0  ~/bin/3kerns.sh
+'5  4  0  /etc/hosts
+'6  132  45  ~/.bashrc
+'7  121  17  ~/.bashrc
+'8  1  0  ~/.bashre
+'9  33  61  ~/bin/wiload.sh
 
 # Jumplist (newest first):
+-'  3  15  /etc/aliases
+-'  1  0  /etc/aliases
+-'  67  16  /etc/sysctl.conf
+-'  70  0  /etc/sysctl.conf
+-'  1  6  ~/.git/COMMIT_EDITMSG
 -'  158  0  ~/.bashrc
 -'  70  4  ~/.bashrc
 -'  132  45  ~/.bashrc
@@ -81,7 +86,6 @@ $
 -'  4  0  /etc/hosts
 -'  2  14  /etc/hosts
 -'  121  17  ~/.bashrc
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  142  0  ~/.bashrc
 -'  1  0  ~/.bashre
 -'  1  0  ~/bin/3kerns.sh
@@ -105,9 +109,7 @@ $
 -'  22  0  /etc/mdm/mdm.conf
 -'  1  0  /etc/mdm/mdm.conf
 -'  1  0  ~/.kodi/addons/script.xbmcbackup/default.py
--'  70  0  /etc/sysctl.conf
 -'  69  23  /etc/sysctl.conf
--'  67  17  /etc/sysctl.conf
 -'  61  0  /etc/sysctl.conf
 -'  58  27  ~/bin/wiload.sh
 -'  25  0  ~/bin/wiload.sh
@@ -170,8 +172,31 @@ $
 -'  306  1  /etc/samba/smb.conf
 -'  48  20  /etc/samba/smb.conf
 -'  479  0  /etc/dnsmasq.conf
+-'  158  0  ~/.bashrc
 
 # History of marks within files (newest to oldest):
+
+> /etc/aliases
+	"	3	15
+	^	3	16
+	.	3	15
+	+	3	15
+
+> /etc/sysctl.conf
+	"	67	16
+	^	67	17
+	.	67	16
+	+	61	0
+	+	67	17
+	+	69	23
+	+	70	0
+	+	67	16
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
 
 > ~/.bashrc
 	"	158	0
@@ -245,12 +270,6 @@ $
 	+	2	14
 	+	1	18
 	+	4	0
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > ~/.bashre
 	"	1	0
@@ -360,15 +379,6 @@ $
 	+	20	11
 	+	21	20
 	+	26	42
-
-> /etc/sysctl.conf
-	"	70	0
-	^	70	1
-	.	70	0
-	+	61	0
-	+	67	17
-	+	69	23
-	+	70	0
 
 > /etc/network/interfaces
 	"	13	30
