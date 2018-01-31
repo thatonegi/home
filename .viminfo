@@ -15,6 +15,7 @@ $
 
 # Command Line History (newest to oldest):
 :wq
+:WQ
 :q
 :q!
 :1
@@ -39,61 +40,65 @@ $
 # Registers:
 "0	LINE	0
 	sudo /etc/init.d/networking stop
-"1	LINE	0
+""1	LINE	0
 	
 "2	LINE	0
-	     -->
+	#alias l='ls -CF'
 "3	LINE	0
-	     <!--
+	#alias la='ls -A'
 "4	LINE	0
-	             <hideemptyseries>true</hideemptyseries>
+	#alias ll='ls -alF'
 "5	LINE	0
-	       <readbufferfactor>20</readbufferfactor -->
+	# some more ls aliases
 "6	LINE	0
-	       <cachemembuffersize>52428800</cachemembuffersize>
+	
 "7	LINE	0
-	       <!--buffermode>1</buffermode>
+	    #alias vdir='vdir --color=auto'
 "8	LINE	0
-		     <backgroundupdate>true</backgroundupdate>
+	    #alias vdir='vdir --color=auto'
 "9	LINE	0
-		     <!-- <memorysize>104857600</memorysize> -->
-""-	CHAR	0
-	1
+	    #alias dir='dir --color=auto'
+"-	CHAR	0
+	#
 
 # File marks:
-'0  128  17  ~/.bashrc
-'1  1  0  ~/.bashre
-'2  7  0  ~/bin/3kerns.sh
-'3  33  61  ~/bin/wiload.sh
-'4  19  0  ~/bin/wiload.sh
-'5  47  4  ~/bin/wiload.sh
-'6  19  0  ~/.bashrc
-'7  296  28  /etc/samba/smb.conf
-'8  107  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
-'9  10  52  /etc/samba/smb.conf
+'0  158  0  ~/.bashrc
+'1  7  0  ~/bin/3kerns.sh
+'2  4  0  /etc/hosts
+'3  132  45  ~/.bashrc
+'4  1  6  ~/.git/COMMIT_EDITMSG
+'5  121  17  ~/.bashrc
+'6  1  0  ~/.bashre
+'7  33  61  ~/bin/wiload.sh
+'8  19  0  ~/bin/wiload.sh
+'9  47  4  ~/bin/wiload.sh
 
 # Jumplist (newest first):
--'  128  17  ~/.bashrc
--'  149  0  ~/.bashrc
--'  1  0  ~/.bashre
+-'  158  0  ~/.bashrc
+-'  70  4  ~/.bashrc
+-'  132  45  ~/.bashrc
 -'  7  0  ~/bin/3kerns.sh
+-'  4  0  /etc/hosts
+-'  2  14  /etc/hosts
+-'  121  17  ~/.bashrc
+-'  1  6  ~/.git/COMMIT_EDITMSG
+-'  142  0  ~/.bashrc
+-'  1  0  ~/.bashre
 -'  1  0  ~/bin/3kerns.sh
 -'  33  61  ~/bin/wiload.sh
 -'  19  0  ~/bin/wiload.sh
 -'  47  4  ~/bin/wiload.sh
 -'  1  0  ~/bin/wiload.sh
 -'  19  0  ~/.bashrc
--'  141  17  ~/.bashrc
+-'  134  17  ~/.bashrc
 -'  296  28  /etc/samba/smb.conf
 -'  10  52  /etc/samba/smb.conf
 -'  107  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
 -'  1  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
 -'  307  1  /etc/samba/smb.conf
--'  2  14  /etc/hosts
 -'  1  0  /etc/host
 -'  18  33  ~/.bash_aliases
 -'  1  0  ~/.bash_aliases
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  88  0  /etc/mdm/mdm.conf
 -'  60  0  /etc/mdm/mdm.conf
 -'  5  0  /etc/mdm/mdm.conf
@@ -144,7 +149,6 @@ $
 -'  8  0  ~/.kodi/addons
 -'  164  0  /etc/rygel.conf
 -'  1  0  /etc/rygel.conf
--'  139  78  ~/.bashrc
 -'  3  19  /etc/resolv.conf
 -'  1  10  /etc/resolv.conf
 -'  36  0  ~/etc/default/useradd
@@ -159,67 +163,65 @@ $
 -'  1  0  /etc/sysctl.conf
 -'  1  27  /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice League Dark.nfo
 -'  1  29  /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice.League.Dark.2017.nfo
--'  138  24  ~/.bashrc
--'  143  0  ~/.bashrc
--'  135  0  ~/.bashrc
+-'  131  24  ~/.bashrc
+-'  136  0  ~/.bashrc
+-'  128  0  ~/.bashrc
 -'  1  0  ~/.bash_history
 -'  306  1  /etc/samba/smb.conf
 -'  48  20  /etc/samba/smb.conf
 -'  479  0  /etc/dnsmasq.conf
--'  1  0  /etc/dnsmasq.conf
--'  1  45  ~/t
--'  57  0  /etc/iptables/rules.v4
--'  54  65  /etc/iptables/rules.v4
--'  14  5  ~/.kodi/userdata/advancedsettings.xml
--'  30  6  ~/.kodi/userdata/advancedsettings.xml
 
 # History of marks within files (newest to oldest):
 
 > ~/.bashrc
-	"	128	17
-	^	118	27
-	.	118	26
-	+	82	0
-	+	83	0
-	+	84	0
+	"	158	0
+	^	110	0
+	.	111	0
+	+	78	0
+	+	78	0
+	+	78	0
 	+	12	6
 	+	12	6
 	+	12	6
-	+	134	0
-	+	138	26
-	+	134	18
-	+	129	13
-	+	131	29
-	+	18	0
-	+	131	31
-	+	134	22
+	+	127	0
 	+	131	26
-	+	138	26
-	+	148	0
-	+	135	29
+	+	127	18
+	+	122	13
+	+	124	29
+	+	18	0
+	+	124	31
+	+	127	22
+	+	124	26
+	+	131	26
+	+	141	0
+	+	128	29
 	+	12	0
 	+	12	0
 	+	12	0
+	+	129	0
 	+	136	0
-	+	143	0
-	+	143	0
-	+	138	26
-	+	139	78
+	+	136	0
+	+	131	26
+	+	132	78
 	+	5	0
-	+	69	4
-	+	119	0
-	+	141	15
-	+	140	16
-	+	141	17
-	+	139	11
-	+	149	0
-	+	159	0
-	+	149	0
-	+	117	23
-	+	118	26
-
-> ~/.bashre
-	"	1	0
+	+	70	4
+	+	112	0
+	+	134	15
+	+	133	16
+	+	134	17
+	+	132	11
+	+	142	0
+	+	152	0
+	+	142	0
+	+	109	23
+	+	111	26
+	+	132	46
+	+	18	0
+	+	70	0
+	+	70	0
+	+	69	0
+	+	78	0
+	+	111	0
 
 > ~/bin/3kerns.sh
 	"	7	0
@@ -228,6 +230,30 @@ $
 	+	1	11
 	+	3	36
 	+	6	18
+
+> /etc/hosts
+	"	4	0
+	^	2	15
+	.	4	0
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/.bashre
+	"	1	0
 
 > ~/bin/wiload.sh
 	"	33	61
@@ -290,19 +316,6 @@ $
 > /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
 	"	107	0
 
-> /etc/hosts
-	"	2	14
-	^	2	15
-	.	2	14
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-
 > /etc/host
 	"	1	0
 
@@ -311,12 +324,6 @@ $
 	^	18	34
 	.	18	33
 	+	18	33
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > /etc/mdm/mdm.conf
 	"	88	0
