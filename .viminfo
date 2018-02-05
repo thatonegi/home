@@ -8,22 +8,26 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/LANG
+~MSle0~/PS1
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq
-:WQ
-:q
 :q!
+:wq!
+:q
+:set runtimepath?
+:vimruntimepath
+:WQ
 :1
 :2
 :w
 :wNext
 
 # Search String History (newest to oldest):
+?/PS1
 ?/LANG
 ?/xdmc
 ?/swap
@@ -41,45 +45,71 @@ $
 "0	LINE	0
 	sudo /etc/init.d/networking stop
 "1	LINE	0
-	
+	packadd google_python_style
 "2	LINE	0
-	#alias l='ls -CF'
+	" Add the google_python_style plugin.
 "3	LINE	0
-	#alias la='ls -A'
-"4	LINE	0
-	#alias ll='ls -alF'
-"5	LINE	0
-	# some more ls aliases
-"6	LINE	0
 	
+"4	LINE	0
+	
+"5	LINE	0
+	
+"6	LINE	0
+	#alias l='ls -CF'
 "7	LINE	0
-	    #alias vdir='vdir --color=auto'
+	#alias la='ls -A'
 "8	LINE	0
-	    #alias vdir='vdir --color=auto'
+	#alias ll='ls -alF'
 "9	LINE	0
-	    #alias dir='dir --color=auto'
+	# some more ls aliases
 ""-	CHAR	0
-	8
+	3
 
 # File marks:
-'0  3  15  /etc/aliases
-'1  67  16  /etc/sysctl.conf
-'2  1  6  ~/.git/COMMIT_EDITMSG
-'3  158  0  ~/.bashrc
-'4  7  0  ~/bin/3kerns.sh
-'5  4  0  /etc/hosts
-'6  132  45  ~/.bashrc
-'7  121  17  ~/.bashrc
-'8  1  0  ~/.bashre
-'9  33  61  ~/bin/wiload.sh
+'0  2  21  /etc/resolv.conf
+'1  4  23  /etc/resolv.conf
+'2  2  19  /etc/resolv.bak
+'3  3  19  /etc/resolv.bak
+'4  158  0  ~/.bashrc
+'5  26  18  ~/bin/gdrive.py
+'6  113  0  ~/.vimrc
+'7  12  0  ~/.vimrc
+'8  114  0  ~/.vimrc
+'9  1  16  ~/bin/gdrive.py
 
 # Jumplist (newest first):
+-'  2  21  /etc/resolv.conf
+-'  4  23  /etc/resolv.conf
+-'  2  19  /etc/resolv.bak
+-'  3  19  /etc/resolv.bak
+-'  1  0  /etc/resolv.bak
+-'  158  0  ~/.bashrc
+-'  64  3  ~/.bashrc
+-'  26  18  ~/bin/gdrive.py
+-'  1  16  ~/bin/gdrive.py
+-'  113  0  ~/.vimrc
+-'  12  0  ~/.vimrc
+-'  114  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  51  1  ~/.vimrc
+-'  33  0  ~/.vimrc
+-'  1  0  ~/.bashrc
+-'  97  27  ~/.bashrc
+-'  141  79  ~/.bashrc
+-'  22  0  ~/.bash_profile
+-'  1  0  ~/.bash_profile
+-'  155  10  ~/.bashrc
+-'  34  31  ~/bin/gdrive.py
+-'  8  26  ~/bin/directory.py
+-'  256  16  /etc/samba/smb.conf
+-'  296  28  /etc/samba/smb.conf
+-'  1  10  ~/bin/wiload.sh
+-'  33  61  ~/bin/wiload.sh
+-'  1  6  ~/.git/COMMIT_EDITMSG
 -'  3  15  /etc/aliases
 -'  1  0  /etc/aliases
 -'  67  16  /etc/sysctl.conf
 -'  70  0  /etc/sysctl.conf
--'  1  6  ~/.git/COMMIT_EDITMSG
--'  158  0  ~/.bashrc
 -'  70  4  ~/.bashrc
 -'  132  45  ~/.bashrc
 -'  7  0  ~/bin/3kerns.sh
@@ -89,13 +119,10 @@ $
 -'  142  0  ~/.bashrc
 -'  1  0  ~/.bashre
 -'  1  0  ~/bin/3kerns.sh
--'  33  61  ~/bin/wiload.sh
 -'  19  0  ~/bin/wiload.sh
 -'  47  4  ~/bin/wiload.sh
--'  1  0  ~/bin/wiload.sh
 -'  19  0  ~/.bashrc
 -'  134  17  ~/.bashrc
--'  296  28  /etc/samba/smb.conf
 -'  10  52  /etc/samba/smb.conf
 -'  107  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
 -'  1  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
@@ -149,59 +176,32 @@ $
 -'  350  0  ~/.config/mpd/mpd.conf
 -'  15  28  ~/.kodi/userdata/advancedsettings.xml
 -'  8  0  ~/.kodi/addons
--'  164  0  /etc/rygel.conf
--'  1  0  /etc/rygel.conf
--'  3  19  /etc/resolv.conf
--'  1  10  /etc/resolv.conf
--'  36  0  ~/etc/default/useradd
--'  1  0  ~/etc/default/useradd
--'  37  0  ~/etc/default/nss
--'  1  0  ~/etc/default/nss
--'  8  22  ~/etc/default/networking
--'  1  0  ~/etc/default/networking
--'  677  0  /etc/dnsmasq.conf
--'  415  0  /etc/dnsmasq.conf
--'  656  17  /etc/dnsmasq.conf
--'  1  0  /etc/sysctl.conf
--'  1  27  /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice League Dark.nfo
--'  1  29  /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice.League.Dark.2017.nfo
--'  131  24  ~/.bashrc
--'  136  0  ~/.bashrc
--'  128  0  ~/.bashrc
--'  1  0  ~/.bash_history
--'  306  1  /etc/samba/smb.conf
--'  48  20  /etc/samba/smb.conf
--'  479  0  /etc/dnsmasq.conf
--'  158  0  ~/.bashrc
 
 # History of marks within files (newest to oldest):
 
-> /etc/aliases
-	"	3	15
-	^	3	16
-	.	3	15
-	+	3	15
+> /etc/resolv.conf
+	"	2	21
+	^	2	22
+	.	2	21
+	+	8	17
+	+	7	23
+	+	1	10
+	+	6	19
+	+	5	19
+	+	4	23
+	+	2	21
 
-> /etc/sysctl.conf
-	"	67	16
-	^	67	17
-	.	67	16
-	+	61	0
-	+	67	17
-	+	69	23
-	+	70	0
-	+	67	16
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
+> /etc/resolv.bak
+	"	2	19
+	^	2	20
+	.	2	19
+	+	3	19
+	+	2	19
 
 > ~/.bashrc
 	"	158	0
-	^	110	0
-	.	111	0
+	^	141	80
+	.	141	79
 	+	78	0
 	+	78	0
 	+	78	0
@@ -247,35 +247,103 @@ $
 	+	69	0
 	+	78	0
 	+	111	0
+	+	138	0
+	+	139	0
+	+	140	0
+	+	141	45
+	+	155	0
+	+	141	79
 
-> ~/bin/3kerns.sh
-	"	7	0
-	^	7	0
-	.	6	18
-	+	1	11
-	+	3	36
-	+	6	18
-
-> /etc/hosts
-	"	4	0
-	^	2	15
-	.	4	0
-	+	3	11
+> ~/bin/gdrive.py
+	"	26	18
+	^	1	17
+	.	1	16
+	+	34	32
+	+	44	0
+	+	42	23
+	+	43	23
+	+	42	29
+	+	43	30
+	+	38	6
+	+	39	6
+	+	40	6
+	+	41	6
+	+	42	7
+	+	43	7
+	+	29	0
+	+	30	0
+	+	31	0
+	+	32	0
+	+	34	0
+	+	25	4
+	+	26	4
+	+	27	4
+	+	37	4
+	+	38	4
+	+	39	4
+	+	40	4
+	+	41	4
+	+	42	4
+	+	43	4
+	+	37	4
+	+	38	4
+	+	39	4
+	+	40	4
+	+	41	4
+	+	42	4
+	+	43	4
+	+	44	0
+	+	1	0
 	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
+	+	1	16
 
-> ~/.bashre
-	"	1	0
+> ~/.vimrc
+	"	113	0
+	^	14	0
+	.	113	0
+	+	49	1
+	+	50	1
+	+	51	1
+	+	113	27
+	+	13	30
+	+	12	238
+	+	13	0
+	+	12	118
+	+	13	54
+	+	113	0
+
+> ~/.bash_profile
+	"	22	0
+
+> ~/bin/directory.py
+	"	8	26
+	^	8	27
+	.	8	26
+	+	11	0
+	+	8	26
+
+> /etc/samba/smb.conf
+	"	256	16
+	^	296	29
+	.	47	21
+	+	156	18
+	+	46	0
+	+	33	0
+	+	11	0
+	+	77	21
+	+	80	0
+	+	80	0
+	+	92	0
+	+	127	0
+	+	186	19
+	+	274	22
+	+	264	22
+	+	10	52
+	+	296	28
+	+	47	21
 
 > ~/bin/wiload.sh
-	"	33	61
+	"	1	10
 	^	31	62
 	.	31	61
 	+	37	0
@@ -313,24 +381,53 @@ $
 	+	19	0
 	+	31	61
 
-> /etc/samba/smb.conf
-	"	296	28
-	^	296	29
-	.	296	28
-	+	156	18
-	+	46	0
-	+	33	0
-	+	11	0
-	+	77	21
-	+	80	0
-	+	80	0
-	+	92	0
-	+	127	0
-	+	186	19
-	+	274	22
-	+	264	22
-	+	10	52
-	+	296	28
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> /etc/aliases
+	"	3	15
+	^	3	16
+	.	3	15
+	+	3	15
+
+> /etc/sysctl.conf
+	"	67	16
+	^	67	17
+	.	67	16
+	+	61	0
+	+	67	17
+	+	69	23
+	+	70	0
+	+	67	16
+
+> ~/bin/3kerns.sh
+	"	7	0
+	^	7	0
+	.	6	18
+	+	1	11
+	+	3	36
+	+	6	18
+
+> /etc/hosts
+	"	4	0
+	^	2	15
+	.	4	0
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+
+> ~/.bashre
+	"	1	0
 
 > /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
 	"	107	0
@@ -355,13 +452,6 @@ $
 
 > ~/.kodi/addons/script.xbmcbackup/default.py
 	"	1	0
-
-> ~/bin/directory.py
-	"	8	26
-	^	8	27
-	.	8	26
-	+	11	0
-	+	8	26
 
 > ~/bin/iface.py
 	"	26	42
@@ -500,17 +590,6 @@ $
 
 > /etc/rygel.conf
 	"	164	0
-
-> /etc/resolv.conf
-	"	3	19
-	^	3	20
-	.	3	19
-	+	7	17
-	+	6	23
-	+	1	10
-	+	5	19
-	+	4	19
-	+	3	19
 
 > ~/etc/default/useradd
 	"	36	0

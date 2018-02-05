@@ -9,6 +9,8 @@
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
+" runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vim74/pack/dist/opt/justify,/usr/share/vim/vim74/pack/dist/opt/editexisting,/usr/share/vim/vim74/pack/dist/opt/matchit,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath^=~/.vim/bundle/google_python_style.vim
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -44,9 +46,9 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+" if has('mouse')
+"   set mouse=a
+" endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -108,4 +110,5 @@ endif
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
 packadd matchit
+
 set bg=dark

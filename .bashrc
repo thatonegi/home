@@ -135,10 +135,10 @@ export PRINTER=PDF
 
 # Android settings
 export ADB_HOME=${HOME}/android/platform-tools
-export ANDROID_STUDIO=/opt/android-studio
-export STUDIO_VM_OPTIONS=${HOME}/studio.vmoptions
-export STUDIO_JDK=${JDK_HOME}
-export PATH=${HOME}/scripts:$PATH:$JAVA_HOME/bin:$ADB_HOME:$ANDROID_STUDIO/bin
+#export ANDROID_STUDIO=/opt/android-studio
+#export STUDIO_VM_OPTIONS=${HOME}/studio.vmoptions
+#export STUDIO_JDK=${JDK_HOME}
+export PATH=${HOME}/scripts:$PATH:$JAVA_HOME:$JDK_HOME:$JRE_HOME:$JAVA_HOME/bin:$ADB_HOME:
 
 shopt -s autocd
 shopt -s cdable_vars
