@@ -66,18 +66,19 @@ $
 	3
 
 # File marks:
-'0  2  21  /etc/resolv.conf
-'1  4  23  /etc/resolv.conf
-'2  2  19  /etc/resolv.bak
-'3  3  19  /etc/resolv.bak
-'4  158  0  ~/.bashrc
-'5  26  18  ~/bin/gdrive.py
-'6  113  0  ~/.vimrc
-'7  12  0  ~/.vimrc
-'8  114  0  ~/.vimrc
-'9  1  16  ~/bin/gdrive.py
+'0  1  6  ~/.git/COMMIT_EDITMSG
+'1  2  21  /etc/resolv.conf
+'2  4  23  /etc/resolv.conf
+'3  2  19  /etc/resolv.bak
+'4  3  19  /etc/resolv.bak
+'5  158  0  ~/.bashrc
+'6  26  18  ~/bin/gdrive.py
+'7  113  0  ~/.vimrc
+'8  12  0  ~/.vimrc
+'9  114  0  ~/.vimrc
 
 # Jumplist (newest first):
+-'  1  6  ~/.git/COMMIT_EDITMSG
 -'  2  21  /etc/resolv.conf
 -'  4  23  /etc/resolv.conf
 -'  2  19  /etc/resolv.bak
@@ -105,7 +106,6 @@ $
 -'  296  28  /etc/samba/smb.conf
 -'  1  10  ~/bin/wiload.sh
 -'  33  61  ~/bin/wiload.sh
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  3  15  /etc/aliases
 -'  1  0  /etc/aliases
 -'  67  16  /etc/sysctl.conf
@@ -175,9 +175,14 @@ $
 -'  325  0  ~/.config/mpd/mpd.conf
 -'  350  0  ~/.config/mpd/mpd.conf
 -'  15  28  ~/.kodi/userdata/advancedsettings.xml
--'  8  0  ~/.kodi/addons
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
 
 > /etc/resolv.conf
 	"	2	21
@@ -380,12 +385,6 @@ $
 	+	47	0
 	+	19	0
 	+	31	61
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > /etc/aliases
 	"	3	15

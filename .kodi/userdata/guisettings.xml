@@ -23,7 +23,7 @@
         <eac3passthrough default="true">false</eac3passthrough>
         <guisoundmode default="true">1</guisoundmode>
         <maintainoriginalvolume default="true">true</maintainoriginalvolume>
-        <passthrough>true</passthrough>
+        <passthrough default="true">false</passthrough>
         <passthroughdevice default="true">default</passthroughdevice>
         <processquality>50</processquality>
         <samplerate default="true">48000</samplerate>
@@ -87,7 +87,7 @@
         <addonnotifications default="true">true</addonnotifications>
         <addonupdates default="true">0</addonupdates>
         <settinglevel>2</settinglevel>
-        <systemtotaluptime>100126</systemtotaluptime>
+        <systemtotaluptime>103641</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -1116,6 +1116,6 @@
     </viewstates>
     <audio>
         <mute>false</mute>
-        <fvolumelevel>0.883072</fvolumelevel>
+        <fvolumelevel>0.949739</fvolumelevel>
     </audio>
 </settings>
