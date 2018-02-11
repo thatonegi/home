@@ -15,9 +15,9 @@ $
 
 # Command Line History (newest to oldest):
 :wq
+:q
 :q!
 :wq!
-:q
 :set runtimepath?
 :vimruntimepath
 :WQ
@@ -44,43 +44,52 @@ $
 # Registers:
 "0	LINE	0
 	sudo /etc/init.d/networking stop
-"1	LINE	0
-	packadd google_python_style
+""1	LINE	0
+	$useragent->agent("My SSL Agent/0.1 ");
 "2	LINE	0
-	" Add the google_python_style plugin.
+	packadd google_python_style
 "3	LINE	0
-	
+	" Add the google_python_style plugin.
 "4	LINE	0
 	
 "5	LINE	0
 	
 "6	LINE	0
-	#alias l='ls -CF'
+	
 "7	LINE	0
-	#alias la='ls -A'
+	#alias l='ls -CF'
 "8	LINE	0
-	#alias ll='ls -alF'
+	#alias la='ls -A'
 "9	LINE	0
-	# some more ls aliases
-""-	CHAR	0
-	3
+	#alias ll='ls -alF'
+"-	CHAR	0
+		
 
 # File marks:
-'0  1  6  ~/.git/COMMIT_EDITMSG
-'1  2  21  /etc/resolv.conf
-'2  4  23  /etc/resolv.conf
-'3  2  19  /etc/resolv.bak
-'4  3  19  /etc/resolv.bak
-'5  158  0  ~/.bashrc
-'6  26  18  ~/bin/gdrive.py
-'7  113  0  ~/.vimrc
-'8  12  0  ~/.vimrc
-'9  114  0  ~/.vimrc
+'0  12  4  ~/bin/whatsmyip.pl
+'1  13  38  ~/bin/whatsmyip.pl
+'2  1  18  /etc/hosts
+'3  66  115  ~/.config/conky/conky.conf
+'4  2  21  /etc/resolv.conf
+'5  1  6  ~/.git/COMMIT_EDITMSG
+'6  3  21  /etc/resolv.conf
+'7  5  23  /etc/resolv.conf
+'8  2  19  /etc/resolv.bak
+'9  3  19  /etc/resolv.bak
 
 # Jumplist (newest first):
--'  1  6  ~/.git/COMMIT_EDITMSG
+-'  12  4  ~/bin/whatsmyip.pl
+-'  13  52  ~/bin/whatsmyip.pl
+-'  1  0  ~/bin/whatsmyip.pl
+-'  1  18  /etc/hosts
+-'  66  115  ~/.config/conky/conky.conf
+-'  74  115  ~/.config/conky/conky.conf
 -'  2  21  /etc/resolv.conf
--'  4  23  /etc/resolv.conf
+-'  1  0  /etc/resolv.conf
+-'  4  0  /etc/hosts
+-'  1  6  ~/.git/COMMIT_EDITMSG
+-'  3  21  /etc/resolv.conf
+-'  5  23  /etc/resolv.conf
 -'  2  19  /etc/resolv.bak
 -'  3  19  /etc/resolv.bak
 -'  1  0  /etc/resolv.bak
@@ -113,7 +122,6 @@ $
 -'  70  4  ~/.bashrc
 -'  132  45  ~/.bashrc
 -'  7  0  ~/bin/3kerns.sh
--'  4  0  /etc/hosts
 -'  2  14  /etc/hosts
 -'  121  17  ~/.bashrc
 -'  142  0  ~/.bashrc
@@ -167,34 +175,94 @@ $
 -'  40  31  ~/.kodi/userdata/advancedsettings.xml
 -'  71  7  ~/.kodi/userdata/advancedsettings.xml
 -'  32  5  ~/.kodi/userdata/advancedsettings.xml
--'  27  0  ~/.kodi/userdata/advancedsettings.xml
--'  73  5  ~/.kodi/userdata/advancedsettings.xml
--'  45  0  ~/.config/mpd/mpd.conf
--'  389  0  ~/.config/mpd/mpd.conf
--'  1  0  ~/.config/mpd/mpd.conf
--'  325  0  ~/.config/mpd/mpd.conf
--'  350  0  ~/.config/mpd/mpd.conf
--'  15  28  ~/.kodi/userdata/advancedsettings.xml
 
 # History of marks within files (newest to oldest):
+
+> ~/bin/whatsmyip.pl
+	"	12	4
+	^	12	5
+	.	12	4
+	+	7	36
+	+	13	38
+	+	6	10
+	+	13	0
+	+	6	54
+	+	3	10
+	+	7	72
+	+	8	36
+	+	13	0
+	+	12	4
+
+> /etc/hosts
+	"	1	18
+	^	4	13
+	.	1	18
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+	+	1	26
+	+	4	0
+	+	1	18
+
+> ~/.config/conky/conky.conf
+	"	66	115
+	^	74	116
+	.	74	115
+	+	62	27
+	+	62	1
+	+	54	89
+	+	62	24
+	+	63	16
+	+	62	39
+	+	51	14
+	+	53	19
+	+	54	67
+	+	62	0
+	+	61	27
+	+	62	0
+	+	68	22
+	+	69	0
+	+	70	0
+	+	69	16
+	+	70	16
+	+	68	38
+	+	62	74
+	+	75	75
+	+	74	73
+	+	76	128
+	+	74	86
+	+	75	88
+	+	74	84
+	+	75	86
+	+	76	179
+	+	75	121
+	+	74	115
+
+> /etc/resolv.conf
+	"	2	21
+	^	2	22
+	.	2	21
+	+	9	17
+	+	8	23
+	+	1	10
+	+	7	19
+	+	6	19
+	+	5	23
+	+	3	21
+	+	2	21
 
 > ~/.git/COMMIT_EDITMSG
 	"	1	6
 	^	1	7
 	.	1	6
 	+	1	6
-
-> /etc/resolv.conf
-	"	2	21
-	^	2	22
-	.	2	21
-	+	8	17
-	+	7	23
-	+	1	10
-	+	6	19
-	+	5	19
-	+	4	23
-	+	2	21
 
 > /etc/resolv.bak
 	"	2	19
@@ -409,21 +477,6 @@ $
 	+	1	11
 	+	3	36
 	+	6	18
-
-> /etc/hosts
-	"	4	0
-	^	2	15
-	.	4	0
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
 
 > ~/.bashre
 	"	1	0
@@ -683,40 +736,6 @@ $
 
 > ~/.ssh/confif
 	"	1	0
-
-> ~/.config/conky/conky.conf
-	"	74	115
-	^	74	116
-	.	74	115
-	+	62	27
-	+	62	1
-	+	54	89
-	+	62	24
-	+	63	16
-	+	62	39
-	+	51	14
-	+	53	19
-	+	54	67
-	+	62	0
-	+	61	27
-	+	62	0
-	+	68	22
-	+	69	0
-	+	70	0
-	+	69	16
-	+	70	16
-	+	68	38
-	+	62	74
-	+	75	75
-	+	74	73
-	+	76	128
-	+	74	86
-	+	75	88
-	+	74	84
-	+	75	86
-	+	76	179
-	+	75	121
-	+	74	115
 
 > ~/.kodi/userdata/profiles.xml
 	"	1	0
