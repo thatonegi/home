@@ -14,8 +14,8 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
 :q
+:wq
 :q!
 :wq!
 :set runtimepath?
@@ -44,7 +44,7 @@ $
 # Registers:
 "0	LINE	0
 	sudo /etc/init.d/networking stop
-""1	LINE	0
+"1	LINE	0
 	$useragent->agent("My SSL Agent/0.1 ");
 "2	LINE	0
 	packadd google_python_style
@@ -62,38 +62,41 @@ $
 	#alias la='ls -A'
 "9	LINE	0
 	#alias ll='ls -alF'
-"-	CHAR	0
-		
+""-	CHAR	0
+	#
 
 # File marks:
-'0  12  4  ~/bin/whatsmyip.pl
-'1  13  38  ~/bin/whatsmyip.pl
-'2  1  18  /etc/hosts
-'3  66  115  ~/.config/conky/conky.conf
-'4  2  21  /etc/resolv.conf
-'5  1  6  ~/.git/COMMIT_EDITMSG
-'6  3  21  /etc/resolv.conf
-'7  5  23  /etc/resolv.conf
-'8  2  19  /etc/resolv.bak
-'9  3  19  /etc/resolv.bak
+'0  157  0  ~/.bashrc
+'1  1  0  ~/.bashr
+'2  4  0  /etc/hosts
+'3  45  20  ~/.config/conky/conky.conf
+'4  1  6  ~/.git/COMMIT_EDITMSG
+'5  12  4  ~/bin/whatsmyip.pl
+'6  13  38  ~/bin/whatsmyip.pl
+'7  1  18  /etc/hosts
+'8  66  115  ~/.config/conky/conky.conf
+'9  2  21  /etc/resolv.conf
 
 # Jumplist (newest first):
+-'  157  0  ~/.bashrc
+-'  158  0  ~/.bashrc
+-'  1  0  ~/.bashr
+-'  4  0  /etc/hosts
+-'  1  18  /etc/hosts
+-'  45  20  ~/.config/conky/conky.conf
+-'  66  115  ~/.config/conky/conky.conf
+-'  1  6  ~/.git/COMMIT_EDITMSG
 -'  12  4  ~/bin/whatsmyip.pl
 -'  13  52  ~/bin/whatsmyip.pl
 -'  1  0  ~/bin/whatsmyip.pl
--'  1  18  /etc/hosts
--'  66  115  ~/.config/conky/conky.conf
 -'  74  115  ~/.config/conky/conky.conf
 -'  2  21  /etc/resolv.conf
 -'  1  0  /etc/resolv.conf
--'  4  0  /etc/hosts
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  3  21  /etc/resolv.conf
 -'  5  23  /etc/resolv.conf
 -'  2  19  /etc/resolv.bak
 -'  3  19  /etc/resolv.bak
 -'  1  0  /etc/resolv.bak
--'  158  0  ~/.bashrc
 -'  64  3  ~/.bashrc
 -'  26  18  ~/bin/gdrive.py
 -'  1  16  ~/bin/gdrive.py
@@ -173,106 +176,11 @@ $
 -'  49  5  ~/.kodi/userdata/advancedsettings.xml
 -'  57  7  ~/.kodi/userdata/advancedsettings.xml
 -'  40  31  ~/.kodi/userdata/advancedsettings.xml
--'  71  7  ~/.kodi/userdata/advancedsettings.xml
--'  32  5  ~/.kodi/userdata/advancedsettings.xml
 
 # History of marks within files (newest to oldest):
 
-> ~/bin/whatsmyip.pl
-	"	12	4
-	^	12	5
-	.	12	4
-	+	7	36
-	+	13	38
-	+	6	10
-	+	13	0
-	+	6	54
-	+	3	10
-	+	7	72
-	+	8	36
-	+	13	0
-	+	12	4
-
-> /etc/hosts
-	"	1	18
-	^	4	13
-	.	1	18
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
-	+	1	26
-	+	4	0
-	+	1	18
-
-> ~/.config/conky/conky.conf
-	"	66	115
-	^	74	116
-	.	74	115
-	+	62	27
-	+	62	1
-	+	54	89
-	+	62	24
-	+	63	16
-	+	62	39
-	+	51	14
-	+	53	19
-	+	54	67
-	+	62	0
-	+	61	27
-	+	62	0
-	+	68	22
-	+	69	0
-	+	70	0
-	+	69	16
-	+	70	16
-	+	68	38
-	+	62	74
-	+	75	75
-	+	74	73
-	+	76	128
-	+	74	86
-	+	75	88
-	+	74	84
-	+	75	86
-	+	76	179
-	+	75	121
-	+	74	115
-
-> /etc/resolv.conf
-	"	2	21
-	^	2	22
-	.	2	21
-	+	9	17
-	+	8	23
-	+	1	10
-	+	7	19
-	+	6	19
-	+	5	23
-	+	3	21
-	+	2	21
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
-
-> /etc/resolv.bak
-	"	2	19
-	^	2	20
-	.	2	19
-	+	3	19
-	+	2	19
-
 > ~/.bashrc
-	"	158	0
+	"	157	0
 	^	141	80
 	.	141	79
 	+	78	0
@@ -326,6 +234,108 @@ $
 	+	141	45
 	+	155	0
 	+	141	79
+
+> ~/kodi_crashlog-20180208_143757.log
+	"	32	0
+
+> ~/.bashr
+	"	1	0
+
+> /etc/hosts
+	"	4	0
+	^	4	1
+	.	4	0
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+	+	1	26
+	+	4	0
+	+	1	18
+	+	2	0
+	+	4	0
+
+> ~/.config/conky/conky.conf
+	"	45	20
+	^	45	21
+	.	45	20
+	+	62	27
+	+	62	1
+	+	54	89
+	+	62	24
+	+	63	16
+	+	62	39
+	+	51	14
+	+	53	19
+	+	54	67
+	+	62	0
+	+	61	27
+	+	62	0
+	+	68	22
+	+	69	0
+	+	70	0
+	+	69	16
+	+	70	16
+	+	68	38
+	+	62	74
+	+	75	75
+	+	74	73
+	+	76	128
+	+	74	86
+	+	75	88
+	+	74	84
+	+	75	86
+	+	76	179
+	+	75	121
+	+	74	115
+	+	45	20
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/bin/whatsmyip.pl
+	"	12	4
+	^	12	5
+	.	12	4
+	+	7	36
+	+	13	38
+	+	6	10
+	+	13	0
+	+	6	54
+	+	3	10
+	+	7	72
+	+	8	36
+	+	13	0
+	+	12	4
+
+> /etc/resolv.conf
+	"	2	21
+	^	2	22
+	.	2	21
+	+	9	17
+	+	8	23
+	+	1	10
+	+	7	19
+	+	6	19
+	+	5	23
+	+	3	21
+	+	2	21
+
+> /etc/resolv.bak
+	"	2	19
+	^	2	20
+	.	2	19
+	+	3	19
+	+	2	19
 
 > ~/bin/gdrive.py
 	"	26	18
