@@ -43,7 +43,7 @@ $
 
 # Registers:
 "0	LINE	0
-	sudo /etc/init.d/networking stop
+	#-A INPUT -p udp -m state --state NEW -m multiport --dports 53,953 -m comment --comment DNS -j ACCEPT
 "1	LINE	0
 	$useragent->agent("My SSL Agent/0.1 ");
 "2	LINE	0
@@ -63,27 +63,41 @@ $
 "9	LINE	0
 	#alias ll='ls -alF'
 ""-	CHAR	0
-	#
+	1
 
 # File marks:
-'0  1  9  ~/Documents/router
-'1  1  20  ~/.git/COMMIT_EDITMSG
-'2  157  0  ~/.bashrc
-'3  1  0  ~/.bashr
-'4  4  0  /etc/hosts
-'5  45  20  ~/.config/conky/conky.conf
-'6  12  4  ~/bin/whatsmyip.pl
-'7  13  38  ~/bin/whatsmyip.pl
-'8  1  18  /etc/hosts
-'9  66  115  ~/.config/conky/conky.conf
+'0  1  59  /etc/modprobe.d/ath9k.conf
+'1  1  0  /etc/modules
+'2  2  0  /etc/hosts
+'3  1  7  ~/.bashrc
+'4  75  23  /etc/iptables/rules.v4
+'5  4  3  /etc/bind/named.conf.options
+'6  2  0  /etc/bind/zones.rfc1918
+'7  3  1  ~/.gitconfig
+'8  4  1  ~/.git/config
+'9  1  0  ~/.git/config
 
 # Jumplist (newest first):
--'  1  9  ~/Documents/router
--'  1  20  ~/.git/COMMIT_EDITMSG
+-'  1  59  /etc/modprobe.d/ath9k.conf
+-'  1  0  /etc/modules
+-'  2  0  /etc/hosts
+-'  4  0  /etc/hosts
+-'  1  7  ~/.bashrc
 -'  157  0  ~/.bashrc
+-'  75  23  /etc/iptables/rules.v4
+-'  58  0  /etc/iptables/rules.v4
+-'  4  3  /etc/bind/named.conf.options
+-'  15  2  /etc/bind/named.conf.options
+-'  2  0  /etc/bind/zones.rfc1918
+-'  1  0  /etc/bind/zones.rfc1918
+-'  3  1  ~/.gitconfig
+-'  1  0  ~/.gitconfig
+-'  4  1  ~/.git/config
+-'  1  0  ~/.git/config
+-'  1  6  ~/.git/COMMIT_EDITMSG
+-'  1  9  ~/Documents/router
 -'  158  0  ~/.bashrc
 -'  1  0  ~/.bashr
--'  4  0  /etc/hosts
 -'  1  18  /etc/hosts
 -'  45  20  ~/.config/conky/conky.conf
 -'  66  115  ~/.config/conky/conky.conf
@@ -107,7 +121,6 @@ $
 -'  1  0  ~/.vimrc
 -'  51  1  ~/.vimrc
 -'  33  0  ~/.vimrc
--'  1  0  ~/.bashrc
 -'  97  27  ~/.bashrc
 -'  141  79  ~/.bashrc
 -'  22  0  ~/.bash_profile
@@ -126,7 +139,6 @@ $
 -'  70  4  ~/.bashrc
 -'  132  45  ~/.bashrc
 -'  7  0  ~/bin/3kerns.sh
--'  2  14  /etc/hosts
 -'  121  17  ~/.bashrc
 -'  142  0  ~/.bashrc
 -'  1  0  ~/.bashre
@@ -163,36 +175,41 @@ $
 -'  6  14  ~/Videos/TV/Stranger Things/Stranger Things.nfo
 -'  7  8  ~/Videos/TV/Stranger Things/Stranger Things.nfo
 -'  5  1  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  3  25  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  1  0  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  1  0  ~/Videos/TV/Stranger Things/Stranger Things
--'  74  18  ~/.kodi/userdata/advancedsettings.xml
--'  55  6  ~/.kodi/userdata/advancedsettings.xml
--'  53  7  ~/.kodi/userdata/advancedsettings.xml
--'  52  7  ~/.kodi/userdata/advancedsettings.xml
--'  51  7  ~/.kodi/userdata/advancedsettings.xml
--'  50  6  ~/.kodi/userdata/advancedsettings.xml
--'  34  7  ~/.kodi/userdata/advancedsettings.xml
--'  39  33  ~/.kodi/userdata/advancedsettings.xml
--'  49  5  ~/.kodi/userdata/advancedsettings.xml
--'  57  7  ~/.kodi/userdata/advancedsettings.xml
 
 # History of marks within files (newest to oldest):
 
-> ~/Documents/router
-	"	1	9
-	^	1	10
-	.	1	9
-	+	1	9
+> /etc/modprobe.d/ath9k.conf
+	"	1	59
+	^	1	60
+	.	1	59
+	+	1	59
 
-> ~/.git/COMMIT_EDITMSG
-	"	1	20
-	^	1	21
-	.	1	20
-	+	1	20
+> /etc/modules
+	"	1	0
+
+> /etc/hosts
+	"	2	0
+	^	2	1
+	.	2	0
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+	+	1	26
+	+	4	0
+	+	1	18
+	+	2	0
+	+	4	0
+	+	2	0
 
 > ~/.bashrc
-	"	157	0
+	"	1	7
 	^	141	80
 	.	141	79
 	+	78	0
@@ -247,31 +264,60 @@ $
 	+	155	0
 	+	141	79
 
+> /etc/iptables/rules.v4
+	"	75	23
+	^	72	24
+	.	72	23
+	+	54	74
+	+	55	74
+	+	65	0
+	+	58	0
+	+	4	19
+	+	5	18
+	+	15	0
+	+	16	0
+	+	17	54
+	+	69	22
+	+	70	17
+	+	71	18
+	+	72	23
+
+> /etc/bind/named.conf.options
+	"	4	3
+	^	4	4
+	.	4	4
+	+	18	2
+	+	19	2
+	+	20	2
+	+	15	2
+	+	4	4
+
+> /etc/bind/zones.rfc1918
+	"	2	0
+
+> ~/.gitconfig
+	"	3	1
+
+> ~/.git/config
+	"	4	1
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/Documents/router
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	9
+
 > ~/kodi_crashlog-20180208_143757.log
 	"	32	0
 
 > ~/.bashr
 	"	1	0
-
-> /etc/hosts
-	"	4	0
-	^	4	1
-	.	4	0
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
-	+	1	26
-	+	4	0
-	+	1	18
-	+	2	0
-	+	4	0
 
 > ~/.config/conky/conky.conf
 	"	45	20
@@ -709,25 +755,8 @@ $
 	.	1	45
 	+	1	45
 
-> /etc/iptables/rules.v4
-	"	57	0
-	.	57	0
-	+	53	74
-	+	54	74
-	+	64	0
-	+	57	0
-
 > ~/.kodi/userdata/ad
 	"	1	0
-
-> /etc/bind/named.conf.options
-	"	15	2
-	^	15	3
-	.	15	2
-	+	18	2
-	+	19	2
-	+	20	2
-	+	15	2
 
 > ~/.ssh/config
 	"	13	21
