@@ -14,8 +14,8 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
 :q!
 :wq!
 :set runtimepath?
@@ -66,18 +66,20 @@ $
 	#
 
 # File marks:
-'0  157  0  ~/.bashrc
-'1  1  0  ~/.bashr
-'2  4  0  /etc/hosts
-'3  45  20  ~/.config/conky/conky.conf
-'4  1  6  ~/.git/COMMIT_EDITMSG
-'5  12  4  ~/bin/whatsmyip.pl
-'6  13  38  ~/bin/whatsmyip.pl
-'7  1  18  /etc/hosts
-'8  66  115  ~/.config/conky/conky.conf
-'9  2  21  /etc/resolv.conf
+'0  1  9  ~/Documents/router
+'1  1  20  ~/.git/COMMIT_EDITMSG
+'2  157  0  ~/.bashrc
+'3  1  0  ~/.bashr
+'4  4  0  /etc/hosts
+'5  45  20  ~/.config/conky/conky.conf
+'6  12  4  ~/bin/whatsmyip.pl
+'7  13  38  ~/bin/whatsmyip.pl
+'8  1  18  /etc/hosts
+'9  66  115  ~/.config/conky/conky.conf
 
 # Jumplist (newest first):
+-'  1  9  ~/Documents/router
+-'  1  20  ~/.git/COMMIT_EDITMSG
 -'  157  0  ~/.bashrc
 -'  158  0  ~/.bashrc
 -'  1  0  ~/.bashr
@@ -85,7 +87,6 @@ $
 -'  1  18  /etc/hosts
 -'  45  20  ~/.config/conky/conky.conf
 -'  66  115  ~/.config/conky/conky.conf
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  12  4  ~/bin/whatsmyip.pl
 -'  13  52  ~/bin/whatsmyip.pl
 -'  1  0  ~/bin/whatsmyip.pl
@@ -175,9 +176,20 @@ $
 -'  39  33  ~/.kodi/userdata/advancedsettings.xml
 -'  49  5  ~/.kodi/userdata/advancedsettings.xml
 -'  57  7  ~/.kodi/userdata/advancedsettings.xml
--'  40  31  ~/.kodi/userdata/advancedsettings.xml
 
 # History of marks within files (newest to oldest):
+
+> ~/Documents/router
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	9
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	20
+	^	1	21
+	.	1	20
+	+	1	20
 
 > ~/.bashrc
 	"	157	0
@@ -295,12 +307,6 @@ $
 	+	75	121
 	+	74	115
 	+	45	20
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > ~/bin/whatsmyip.pl
 	"	12	4
