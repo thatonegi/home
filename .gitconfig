@@ -1,0 +1,10 @@
+[user]
+	email = bljohnston@gmail.com
+	name = thatonegi
+[push]
+	default = simple
+[color]
+	ui = auto
+	status = true
+[web]
+	browser = /opt/firefox/firefox

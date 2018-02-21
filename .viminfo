@@ -8,15 +8,15 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/PS1
+~MSle0~/1.3.6.1.4.1.1466.115.121.1.15
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
-:q
 :q!
+:q
+:wq
 :wq!
 :set runtimepath?
 :vimruntimepath
@@ -27,6 +27,9 @@ $
 :wNext
 
 # Search String History (newest to oldest):
+?/1.3.6.1.4.1.1466.115.121.1.15
+?/hide_tem
+?/setval
 ?/PS1
 ?/LANG
 ?/xdmc
@@ -63,25 +66,45 @@ $
 "9	LINE	0
 	#alias ll='ls -alF'
 ""-	CHAR	0
-	1
+	 
 
 # File marks:
-'0  1  59  /etc/modprobe.d/ath9k.conf
-'1  1  0  /etc/modules
-'2  2  0  /etc/hosts
-'3  1  7  ~/.bashrc
-'4  75  23  /etc/iptables/rules.v4
-'5  4  3  /etc/bind/named.conf.options
-'6  2  0  /etc/bind/zones.rfc1918
-'7  3  1  ~/.gitconfig
-'8  4  1  ~/.git/config
-'9  1  0  ~/.git/config
+'0  52  204  ~/Downloads/apple1.ldif
+'1  88  194  ~/Downloads/apple.ldif
+'2  79  204  ~/Downloads/apple.ldif
+'3  182  154  ~/Downloads/apple.ldif
+'4  1  0  ~/Downloads/apple.schema
+'5  1  275  ~/Downloads/new-apple.ldif
+'6  9  77  ~/Downloads/apple.ldif
+'7  540  1  ~/Downloads/apple.ldif
+'8  3  25  ~/.ldaprc
+'9  2  0  ~/Downloads/export.ldif
 
 # Jumplist (newest first):
+-'  52  204  ~/Downloads/apple1.ldif
+-'  39  154  ~/Downloads/apple1.ldif
+-'  1  0  ~/Downloads/apple1.ldif
+-'  88  194  ~/Downloads/apple.ldif
+-'  79  204  ~/Downloads/apple.ldif
+-'  182  154  ~/Downloads/apple.ldif
+-'  1  0  ~/Downloads/apple.schema
+-'  140  0  ~/Downloads/apple.ldif
+-'  9  77  ~/Downloads/apple.ldif
+-'  1  275  ~/Downloads/new-apple.ldif
+-'  1  0  ~/Downloads/apple.ldif
+-'  540  1  ~/Downloads/apple.ldif
+-'  3  25  ~/.ldaprc
+-'  1  0  ~/.ldaprc
+-'  2  0  ~/Downloads/export.ldif
+-'  1  0  ~/Downloads/export.ldif
+-'  4  32  /etc/hosts
+-'  2  0  /etc/hosts
+-'  161  58  /etc/phpldapadmin/config.php
+-'  348  0  /etc/phpldapadmin/config.php
+-'  1  0  /etc/phpldapadmin/config.php
+-'  1  26  ~/.git/COMMIT_EDITMSG
 -'  1  59  /etc/modprobe.d/ath9k.conf
 -'  1  0  /etc/modules
--'  2  0  /etc/hosts
--'  4  0  /etc/hosts
 -'  1  7  ~/.bashrc
 -'  157  0  ~/.bashrc
 -'  75  23  /etc/iptables/rules.v4
@@ -94,7 +117,6 @@ $
 -'  1  0  ~/.gitconfig
 -'  4  1  ~/.git/config
 -'  1  0  ~/.git/config
--'  1  6  ~/.git/COMMIT_EDITMSG
 -'  1  9  ~/Documents/router
 -'  158  0  ~/.bashrc
 -'  1  0  ~/.bashr
@@ -146,51 +168,79 @@ $
 -'  19  0  ~/bin/wiload.sh
 -'  47  4  ~/bin/wiload.sh
 -'  19  0  ~/.bashrc
--'  134  17  ~/.bashrc
--'  10  52  /etc/samba/smb.conf
--'  107  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
--'  1  0  /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
--'  307  1  /etc/samba/smb.conf
--'  1  0  /etc/host
--'  18  33  ~/.bash_aliases
--'  1  0  ~/.bash_aliases
--'  88  0  /etc/mdm/mdm.conf
--'  60  0  /etc/mdm/mdm.conf
--'  5  0  /etc/mdm/mdm.conf
--'  22  0  /etc/mdm/mdm.conf
--'  1  0  /etc/mdm/mdm.conf
--'  1  0  ~/.kodi/addons/script.xbmcbackup/default.py
--'  69  23  /etc/sysctl.conf
--'  61  0  /etc/sysctl.conf
--'  58  27  ~/bin/wiload.sh
--'  25  0  ~/bin/wiload.sh
--'  13  30  /etc/network/interfaces
--'  1  0  /etc/network/interfaces
--'  5  20  /etc/networks
--'  28  20  /etc/avahi/avahi-daemon.conf
--'  1  0  /etc/avahi/avahi-daemon.conf
--'  1  0  /etc/avahi/hosts
--'  24  0  /etc/avahi/avahi-daemon.conf
--'  4  10  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  6  14  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  7  8  ~/Videos/TV/Stranger Things/Stranger Things.nfo
--'  5  1  ~/Videos/TV/Stranger Things/Stranger Things.nfo
 
 # History of marks within files (newest to oldest):
 
-> /etc/modprobe.d/ath9k.conf
-	"	1	59
-	^	1	60
-	.	1	59
-	+	1	59
+> ~/Downloads/apple1.ldif
+	"	52	204
+	^	52	205
+	.	52	155
+	+	39	155
+	+	39	232
+	+	39	235
+	+	39	313
+	+	39	389
+	+	39	457
+	+	39	535
+	+	39	610
+	+	39	643
+	+	39	671
+	+	39	714
+	+	39	729
+	+	39	78
+	+	39	155
+	+	39	232
+	+	40	0
+	+	52	155
+	+	52	155
 
-> /etc/modules
+> ~/Downloads/apple.ldif
+	"	22	0
+	.	22	0
+	+	4	155
+	+	5	0
+	+	6	0
+	+	7	0
+	+	7	0
+	+	8	0
+	+	8	0
+	+	9	0
+	+	9	0
+	+	10	0
+	+	10	0
+	+	154	387
+	+	154	618
+	+	154	849
+	+	155	386
+	+	182	155
+	+	182	309
+	+	183	0
+	+	16	44
+	+	16	235
+	+	17	0
+	+	21	44
+	+	21	205
+	+	22	0
+
+> ~/Downloads/apple.schema
 	"	1	0
 
-> /etc/hosts
+> ~/Downloads/new-apple.ldif
+	"	1	275
+
+> ~/.ldaprc
+	"	3	25
+	^	3	26
+	.	3	25
+	+	3	25
+
+> ~/Downloads/export.ldif
 	"	2	0
-	^	2	1
-	.	2	0
+
+> /etc/hosts
+	"	4	32
+	^	4	33
+	.	4	32
 	+	3	11
 	+	2	0
 	+	3	21
@@ -207,6 +257,32 @@ $
 	+	2	0
 	+	4	0
 	+	2	0
+	+	4	32
+
+> /etc/phpldapadmin/config.php
+	"	161	58
+	^	161	59
+	.	161	58
+	+	286	47
+	+	300	51
+	+	326	56
+	+	161	58
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	26
+	^	1	27
+	.	2	0
+	+	1	27
+	+	2	0
+
+> /etc/modprobe.d/ath9k.conf
+	"	1	59
+	^	1	60
+	.	1	59
+	+	1	59
+
+> /etc/modules
+	"	1	0
 
 > ~/.bashrc
 	"	1	7
@@ -300,12 +376,6 @@ $
 
 > ~/.git/config
 	"	4	1
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > ~/Documents/router
 	"	1	9
