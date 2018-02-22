@@ -8,15 +8,15 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/1.3.6.1.4.1.1466.115.121.1.15
+~MSle0~/olcAtt
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq
-:q
 :w
+:q
 :q!
 :wq!
 :set runtimepath?
@@ -27,6 +27,9 @@ $
 :wNext
 
 # Search String History (newest to oldest):
+?/olcAtt
+?/\)
+?/1.3.6.1.4.1.1466.115.121.1.15/
 ?/1.3.6.1.4.1.1466.115.121.1.15
 ?/hide_tem
 ?/setval
@@ -48,138 +51,451 @@ $
 "0	LINE	0
 	#-A INPUT -p udp -m state --state NEW -m multiport --dports 53,953 -m comment --comment DNS -j ACCEPT
 "1	LINE	0
-		DUMP $ARGS '--login-path'=$LPATH $SCHEMA | $GZIP > $BDIR/$SCHEMA-$MDY.sql.gz
+	
 "2	LINE	0
-	PORT=3306
+	
 "3	LINE	0
-	HOST='localhost'
+	
 "4	LINE	0
-	PASS='letmein'
+	
 "5	LINE	0
-	ddUSER="-u root"
+	
 "6	LINE	0
 	
 "7	LINE	0
-	DATE=`date --date='%F_%I%M%S%p'
+	
 "8	LINE	0
-		   	\
+	
 "9	LINE	0
-	93
+	
 ""-	CHAR	0
 	 
 
 # File marks:
-'0  14  14  ~/bin/dbback.sh
-'1  17  45  ~/bin/dbback.sh
-'2  18  26  ~/bin/dbback.sh
-'3  15  1  ~/bin/dbback.sh
-'4  18  49  ~/bin/dbback.sh
-'5  20  0  ~/bin/dbback.sh
-'6  7  0  ~/bin/dbback.sh
-'7  1  4  ~/.git/COMMIT_EDITMSG
-'8  52  204  ~/Downloads/apple1.ldif
-'9  88  194  ~/Downloads/apple.ldif
+'0  136  0  ~/.bashrc
+'1  152  78  ~/Downloads/newapple.ldif
+'2  69  0  ~/Downloads/apple.ldif
+'3  34  161  /etc/ldap/schema/apple.ldif
+'4  4  12  /etc/hosts
+'5  25  39  /tmp/crontab.j5FWZv/crontab
+'6  24  48  /tmp/crontab.vbe2zQ/crontab
+'7  1  3  ~/.git/COMMIT_EDITMSG
+'8  14  14  ~/bin/dbback.sh
+'9  17  45  ~/bin/dbback.sh
 
 # Jumplist (newest first):
--'  14  14  ~/bin/dbback.sh
--'  17  45  ~/bin/dbback.sh
--'  18  0  ~/bin/dbback.sh
--'  15  1  ~/bin/dbback.sh
--'  20  0  ~/bin/dbback.sh
--'  7  0  ~/bin/dbback.sh
--'  1  0  ~/bin/dbback.sh
--'  1  4  ~/.git/COMMIT_EDITMSG
--'  52  204  ~/Downloads/apple1.ldif
--'  39  154  ~/Downloads/apple1.ldif
--'  1  0  ~/Downloads/apple1.ldif
--'  88  194  ~/Downloads/apple.ldif
--'  79  204  ~/Downloads/apple.ldif
--'  182  154  ~/Downloads/apple.ldif
--'  1  0  ~/Downloads/apple.schema
--'  140  0  ~/Downloads/apple.ldif
--'  9  77  ~/Downloads/apple.ldif
--'  1  275  ~/Downloads/new-apple.ldif
--'  1  0  ~/Downloads/apple.ldif
--'  540  1  ~/Downloads/apple.ldif
--'  3  25  ~/.ldaprc
--'  1  0  ~/.ldaprc
--'  2  0  ~/Downloads/export.ldif
--'  1  0  ~/Downloads/export.ldif
--'  4  32  /etc/hosts
--'  2  0  /etc/hosts
--'  161  58  /etc/phpldapadmin/config.php
--'  348  0  /etc/phpldapadmin/config.php
--'  1  0  /etc/phpldapadmin/config.php
--'  1  59  /etc/modprobe.d/ath9k.conf
--'  1  0  /etc/modules
+-'  136  0  ~/.bashrc
 -'  1  7  ~/.bashrc
--'  157  0  ~/.bashrc
--'  75  23  /etc/iptables/rules.v4
--'  58  0  /etc/iptables/rules.v4
--'  4  3  /etc/bind/named.conf.options
--'  15  2  /etc/bind/named.conf.options
--'  2  0  /etc/bind/zones.rfc1918
--'  1  0  /etc/bind/zones.rfc1918
--'  3  1  ~/.gitconfig
--'  1  0  ~/.gitconfig
--'  4  1  ~/.git/config
--'  1  0  ~/.git/config
--'  1  9  ~/Documents/router
--'  158  0  ~/.bashrc
--'  1  0  ~/.bashr
--'  1  18  /etc/hosts
--'  45  20  ~/.config/conky/conky.conf
--'  66  115  ~/.config/conky/conky.conf
--'  12  4  ~/bin/whatsmyip.pl
--'  13  52  ~/bin/whatsmyip.pl
--'  1  0  ~/bin/whatsmyip.pl
--'  74  115  ~/.config/conky/conky.conf
--'  2  21  /etc/resolv.conf
--'  1  0  /etc/resolv.conf
--'  3  21  /etc/resolv.conf
--'  5  23  /etc/resolv.conf
--'  2  19  /etc/resolv.bak
--'  3  19  /etc/resolv.bak
--'  1  0  /etc/resolv.bak
--'  64  3  ~/.bashrc
--'  26  18  ~/bin/gdrive.py
--'  1  16  ~/bin/gdrive.py
--'  113  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  114  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  51  1  ~/.vimrc
--'  33  0  ~/.vimrc
--'  97  27  ~/.bashrc
--'  141  79  ~/.bashrc
--'  22  0  ~/.bash_profile
--'  1  0  ~/.bash_profile
--'  155  10  ~/.bashrc
--'  34  31  ~/bin/gdrive.py
--'  8  26  ~/bin/directory.py
--'  256  16  /etc/samba/smb.conf
--'  296  28  /etc/samba/smb.conf
--'  1  10  ~/bin/wiload.sh
--'  33  61  ~/bin/wiload.sh
--'  3  15  /etc/aliases
--'  1  0  /etc/aliases
--'  67  16  /etc/sysctl.conf
--'  70  0  /etc/sysctl.conf
--'  70  4  ~/.bashrc
--'  132  45  ~/.bashrc
--'  7  0  ~/bin/3kerns.sh
--'  121  17  ~/.bashrc
--'  142  0  ~/.bashrc
--'  1  0  ~/.bashre
--'  1  0  ~/bin/3kerns.sh
--'  19  0  ~/bin/wiload.sh
--'  47  4  ~/bin/wiload.sh
--'  19  0  ~/.bashrc
--'  52  204  ~/Downloads/apple1.ldif
--'  39  154  ~/Downloads/apple1.ldif
--'  1  0  ~/Downloads/apple1.ldif
+-'  152  78  ~/Downloads/newapple.ldif
+-'  157  79  ~/Downloads/newapple.ldif
+-'  204  79  ~/Downloads/newapple.ldif
+-'  71  0  ~/Downloads/newapple.ldif
+-'  21  0  ~/Downloads/newapple.ldif
+-'  1  0  ~/Downloads/newapple.ldif
+-'  69  0  ~/Downloads/apple.ldif
+-'  68  0  ~/Downloads/apple.ldif
+-'  67  0  ~/Downloads/apple.ldif
+-'  66  0  ~/Downloads/apple.ldif
+-'  65  0  ~/Downloads/apple.ldif
+-'  64  0  ~/Downloads/apple.ldif
+-'  63  0  ~/Downloads/apple.ldif
+-'  62  0  ~/Downloads/apple.ldif
+-'  61  0  ~/Downloads/apple.ldif
+-'  60  0  ~/Downloads/apple.ldif
+-'  59  0  ~/Downloads/apple.ldif
+-'  58  0  ~/Downloads/apple.ldif
+-'  57  0  ~/Downloads/apple.ldif
+-'  56  0  ~/Downloads/apple.ldif
+-'  55  0  ~/Downloads/apple.ldif
+-'  54  0  ~/Downloads/apple.ldif
+-'  53  0  ~/Downloads/apple.ldif
+-'  52  0  ~/Downloads/apple.ldif
+-'  51  0  ~/Downloads/apple.ldif
+-'  50  0  ~/Downloads/apple.ldif
+-'  49  0  ~/Downloads/apple.ldif
+-'  48  0  ~/Downloads/apple.ldif
+-'  47  0  ~/Downloads/apple.ldif
+-'  46  0  ~/Downloads/apple.ldif
+-'  45  0  ~/Downloads/apple.ldif
+-'  44  0  ~/Downloads/apple.ldif
+-'  43  0  ~/Downloads/apple.ldif
+-'  42  0  ~/Downloads/apple.ldif
+-'  41  0  ~/Downloads/apple.ldif
+-'  40  0  ~/Downloads/apple.ldif
+-'  39  0  ~/Downloads/apple.ldif
+-'  38  0  ~/Downloads/apple.ldif
+-'  37  0  ~/Downloads/apple.ldif
+-'  36  0  ~/Downloads/apple.ldif
+-'  35  0  ~/Downloads/apple.ldif
+-'  34  0  ~/Downloads/apple.ldif
+-'  33  0  ~/Downloads/apple.ldif
+-'  32  0  ~/Downloads/apple.ldif
+-'  31  0  ~/Downloads/apple.ldif
+-'  30  0  ~/Downloads/apple.ldif
+-'  29  0  ~/Downloads/apple.ldif
+-'  28  0  ~/Downloads/apple.ldif
+-'  27  0  ~/Downloads/apple.ldif
+-'  26  0  ~/Downloads/apple.ldif
+-'  25  0  ~/Downloads/apple.ldif
+-'  24  0  ~/Downloads/apple.ldif
+-'  23  0  ~/Downloads/apple.ldif
+-'  22  0  ~/Downloads/apple.ldif
+-'  21  0  ~/Downloads/apple.ldif
+-'  20  0  ~/Downloads/apple.ldif
+-'  19  0  ~/Downloads/apple.ldif
+-'  70  1  ~/Downloads/apple.ldif
+-'  18  0  ~/Downloads/apple.ldif
+-'  17  0  ~/Downloads/apple.ldif
+-'  16  0  ~/Downloads/apple.ldif
+-'  15  0  ~/Downloads/apple.ldif
+-'  14  0  ~/Downloads/apple.ldif
+-'  13  0  ~/Downloads/apple.ldif
+-'  12  0  ~/Downloads/apple.ldif
+-'  11  0  ~/Downloads/apple.ldif
+-'  10  0  ~/Downloads/apple.ldif
+-'  9  0  ~/Downloads/apple.ldif
+-'  8  0  ~/Downloads/apple.ldif
+-'  7  0  ~/Downloads/apple.ldif
+-'  6  0  ~/Downloads/apple.ldif
+-'  5  0  ~/Downloads/apple.ldif
+-'  4  0  ~/Downloads/apple.ldif
+-'  3  0  ~/Downloads/apple.ldif
+-'  1  0  ~/Downloads/apple.ldif
+-'  34  161  /etc/ldap/schema/apple.ldif
+-'  33  180  /etc/ldap/schema/apple.ldif
+-'  32  179  /etc/ldap/schema/apple.ldif
+-'  31  156  /etc/ldap/schema/apple.ldif
+-'  29  157  /etc/ldap/schema/apple.ldif
+-'  28  156  /etc/ldap/schema/apple.ldif
+-'  27  167  /etc/ldap/schema/apple.ldif
+-'  21  161  /etc/ldap/schema/apple.ldif
+-'  20  181  /etc/ldap/schema/apple.ldif
+-'  19  172  /etc/ldap/schema/apple.ldif
+-'  18  156  /etc/ldap/schema/apple.ldif
+-'  17  183  /etc/ldap/schema/apple.ldif
+-'  15  177  /etc/ldap/schema/apple.ldif
+-'  14  169  /etc/ldap/schema/apple.ldif
+-'  13  174  /etc/ldap/schema/apple.ldif
+-'  12  159  /etc/ldap/schema/apple.ldif
+-'  11  188  /etc/ldap/schema/apple.ldif
+-'  10  157  /etc/ldap/schema/apple.ldif
+-'  9  171  /etc/ldap/schema/apple.ldif
+-'  1  0  /etc/ldap/schema/apple.ldif
+-'  4  12  /etc/hosts
+-'  25  39  /tmp/crontab.j5FWZv/crontab
 
 # History of marks within files (newest to oldest):
+
+> ~/.bashrc
+	"	136	0
+	^	136	0
+	.	135	35
+	+	78	0
+	+	78	0
+	+	78	0
+	+	12	6
+	+	12	6
+	+	12	6
+	+	127	0
+	+	131	26
+	+	127	18
+	+	122	13
+	+	124	29
+	+	18	0
+	+	124	31
+	+	127	22
+	+	124	26
+	+	131	26
+	+	142	0
+	+	128	29
+	+	12	0
+	+	12	0
+	+	12	0
+	+	129	0
+	+	137	0
+	+	137	0
+	+	131	26
+	+	132	78
+	+	5	0
+	+	70	4
+	+	112	0
+	+	134	15
+	+	133	16
+	+	134	17
+	+	132	11
+	+	143	0
+	+	153	0
+	+	143	0
+	+	109	23
+	+	111	26
+	+	132	46
+	+	18	0
+	+	70	0
+	+	70	0
+	+	69	0
+	+	78	0
+	+	111	0
+	+	139	0
+	+	140	0
+	+	141	0
+	+	142	45
+	+	156	0
+	+	142	79
+	+	135	35
+
+> ~/Downloads/newapple.ldif
+	"	152	78
+	^	154	112
+	.	153	78
+	+	148	0
+	+	149	0
+	+	150	0
+	+	151	0
+	+	152	0
+	+	153	0
+	+	154	0
+	+	155	0
+	+	157	0
+	+	159	0
+	+	161	0
+	+	163	0
+	+	165	0
+	+	166	0
+	+	164	0
+	+	162	0
+	+	160	0
+	+	158	0
+	+	156	0
+	+	167	0
+	+	169	0
+	+	170	0
+	+	171	0
+	+	172	0
+	+	173	0
+	+	174	0
+	+	175	0
+	+	176	0
+	+	177	0
+	+	178	0
+	+	179	0
+	+	180	0
+	+	181	0
+	+	182	0
+	+	183	0
+	+	184	0
+	+	185	0
+	+	186	0
+	+	188	0
+	+	189	0
+	+	187	0
+	+	190	0
+	+	191	0
+	+	192	0
+	+	193	0
+	+	194	0
+	+	195	0
+	+	196	0
+	+	197	0
+	+	198	0
+	+	199	0
+	+	200	0
+	+	201	0
+	+	202	0
+	+	203	0
+	+	204	0
+	+	205	0
+	+	206	0
+	+	207	0
+	+	208	0
+	+	209	0
+	+	210	0
+	+	209	154
+	+	208	78
+	+	206	78
+	+	204	78
+	+	202	155
+	+	202	309
+	+	202	698
+	+	202	386
+	+	200	78
+	+	198	78
+	+	195	78
+	+	192	233
+	+	188	155
+	+	186	106
+	+	182	78
+	+	181	78
+	+	179	90
+	+	177	309
+	+	177	91
+	+	175	78
+	+	175	100
+	+	173	78
+	+	171	78
+	+	169	310
+	+	169	155
+	+	167	93
+	+	165	155
+	+	163	78
+	+	161	78
+	+	159	78
+	+	157	78
+	+	157	389
+	+	157	155
+	+	155	856
+	+	155	701
+	+	155	78
+	+	154	111
+	+	153	78
+
+> ~/Downloads/apple.ldif
+	"	69	0
+	^	69	0
+	.	68	214
+	+	72	155
+	+	73	0
+	+	74	0
+	+	75	0
+	+	75	0
+	+	76	0
+	+	76	0
+	+	77	0
+	+	77	0
+	+	78	0
+	+	78	0
+	+	222	387
+	+	222	618
+	+	222	849
+	+	223	386
+	+	250	155
+	+	250	309
+	+	251	0
+	+	84	44
+	+	84	235
+	+	85	0
+	+	89	44
+	+	89	205
+	+	90	0
+	+	1	32
+	+	2	30
+	+	3	9
+	+	3	9
+	+	4	226
+	+	5	129
+	+	6	221
+	+	7	210
+	+	8	225
+	+	9	217
+	+	10	203
+	+	11	220
+	+	12	205
+	+	13	220
+	+	14	215
+	+	15	223
+	+	16	235
+	+	17	229
+	+	18	188
+	+	70	0
+	+	18	188
+	+	19	218
+	+	20	213
+	+	21	206
+	+	22	209
+	+	23	211
+	+	24	207
+	+	25	207
+	+	26	211
+	+	27	200
+	+	28	188
+	+	29	189
+	+	30	193
+	+	31	201
+	+	32	212
+	+	32	0
+	+	32	211
+	+	33	213
+	+	34	194
+	+	35	227
+	+	36	216
+	+	37	220
+	+	38	233
+	+	2	27
+	+	39	218
+	+	40	206
+	+	41	205
+	+	42	202
+	+	43	210
+	+	44	207
+	+	45	228
+	+	46	226
+	+	47	198
+	+	48	214
+	+	49	188
+	+	50	222
+	+	51	223
+	+	52	222
+	+	53	200
+	+	54	242
+	+	55	212
+	+	56	179
+	+	57	204
+	+	58	211
+	+	59	198
+	+	60	226
+	+	61	210
+	+	62	242
+	+	63	211
+	+	64	208
+	+	65	199
+	+	66	199
+	+	67	191
+	+	68	214
+
+> /etc/ldap/schema/apple.ldif
+	"	34	161
+
+> /etc/hosts
+	"	4	12
+	^	4	13
+	.	4	12
+	+	3	11
+	+	2	0
+	+	3	21
+	+	4	12
+	+	10	20
+	+	4	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	4	0
+	+	1	26
+	+	4	0
+	+	1	18
+	+	2	0
+	+	4	0
+	+	2	0
+	+	4	12
+
+> /tmp/crontab.j5FWZv/crontab
+	"	25	39
+	^	24	45
+	.	24	44
+	+	24	44
+
+> /tmp/crontab.vbe2zQ/crontab
+	"	24	48
+	^	24	49
+	.	24	48
+	+	1	0
+	+	24	48
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	3
+	^	1	4
+	.	1	3
+	+	1	27
+	+	2	0
+	+	1	3
 
 > ~/bin/dbback.sh
 	"	14	14
@@ -240,14 +556,6 @@ $
 	+	17	45
 	+	14	14
 
-> ~/.git/COMMIT_EDITMSG
-	"	1	4
-	^	1	5
-	.	1	4
-	+	1	27
-	+	2	0
-	+	1	4
-
 > ~/Downloads/apple1.ldif
 	"	52	204
 	^	52	205
@@ -271,34 +579,6 @@ $
 	+	52	155
 	+	52	155
 
-> ~/Downloads/apple.ldif
-	"	22	0
-	.	22	0
-	+	4	155
-	+	5	0
-	+	6	0
-	+	7	0
-	+	7	0
-	+	8	0
-	+	8	0
-	+	9	0
-	+	9	0
-	+	10	0
-	+	10	0
-	+	154	387
-	+	154	618
-	+	154	849
-	+	155	386
-	+	182	155
-	+	182	309
-	+	183	0
-	+	16	44
-	+	16	235
-	+	17	0
-	+	21	44
-	+	21	205
-	+	22	0
-
 > ~/Downloads/apple.schema
 	"	1	0
 
@@ -313,28 +593,6 @@ $
 
 > ~/Downloads/export.ldif
 	"	2	0
-
-> /etc/hosts
-	"	4	32
-	^	4	33
-	.	4	32
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
-	+	1	26
-	+	4	0
-	+	1	18
-	+	2	0
-	+	4	0
-	+	2	0
-	+	4	32
 
 > /etc/phpldapadmin/config.php
 	"	161	58
@@ -353,62 +611,6 @@ $
 
 > /etc/modules
 	"	1	0
-
-> ~/.bashrc
-	"	1	7
-	^	141	80
-	.	141	79
-	+	78	0
-	+	78	0
-	+	78	0
-	+	12	6
-	+	12	6
-	+	12	6
-	+	127	0
-	+	131	26
-	+	127	18
-	+	122	13
-	+	124	29
-	+	18	0
-	+	124	31
-	+	127	22
-	+	124	26
-	+	131	26
-	+	141	0
-	+	128	29
-	+	12	0
-	+	12	0
-	+	12	0
-	+	129	0
-	+	136	0
-	+	136	0
-	+	131	26
-	+	132	78
-	+	5	0
-	+	70	4
-	+	112	0
-	+	134	15
-	+	133	16
-	+	134	17
-	+	132	11
-	+	142	0
-	+	152	0
-	+	142	0
-	+	109	23
-	+	111	26
-	+	132	46
-	+	18	0
-	+	70	0
-	+	70	0
-	+	69	0
-	+	78	0
-	+	111	0
-	+	138	0
-	+	139	0
-	+	140	0
-	+	141	45
-	+	155	0
-	+	141	79
 
 > /etc/iptables/rules.v4
 	"	75	23
