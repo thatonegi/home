@@ -14,16 +14,16 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
-:q
 :wq
+:q
+:w
+:q!
 :wq!
 :set runtimepath?
 :vimruntimepath
 :WQ
 :1
 :2
-:w
 :wNext
 
 # Search String History (newest to oldest):
@@ -48,39 +48,47 @@ $
 "0	LINE	0
 	#-A INPUT -p udp -m state --state NEW -m multiport --dports 53,953 -m comment --comment DNS -j ACCEPT
 "1	LINE	0
-	$useragent->agent("My SSL Agent/0.1 ");
+		DUMP $ARGS '--login-path'=$LPATH $SCHEMA | $GZIP > $BDIR/$SCHEMA-$MDY.sql.gz
 "2	LINE	0
-	packadd google_python_style
+	PORT=3306
 "3	LINE	0
-	" Add the google_python_style plugin.
+	HOST='localhost'
 "4	LINE	0
-	
+	PASS='letmein'
 "5	LINE	0
-	
+	ddUSER="-u root"
 "6	LINE	0
 	
 "7	LINE	0
-	#alias l='ls -CF'
+	DATE=`date --date='%F_%I%M%S%p'
 "8	LINE	0
-	#alias la='ls -A'
+		   	\
 "9	LINE	0
-	#alias ll='ls -alF'
+	93
 ""-	CHAR	0
 	 
 
 # File marks:
-'0  52  204  ~/Downloads/apple1.ldif
-'1  88  194  ~/Downloads/apple.ldif
-'2  79  204  ~/Downloads/apple.ldif
-'3  182  154  ~/Downloads/apple.ldif
-'4  1  0  ~/Downloads/apple.schema
-'5  1  275  ~/Downloads/new-apple.ldif
-'6  9  77  ~/Downloads/apple.ldif
-'7  540  1  ~/Downloads/apple.ldif
-'8  3  25  ~/.ldaprc
-'9  2  0  ~/Downloads/export.ldif
+'0  14  14  ~/bin/dbback.sh
+'1  17  45  ~/bin/dbback.sh
+'2  18  26  ~/bin/dbback.sh
+'3  15  1  ~/bin/dbback.sh
+'4  18  49  ~/bin/dbback.sh
+'5  20  0  ~/bin/dbback.sh
+'6  7  0  ~/bin/dbback.sh
+'7  1  4  ~/.git/COMMIT_EDITMSG
+'8  52  204  ~/Downloads/apple1.ldif
+'9  88  194  ~/Downloads/apple.ldif
 
 # Jumplist (newest first):
+-'  14  14  ~/bin/dbback.sh
+-'  17  45  ~/bin/dbback.sh
+-'  18  0  ~/bin/dbback.sh
+-'  15  1  ~/bin/dbback.sh
+-'  20  0  ~/bin/dbback.sh
+-'  7  0  ~/bin/dbback.sh
+-'  1  0  ~/bin/dbback.sh
+-'  1  4  ~/.git/COMMIT_EDITMSG
 -'  52  204  ~/Downloads/apple1.ldif
 -'  39  154  ~/Downloads/apple1.ldif
 -'  1  0  ~/Downloads/apple1.ldif
@@ -102,7 +110,6 @@ $
 -'  161  58  /etc/phpldapadmin/config.php
 -'  348  0  /etc/phpldapadmin/config.php
 -'  1  0  /etc/phpldapadmin/config.php
--'  1  26  ~/.git/COMMIT_EDITMSG
 -'  1  59  /etc/modprobe.d/ath9k.conf
 -'  1  0  /etc/modules
 -'  1  7  ~/.bashrc
@@ -168,8 +175,78 @@ $
 -'  19  0  ~/bin/wiload.sh
 -'  47  4  ~/bin/wiload.sh
 -'  19  0  ~/.bashrc
+-'  52  204  ~/Downloads/apple1.ldif
+-'  39  154  ~/Downloads/apple1.ldif
+-'  1  0  ~/Downloads/apple1.ldif
 
 # History of marks within files (newest to oldest):
+
+> ~/bin/dbback.sh
+	"	14	14
+	^	14	15
+	.	14	14
+	+	4	23
+	+	7	0
+	+	8	50
+	+	21	0
+	+	2	0
+	+	14	31
+	+	18	9
+	+	7	8
+	+	18	81
+	+	18	31
+	+	18	87
+	+	18	43
+	+	9	34
+	+	18	60
+	+	14	0
+	+	16	1
+	+	14	0
+	+	5	13
+	+	7	71
+	+	18	88
+	+	19	4
+	+	15	0
+	+	16	0
+	+	18	0
+	+	18	31
+	+	19	0
+	+	18	20
+	+	12	9
+	+	20	3
+	+	18	1
+	+	16	3
+	+	18	77
+	+	18	49
+	+	18	66
+	+	7	0
+	+	6	15
+	+	18	17
+	+	6	28
+	+	18	29
+	+	18	31
+	+	18	30
+	+	6	28
+	+	7	72
+	+	8	8
+	+	18	31
+	+	1	7
+	+	6	1
+	+	18	5
+	+	6	6
+	+	18	0
+	+	17	19
+	+	18	0
+	+	17	45
+	+	14	14
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	4
+	^	1	5
+	.	1	4
+	+	1	27
+	+	2	0
+	+	1	4
 
 > ~/Downloads/apple1.ldif
 	"	52	204
@@ -267,13 +344,6 @@ $
 	+	300	51
 	+	326	56
 	+	161	58
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	26
-	^	1	27
-	.	2	0
-	+	1	27
-	+	2	0
 
 > /etc/modprobe.d/ath9k.conf
 	"	1	59
