@@ -18,6 +18,7 @@ $
 :w
 :q
 :q!
+:Q
 :wq!
 :set runtimepath?
 :vimruntimepath
@@ -49,41 +50,78 @@ $
 
 # Registers:
 "0	LINE	0
-	#-A INPUT -p udp -m state --state NEW -m multiport --dports 53,953 -m comment --comment DNS -j ACCEPT
-"1	LINE	0
+		iptables -L FORWARD --line-numbers -n | grep "TRAFFIC_IN" | grep "1" > /dev/null
+		if [ $? -ne 0 ]; then
+			iptables -L FORWARD -n | grep "TRAFFIC_IN" > /dev/null
+			if [ $? -eq 0 ]; then
+				echo "DEBUG : iptables chain misplaced, recreating it..."
+				iptables -D FORWARD -i ${LAN_IFACE} -j TRAFFIC_IN
+			fi
+			iptables -I FORWARD 1 -i ${LAN_IFACE} -j TRAFFIC_IN
+		fi
 	
+"1	LINE	0
+		iptables -L FORWARD --line-
 "2	LINE	0
 	
 "3	LINE	0
 	
 "4	LINE	0
-	
+		do
 "5	LINE	0
-	
+		for CHAIN in "TRAFFIC_IN TRAFFIC_OUT" ;
 "6	LINE	0
-	
+		CHAIN_NUM=1
 "7	LINE	0
-	
+	echo "WARNING : Lockfile detected but process $(cat /tmp/wrtbwmon.lock) does not exist !"
 "8	LINE	0
-	
+	iptables -N TRAFFIC_OUT 2> /dev/null
 "9	LINE	0
-	
+	iptables -N TRAFFIC_IN 2> /dev/null
 ""-	CHAR	0
-	 
+	i
 
 # File marks:
-'0  136  0  ~/.bashrc
-'1  152  78  ~/Downloads/newapple.ldif
-'2  69  0  ~/Downloads/apple.ldif
-'3  34  161  /etc/ldap/schema/apple.ldif
-'4  4  12  /etc/hosts
-'5  25  39  /tmp/crontab.j5FWZv/crontab
-'6  24  48  /tmp/crontab.vbe2zQ/crontab
-'7  1  3  ~/.git/COMMIT_EDITMSG
-'8  14  14  ~/bin/dbback.sh
-'9  17  45  ~/bin/dbback.sh
+'0  58  52  ~/bin/ipacct.sh
+'1  20  0  ~/bin/ipacct.sh
+'2  1  0  ~/Downloads/wrtbwmon.sh
+'3  7  17  /etc/bind/named.conf.local
+'4  1  0  /etc/bind/named.conf.local
+'5  25  9  /tmp/crontab.ZMkhH1/crontab
+'6  25  9  /tmp/crontab.zkxT4g/crontab
+'7  1  17  /etc/apache2/sites-available/openwrt-proxy.conf
+'8  7  1  /etc/apache2/sites-available/kodi-webserver.conf
+'9  50  27  /etc/iptables/rules.v4
 
 # Jumplist (newest first):
+-'  58  52  ~/bin/ipacct.sh
+-'  16  0  ~/bin/ipacct.sh
+-'  34  0  ~/bin/ipacct.sh
+-'  59  4  ~/bin/ipacct.sh
+-'  20  0  ~/bin/ipacct.sh
+-'  1  0  ~/bin/ipacct.sh
+-'  1  0  ~/Downloads/wrtbwmon.sh
+-'  7  17  /etc/bind/named.conf.local
+-'  1  0  /etc/bind/named.conf.local
+-'  25  9  /tmp/crontab.ZMkhH1/crontab
+-'  1  0  /tmp/crontab.ZMkhH1/crontab
+-'  25  9  /tmp/crontab.zkxT4g/crontab
+-'  1  0  /tmp/crontab.zkxT4g/crontab
+-'  1  17  /etc/apache2/sites-available/openwrt-proxy.conf
+-'  11  9  /etc/apache2/sites-available/openwrt-proxy.conf
+-'  7  1  /etc/apache2/sites-available/kodi-webserver.conf
+-'  10  19  /etc/apache2/sites-available/kodi-webserver.conf
+-'  50  27  /etc/iptables/rules.v4
+-'  20  0  /etc/iptables/rules.v4
+-'  75  23  /etc/iptables/rules.v4
+-'  9  12  /etc/apache2/sites-available/kodi-webserver.conf
+-'  1  0  /etc/apache2/sites-available/kodi-webserver.conf
+-'  31  0  /etc/apache2/sites-available/000-default.conf
+-'  1  0  /etc/apache2/sites-available/000-default.conf
+-'  5  13  /etc/hosts
+-'  4  28  /etc/hosts
+-'  20  0  ~/bin/dbback.sh
+-'  11  14  ~/bin/dbback.sh
 -'  136  0  ~/.bashrc
 -'  1  7  ~/.bashrc
 -'  152  78  ~/Downloads/newapple.ldif
@@ -154,37 +192,250 @@ $
 -'  11  0  ~/Downloads/apple.ldif
 -'  10  0  ~/Downloads/apple.ldif
 -'  9  0  ~/Downloads/apple.ldif
--'  8  0  ~/Downloads/apple.ldif
--'  7  0  ~/Downloads/apple.ldif
--'  6  0  ~/Downloads/apple.ldif
--'  5  0  ~/Downloads/apple.ldif
--'  4  0  ~/Downloads/apple.ldif
--'  3  0  ~/Downloads/apple.ldif
--'  1  0  ~/Downloads/apple.ldif
--'  34  161  /etc/ldap/schema/apple.ldif
--'  33  180  /etc/ldap/schema/apple.ldif
--'  32  179  /etc/ldap/schema/apple.ldif
--'  31  156  /etc/ldap/schema/apple.ldif
--'  29  157  /etc/ldap/schema/apple.ldif
--'  28  156  /etc/ldap/schema/apple.ldif
--'  27  167  /etc/ldap/schema/apple.ldif
--'  21  161  /etc/ldap/schema/apple.ldif
--'  20  181  /etc/ldap/schema/apple.ldif
--'  19  172  /etc/ldap/schema/apple.ldif
--'  18  156  /etc/ldap/schema/apple.ldif
--'  17  183  /etc/ldap/schema/apple.ldif
--'  15  177  /etc/ldap/schema/apple.ldif
--'  14  169  /etc/ldap/schema/apple.ldif
--'  13  174  /etc/ldap/schema/apple.ldif
--'  12  159  /etc/ldap/schema/apple.ldif
--'  11  188  /etc/ldap/schema/apple.ldif
--'  10  157  /etc/ldap/schema/apple.ldif
--'  9  171  /etc/ldap/schema/apple.ldif
--'  1  0  /etc/ldap/schema/apple.ldif
--'  4  12  /etc/hosts
--'  25  39  /tmp/crontab.j5FWZv/crontab
 
 # History of marks within files (newest to oldest):
+
+> ~/bin/ipacct.sh
+	"	58	52
+	^	58	53
+	.	58	52
+	+	59	0
+	+	7	34
+	+	21	0
+	+	9	90
+	+	14	27
+	+	20	0
+	+	59	0
+	+	23	0
+	+	24	9
+	+	31	81
+	+	59	0
+	+	59	0
+	+	34	23
+	+	59	0
+	+	35	60
+	+	38	42
+	+	31	13
+	+	16	0
+	+	31	0
+	+	31	0
+	+	31	10
+	+	31	55
+	+	32	0
+	+	33	1
+	+	34	1
+	+	35	1
+	+	36	2
+	+	37	1
+	+	38	0
+	+	33	41
+	+	36	45
+	+	36	50
+	+	31	11
+	+	31	74
+	+	31	1
+	+	32	1
+	+	33	1
+	+	34	1
+	+	35	1
+	+	36	1
+	+	37	1
+	+	38	0
+	+	31	64
+	+	36	51
+	+	38	53
+	+	38	53
+	+	59	0
+	+	31	57
+	+	33	43
+	+	59	0
+	+	59	0
+	+	41	68
+	+	43	43
+	+	46	52
+	+	48	25
+	+	52	9
+	+	53	0
+	+	24	9
+	+	25	0
+	+	55	107
+	+	57	0
+	+	56	0
+	+	58	52
+
+> ~/Downloads/wrtbwmon.sh
+	"	80	25
+	^	66	13
+	.	66	12
+	+	22	81
+	+	68	0
+	+	66	12
+
+> /etc/iptables/rules.v4
+	"	74	0
+	^	50	28
+	.	74	0
+	+	54	74
+	+	55	74
+	+	65	0
+	+	58	0
+	+	4	19
+	+	5	18
+	+	15	0
+	+	16	0
+	+	17	54
+	+	69	22
+	+	70	17
+	+	71	18
+	+	72	23
+	+	49	27
+	+	50	27
+	+	76	0
+	+	74	0
+
+> /etc/bind/named.conf.local
+	"	7	17
+	^	7	18
+	.	7	17
+	+	7	17
+
+> /tmp/crontab.ZMkhH1/crontab
+	"	25	9
+	^	25	10
+	.	25	9
+	+	25	9
+
+> /tmp/crontab.zkxT4g/crontab
+	"	25	9
+	^	25	10
+	.	25	10
+	+	25	10
+
+> /etc/apache2/sites-available/openwrt-proxy.conf
+	"	1	17
+	^	16	14
+	.	16	13
+	+	2	0
+	+	5	21
+	+	6	0
+	+	7	35
+	+	8	36
+	+	12	16
+	+	20	13
+	+	17	18
+	+	18	33
+	+	12	23
+	+	17	0
+	+	14	0
+	+	13	13
+	+	14	0
+	+	15	29
+	+	16	14
+	+	17	0
+	+	22	0
+	+	13	12
+	+	16	13
+
+> /etc/apache2/sites-available/kodi-webserver.conf
+	"	7	1
+	^	10	20
+	.	7	0
+	+	9	13
+	+	10	19
+	+	11	0
+	+	7	0
+
+> /etc/apache2/sites-available/000-default.conf
+	"	31	0
+
+> /etc/hosts
+	"	5	13
+	^	5	14
+	.	5	13
+	+	3	11
+	+	2	0
+	+	3	21
+	+	5	12
+	+	11	20
+	+	5	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	5	0
+	+	1	26
+	+	5	0
+	+	1	18
+	+	2	0
+	+	5	0
+	+	2	0
+	+	5	12
+	+	4	28
+	+	5	13
+
+> ~/bin/dbback.sh
+	"	20	0
+	^	20	0
+	.	19	34
+	+	4	23
+	+	7	0
+	+	8	50
+	+	22	0
+	+	2	0
+	+	11	31
+	+	16	9
+	+	7	8
+	+	16	81
+	+	16	31
+	+	16	87
+	+	16	43
+	+	9	34
+	+	16	60
+	+	11	0
+	+	13	1
+	+	11	0
+	+	5	13
+	+	7	71
+	+	16	88
+	+	16	4
+	+	12	0
+	+	13	0
+	+	16	0
+	+	16	31
+	+	16	0
+	+	16	20
+	+	10	9
+	+	21	3
+	+	16	1
+	+	13	3
+	+	16	77
+	+	16	49
+	+	16	66
+	+	7	0
+	+	6	15
+	+	16	17
+	+	6	28
+	+	16	29
+	+	16	31
+	+	16	30
+	+	6	28
+	+	7	72
+	+	8	8
+	+	16	31
+	+	1	7
+	+	6	1
+	+	16	5
+	+	6	6
+	+	16	0
+	+	14	19
+	+	16	0
+	+	14	45
+	+	11	14
+	+	10	0
+	+	16	0
+	+	15	42
+	+	19	33
+	+	15	0
+	+	19	34
 
 > ~/.bashrc
 	"	136	0
@@ -454,28 +705,6 @@ $
 > /etc/ldap/schema/apple.ldif
 	"	34	161
 
-> /etc/hosts
-	"	4	12
-	^	4	13
-	.	4	12
-	+	3	11
-	+	2	0
-	+	3	21
-	+	4	12
-	+	10	20
-	+	4	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	4	0
-	+	1	26
-	+	4	0
-	+	1	18
-	+	2	0
-	+	4	0
-	+	2	0
-	+	4	12
-
 > /tmp/crontab.j5FWZv/crontab
 	"	25	39
 	^	24	45
@@ -496,65 +725,6 @@ $
 	+	1	27
 	+	2	0
 	+	1	3
-
-> ~/bin/dbback.sh
-	"	14	14
-	^	14	15
-	.	14	14
-	+	4	23
-	+	7	0
-	+	8	50
-	+	21	0
-	+	2	0
-	+	14	31
-	+	18	9
-	+	7	8
-	+	18	81
-	+	18	31
-	+	18	87
-	+	18	43
-	+	9	34
-	+	18	60
-	+	14	0
-	+	16	1
-	+	14	0
-	+	5	13
-	+	7	71
-	+	18	88
-	+	19	4
-	+	15	0
-	+	16	0
-	+	18	0
-	+	18	31
-	+	19	0
-	+	18	20
-	+	12	9
-	+	20	3
-	+	18	1
-	+	16	3
-	+	18	77
-	+	18	49
-	+	18	66
-	+	7	0
-	+	6	15
-	+	18	17
-	+	6	28
-	+	18	29
-	+	18	31
-	+	18	30
-	+	6	28
-	+	7	72
-	+	8	8
-	+	18	31
-	+	1	7
-	+	6	1
-	+	18	5
-	+	6	6
-	+	18	0
-	+	17	19
-	+	18	0
-	+	17	45
-	+	14	14
 
 > ~/Downloads/apple1.ldif
 	"	52	204
@@ -611,24 +781,6 @@ $
 
 > /etc/modules
 	"	1	0
-
-> /etc/iptables/rules.v4
-	"	75	23
-	^	72	24
-	.	72	23
-	+	54	74
-	+	55	74
-	+	65	0
-	+	58	0
-	+	4	19
-	+	5	18
-	+	15	0
-	+	16	0
-	+	17	54
-	+	69	22
-	+	70	17
-	+	71	18
-	+	72	23
 
 > /etc/bind/named.conf.options
 	"	4	3
