@@ -1,0 +1,224 @@
+#!/sbin/runscript
+
+start() {
+        ebegin "Configuring Network"
+
+        #Make sure we do not already have a default route to mess w/ us.
+        /sbin/route del default
+
+        #Variables to avoid typos
+        CABLE="eth1"
+        CABLE_IP="[removed]"
+        CABLE_MASK="255.255.255.248"
+        CABLE_NET="[removed]/29"
+        CABLE_ROUTE="[removed]"
+        CABLE_TABLE="4"
+        CABLE_DEFUP="3mbit"
+        DSL="eth2"
+        DSL_IP="[removed]"
+        DSL_MASK="255.255.255.248"
+        DSL_NET="[removed]/29"
+        DSL_ROUTE="[removed]"
+        DSL_TABLE="3"
+        DSL_DEFUP="2mbit"
+        LOCAL="eth0"
+        LOCAL_SLAVEA="eth0"
+        LOCAL_SLAVEB="eth3"
+        LOCAL_IP="192.168.0.1"
+        LOCAL_MASK="255.255.255.0"
+        LOCAL_NET="192.168.0.0/24"
+        LOCAL_TABLE="2"
+        LOCAL_UPLIM="128kbit burst 5k"
+        LOCAL_DNLIM="3mbit burst 5k"
+        LOCAL_CLASS="20"
+        LOCAL_MARK="7"
+        LOCAL_NETLIM="1024mbit"
+        WIFI="eth3"
+        WIFI_IP="192.168.1.1"
+        WIFI_MASK="255.255.255.0"
+        WIFI_NET="192.168.1.0/24"
+        WIFI_UPLIM="64kbit burst 5k"
+        WIFI_DNLIM="128kbit burst 5k"
+        WIFI_CLASS="10"
+        WIFI_MARK="6"
+        INET_MARK="9"
+
+        #Configure the bonded internal network that most systems will connect to.
+        echo "Establishing LOCAL ${LOCAL}..."
+        /sbin/ifconfig ${LOCAL} ${LOCAL_IP} netmask ${LOCAL_MASK}
+        /sbin/ip route add ${LOCAL_NET} dev ${LOCAL} src ${LOCAL_IP} table ${LOCAL_TABLE}
+        /sbin/ip rule add from ${LOCAL_IP} table ${LOCAL_TABLE}
+        #/sbin/ifenslave ${LOCAL} ${LOCAL_SLAVEA} 
+        #/sbin/ifenslave ${LOCAL} ${LOCAL_SLAVEB} 
+
+        #Configure the other internal network that will be used for a wifi hot spot
+        echo "Establishing WIFI ${WIFI}..."
+        /sbin/ifconfig ${WIFI} ${WIFI_IP} netmask ${WIFI_MASK}
+
+        #Configure the DSL connection
+        echo "Establishing DSL ${DSL}..."
+        /sbin/ifconfig ${DSL} ${DSL_IP} netmask ${DSL_MASK}
+        /sbin/ip route add ${DSL_NET} dev ${DSL} src ${DSL_IP} table ${DSL_TABLE}
+        /sbin/ip route add default via ${DSL_ROUTE} table ${DSL_TABLE}
+        /sbin/ip rule add from ${DSL_IP} table ${DSL_TABLE}
+
+        #Configure the cable connection
+        echo "Establishing CABLE ${CABLE}..."
+        /sbin/ifconfig ${CABLE} ${CABLE_IP} netmask ${CABLE_MASK}
+        /sbin/ip route add ${CABLE_NET} dev ${CABLE} src ${CABLE_IP} table ${CABLE_TABLE}
+        /sbin/ip route add default via ${CABLE_ROUTE} table ${CABLE_TABLE}
+        /sbin/ip rule add from ${CABLE_IP} table ${CABLE_TABLE}
+
+        #Round robin the 2 internet connections w/ wight
+        echo "Round-Robin default gw...."
+        /sbin/ip route add default scope global nexthop via ${DSL_ROUTE} dev ${DSL} weight 1\
+                                                nexthop via ${CABLE_ROUTE} dev ${CABLE} weight 3
+
+        #Create resolv.conf and populate it.
+        echo "Creating Resolv.conf...."
+        echo "nameserver ${CABLE_ROUTE}" > /etc/resolv.conf
+        echo "nameserver ${DSL_ROUTE}" >> /etc/resolv.conf
+
+        #Limit the speed of traffic from the server to the WIFI hot spot
+        echo "Limiting WIFI ${WIFI}..."
+        /sbin/tc qdisc add dev ${WIFI} root handle 1: htb default 1
+        /sbin/tc class add dev ${WIFI} parent 1: classid 1:1 htb rate ${WIFI_DNLIM}
+
+        #Limit the speed of the traffic from the server to the internal network
+        echo "Limiting LOCAL ${LOCAL}..."
+        /sbin/tc qdisc add dev ${LOCAL} root handle 2: htb default 1
+        #Set the limit for connections to the server's services very high
+        echo 1
+        /sbin/tc class add dev ${LOCAL} parent 2: classid 2:1 htb rate ${LOCAL_NETLIM}
+        #Set the internet download limit to something reasonable
+        echo 2 
+        /sbin/tc class add dev ${LOCAL} parent 2: classid 2:10 htb rate ${LOCAL_DNLIM}
+        #Make sure internet traffic is directed to the currect limit.   
+        echo 3
+        /sbin/tc filter add dev ${LOCAL} protocol ip parent 2:0 prio 1 handle ${INET_MARK} fw flowid 2:10
+
+    #Limit the speed at which the server routes data from the internal networks to the internet.
+
+        #Limit the dsl w/ a catch all default
+        echo "Limiting DSL ${DSL}"
+        /sbin/tc qdisc add dev ${DSL} root handle 3: htb default 1
+        /sbin/tc class add dev ${DSL} parent 3: classid 3:1 htb rate ${DSL_DEFUP}
+        #Limits for both internal networks are set here
+        /sbin/tc class add dev ${DSL} parent 3:1 classid 3:${WIFI_CLASS} htb rate ${WIFI_UPLIM}
+        /sbin/tc class add dev ${DSL} parent 3:1 classid 3:${LOCAL_CLASS} htb rate ${LOCAL_UPLIM}
+        #Make sure we direct packets to the correct limits.
+        /sbin/tc filter add dev ${DSL} protocol ip parent 3:0 prio 1 handle ${WIFI_MARK} fw flowid 3:${WIFI_CLASS}
+        /sbin/tc filter add dev ${DSL} protocol ip parent 3:0 prio 1 handle ${LOCAL_MARK} fw flowid 3:${LOCAL_CLASS}
+
+        #Limit the cable connection w/ a catch all default
+        echo "Limiting CABLE ${CABLE}"
+        /sbin/tc qdisc add dev ${CABLE} root handle 4: htb default 1
+        /sbin/tc class add dev ${CABLE} parent 4: classid 4:1 htb rate ${CABLE_DEFUP}
+        #Limits for both internal networks are set here
+        /sbin/tc class add dev ${CABLE} parent 4:1 classid 4:${WIFI_CLASS} htb rate ${WIFI_UPLIM}
+        /sbin/tc class add dev ${CABLE} parent 4:1 classid 4:${LOCAL_CLASS} htb rate ${LOCAL_UPLIM}
+        #Make sure we direct packets to the correct limits.
+        /sbin/tc filter add dev ${CABLE} protocol ip parent 4:0 prio 1 handle ${WIFI_MARK} fw flowid 4:${WIFI_CLASS}
+        /sbin/tc filter add dev ${CABLE} protocol ip parent 4:0 prio 1 handle ${LOCAL_MARK} fw flowid 4:${LOCAL_CLASS}
+
+
+        #Clear existing iptables settings if any
+        echo "Starting Firewall..."
+        iptables -F
+        iptables -t nat -F
+        
+        #Drop all by default
+        echo "Drop all by default..."
+        iptables -P INPUT DROP
+        #Accept from lo and LOCAL by default
+        echo "Accept all from lo and LOCAL ${LOCAL} by default..."
+        iptables -A INPUT -i lo -j ACCEPT
+        iptables -A INPUT -i ${LOCAL} -j ACCEPT
+        #Accept established and related packets
+        echo "Accept established and related..."
+        iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+        #Allow connections to the server 
+        echo Allow the following ports: 
+        for PORT in '80' '8080' '20' '21' '22' '25' '110' '113' '118' '156' '194' '220' '443' '465' '989' '990' '993' '995'; do
+                echo -n "${PORT} "
+                iptables -A INPUT -p tcp --dport ${PORT} -m state --state NEW -j ACCEPT
+                iptables -A INPUT -p udp --dport ${PORT} -m state --state NEW -j ACCEPT
+        done
+        echo "."
+
+        echo "Extra rules for WIFI ${WIFI}"
+        iptables -A INPUT -i ${WIFI} -p UDP --dport domain -m state --state NEW -j ACCEPT
+        iptables -A INPUT -i ${WIFI} -d 192.168.1.0/24 -j DROP
+        iptables -A INPUT -i ${WIFI} -d 192.168.0.0/24 -j DROP
+        iptables -A INPUT -i ${WIFI} -j ACCEPT
+
+        #Configure forwarding rules
+        echo "Drop all forward requests by default."
+        iptables -P FORWARD DROP
+        echo "Allow forwarding from LOCAL ${LOCAL} to DSL ${DSL}, CABLE ${CABLE}, and WIFI ${WIFI}..."
+        iptables -A FORWARD -i ${LOCAL} -o ${DSL} -j ACCEPT
+        iptables -A FORWARD -i ${LOCAL} -o ${CABLE} -j ACCEPT
+        iptables -A FORWARD -i ${LOCAL} -o ${WIFI} -j ACCEPT
+        echo "Allow forwarding from WIFI ${WIFI} to DSL ${DSL}, and CABLE ${CABLE}"
+        iptables -A FORWARD -i ${WIFI} -o ${DSL} -j ACCEPT
+        iptables -A FORWARD -i ${WIFI} -o ${CABLE} -j ACCEPT
+        echo "Allow forwarding from WIFI ${WIFI} to LOCAL ${LOCAL} if established or related"
+        iptables -A FORWARD -i ${WIFI} -o ${LOCAL} -m state --state ESTABLISHED,RELATED -j ACCEPT
+        echo "Allow forwarding fo established and related from CABLE ${CABLE}, and DSL ${DSL} to WIFI ${WIFI} and LOCAL ${LOCAL}..."
+        iptables -A FORWARD -i ${CABLE} -o ${LOCAL} -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A FORWARD -i ${DSL} -o ${LOCAL} -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A FORWARD -i ${CABLE} -o ${WIFI} -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A FORWARD -i ${DSL} -o ${WIFI} -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+        #Make sure ECN is never enabled, it is bad.
+        echo "Kill ECN..."
+        if [ -e /proc/sys/net/ipv4/tcp_ecn ]
+        then
+                echo 0 > /proc/sys/net/ipv4/tcp_ecn
+        fi
+
+        #Tell the kernel that ip forwarding is OK
+        echo "Allow Forwarding..."
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        for f in /proc/sys/net/ipv4/conf/*/rp_filter ; do echo 1 > $f ; done
+
+        #Respond to blocked connections properly.
+        echo "Proper responces to blocked ports...";
+        for NIF in ${CABLE} ${DSL}; do
+                iptables -A INPUT -p tcp -i ${NIF} -j REJECT --reject-with tcp-reset
+                iptables -A INPUT -p udp -i ${NIF} -j REJECT --reject-with icmp-port-unreachable
+        done
+        
+        #Masquerading
+        echo "Enable masquerading / nat..."
+        iptables -t nat -A POSTROUTING -o ${CABLE} -j SNAT --to ${CABLE_IP}
+        iptables -t nat -A POSTROUTING -o ${DSL} -j SNAT --to ${DSL_IP}
+
+        #Mark packets from the internal networks so we know where they came form when
+        #directing to the limiters
+        echo "Packet Marking..."
+        iptables -A PREROUTING -t mangle -i ${WIFI} -j MARK --set-mark ${WIFI_MARK}
+        iptables -A PREROUTING -t mangle -i ${LOCAL} -j MARK --set-mark ${LOCAL_MARK}
+
+        #Mark packets from the internet.
+        echo "More Packet Marking..."
+        iptables -A PREROUTING -t mangle -i ${DSL} -j MARK --set-mark ${INET_MARK}
+        iptables -A PREROUTING -t mangle -i ${CABLE} -j MARK --set-mark ${INET_MARK}
+
+        eend 0
+
+}
+
+restart() {
+svc_stop
+svc_start
+}
+
+stop() {
+        for i in 0 1 2 3 4; do
+                ifconfig eth${i} down
+        done
+        /sbin/tc class del dev eth4 parent 1: classid 1:1 
+        /sbin/tc qdisc del dev eth4 root handle 1: 
+}

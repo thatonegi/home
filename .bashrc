@@ -133,6 +133,7 @@ export HISTIGNORE="&:l[los]:[bf]g:exit:d[uf]:h:wiload.sh:pwd:clear:mount:umount:
 export LPDEST=PDF
 export PRINTER=PDF
 export APT_CONFIG=/etc/apt/apt.conf
+export SUDO_EDITOR=vim
 
 # Android settings
 export ADB_HOME=${HOME}/android/platform-tools
