@@ -1,0 +1,70 @@
+# This is an example configuration file for pianobar. You may remove the # from
+# lines you need and copy/move this file to ~/.config/pianobar/config
+# See manpage for a description of the config keys
+#
+# User
+user = <email-address>
+password = <password>
+# or
+#password_command = gpg --decrypt ~/password
+
+# Proxy (for those who are not living in the USA)
+#control_proxy = http://127.0.0.1:9090/
+#bind_to = if!tun0
+
+# Keybindings
+act_help = ?
+act_songlove = +
+act_songban = -
+act_stationaddmusic = a
+act_stationcreate = c
+act_stationdelete = d
+act_songexplain = e
+#act_stationaddbygenre = g
+act_songinfo = i
+#act_addshared = j
+#act_songmove = m
+act_songnext = n
+act_songpause = S
+act_songpausetoggle = p
+#act_songpausetoggle2 =  
+act_songplay = P
+act_quit = q
+#act_stationrename = r
+act_stationchange = s
+act_stationcreatefromsong = v
+act_songtired = t
+act_upcoming = u
+act_stationselectquickmix = x
+#act_voldown = (
+#act_volup = )
+#act_volreset = ^
+
+# Misc
+audio_quality = medium
+autostart_station = 2343450687917855650
+#event_command = /home/user/.config/pianobar/eventcmd
+fifo = ${HOME}/.config/pianobar/pianobar-pipe
+#sort = quickmix_10_name_az
+#volume = 0
+#ca_bundle = /etc/ssl/certs/ca-certificates.crt
+#gain_mul = 1.0
+
+# Format strings
+#format_nowplaying_song = %t by %a on %l%r%@%s
+#format_nowplaying_song = "%t" by "%a" on "%l"%r%@%s
+format_nowplaying_song = "[01;32m%t[00;33m" by "[01;34m%a[00;33m" on "[01;35m%l[00;33m"%r[01;33m%@[01;37m%s[20h[01;37m%u[00;33m[20h
+ban_icon =  </3
+love_icon =  <3
+#tired_icon =  zZ
+#format_nowplaying_station = Station "%n" (%i)
+format_nowplaying_station = Station "[01;37m%n[00;33m" ([01;31m%i[00;33m)
+#format_list_song = %i) %a - %t%r (%d)%@%s
+format_list_song = [01;37m%i[00;33m) [01;34m%a[00;33m - [01;32m%t[00;33m%r
+
+#rpc_host = internal-tuner.pandora.com
+#partner_user = pandora one
+#partner_password = TVCKIBGS9AO9TSYLNNFUML0743LH82D
+#device = D01
+#encrypt_password = 2%3WCL*JU$MP]4
+#decrypt_password = U#IO$RZPAB%VX2
