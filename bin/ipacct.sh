@@ -1,10 +1,11 @@
 #!/bin/sh
 
+set -x
 #LAN_IFACE
 if [ ! ${2} ]; then
 	LAN_IFACE='eth0'
 else
-	LAN_IFACE=${2}
+ 	LAN_IFACE=${2}
 fi
 
 lock()
@@ -68,3 +69,4 @@ case ${1} in
 	done
 	;;
 esac
+set +x

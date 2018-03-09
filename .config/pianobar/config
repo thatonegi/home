@@ -3,8 +3,8 @@
 # See manpage for a description of the config keys
 #
 # User
-user = <email-address>
-password = <password>
+user = brett.johnston@kodyboy.com
+password = bljn1285
 # or
 #password_command = gpg --decrypt ~/password
 
@@ -43,8 +43,8 @@ act_stationselectquickmix = x
 # Misc
 audio_quality = medium
 autostart_station = 2343450687917855650
-#event_command = /home/user/.config/pianobar/eventcmd
-fifo = ${HOME}/.config/pianobar/pianobar-pipe
+event_command = /home/bjohnston/.config/pianobar/scrobble.py
+fifo = /home/bjohnston/.config/pianobar/pianobar-pipe
 #sort = quickmix_10_name_az
 #volume = 0
 #ca_bundle = /etc/ssl/certs/ca-certificates.crt
@@ -53,7 +53,8 @@ fifo = ${HOME}/.config/pianobar/pianobar-pipe
 # Format strings
 #format_nowplaying_song = %t by %a on %l%r%@%s
 #format_nowplaying_song = "%t" by "%a" on "%l"%r%@%s
-format_nowplaying_song = "[01;32m%t[00;33m" by "[01;34m%a[00;33m" on "[01;35m%l[00;33m"%r[01;33m%@[01;37m%s[20h[01;37m%u[00;33m[20h
+#format_nowplaying_song = "[01;32m%t[00;33m" by "[01;34m%a[00;33m" on "[01;35m%l[00;33m"%r[01;33m%@[01;37m%s[01;37m%u[00;33m
+format_nowplaying_song = "[01;32m%t[00;33m" by "[01;34m%a[00;33m" on "[01;35m%l[00;33m"   [01;37m%u[00;33m
 ban_icon =  </3
 love_icon =  <3
 #tired_icon =  zZ
