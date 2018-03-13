@@ -8,7 +8,10 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/olcAtt
+~Msle0~/\<Usage\>
+
+# Last Substitute Search Pattern:
+~MSle0&^" \a
 
 # Last Substitute String:
 $
@@ -19,15 +22,63 @@ $
 :w
 :q!
 :Q
+:r rules.v4
+:r bash-xcol
+:rbash-xcol
+:runtime syntax/colortest.vim
+:let &t_Co=256
+:h stustitute
+:h whitespace
+:h whitespae
+:%s/\.mp3/\.mp3\"/g
+:%s/\.\//rm\ \"\.\//g
+:%s/\.\//rm\/s\"\.\//g
+:%s/\.\//\rm "\.\//g
+:%s/\.\//\"\.\//g
+:%s/\(/\s\)\@<=/\s
+:%s/\(/\s\)\@<=\s
+:%s/\(/\s\)\@<=/\s/
+:%s/\(/\s\)\@<=\/s/
+:%s/\(\_s\)\@<=\_s/
+:%s/\(\_s\)\@<=\_s/g
+:h \@<=
+:h \+
+:h +
+:h \zs
+:h zs
+:!
+:WQ
+:r ~/git-repos/lastfm-tools/mylast.py
+:r Downloads/xcol.sh
 :wq!
 :set runtimepath?
 :vimruntimepath
-:WQ
 :1
 :2
 :wNext
 
 # Search String History (newest to oldest):
+? \<Usage\>
+?/1567
+?/if
+?/title
+? \<A\>
+?/drop
+?/input_rule
+?/tcpmss
+?/forwarding_rul
+?/masq
+? ^" \a
+? \.mp3
+? \.\/
+? \(
+? \(\_s\)\@<=\_s
+?/\(\_s\)\@<=\_s
+?/playlistf
+?/path
+?/line
+??q
+?/gre
 ?/olcAtt
 ?/\)
 ?/1.3.6.1.4.1.1466.115.121.1.15/
@@ -50,270 +101,1519 @@ $
 
 # Registers:
 "0	LINE	0
-	192.168.15.1	kodi
-""1	LINE	0
+	-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+"1	LINE	0
 	
 "2	LINE	0
-	set -x
+	echo -e "$#\t\t$1"
 "3	LINE	0
-	-A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTables-Dropped: "
+	[ -z $1 ] && Usage
+	
+	[ $# ne 1 | (($1 ne 'wlan0' | 'eth0')) ] && Usage
 "4	LINE	0
-	-A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTables-Dropped: "
+	
 "5	LINE	0
-	-A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTables-Dropped: "
+	${if_match cpu%>75}${color #ff0000}${endif}
 "6	LINE	0
-	-A TRAFFIC_OUT -d 192.168.15.125/32
+	${if_match cpu%>40}${color #f
 "7	LINE	0
-	-A TRAFFIC_OUT -d 192.168.15.124/32
+	
 "8	LINE	0
-	-A TRAFFIC_OUT -d 192.168.15.123/32
+	
 "9	LINE	0
-	-A TRAFFIC_OUT -d 192.168.15.122/32
-"-	CHAR	0
-	"
+	${color #e59866}Cyberciti:
+""-	CHAR	0
+	'
 
 # File marks:
-'0  73  42  /etc/iptables/rules.v4
-'1  3  0  ~/bin/ipacct.sh
-'2  63  33  ~/bin/ipacct.sh
-'3  66  51  ~/bin/ipacct.sh
-'4  8  0  ~/bin/ipacct.sh
-'5  60  59  ~/bin/ipacct.sh
-'6  76  0  /etc/iptables/rules.v4
-'7  232  3  ~/Downloads/wrtbwmon.sh
-'8  84  18  ~/Downloads/wrtbwmon.sh
-'9  80  25  ~/Downloads/wrtbwmon.sh
+'N  41  79  ~/bin/cowsay_random
+'0  18  18  ~/bin/ifcheck.sh
+'1  17  87  ~/bin/ifcheck.sh
+'2  11  0  ~/bin/ifcheck.sh
+'3  10  11  ~/bin/ifcheck.sh
+'4  10  17  ~/bin/ifcheck.sh
+'5  13  0  ~/bin/ifcheck.sh
+'6  1  6  ~/bin/ifcheck.sh
+'7  16  35  ~/bin/ifcheck.sh
+'8  20  5  ~/bin/ifcheck.sh
+'9  5  6  ~/bin/ifcheck.sh
 
 # Jumplist (newest first):
--'  73  42  /etc/iptables/rules.v4
--'  3  0  ~/bin/ipacct.sh
--'  63  33  ~/bin/ipacct.sh
--'  72  0  /etc/iptables/rules.v4
--'  75  0  /etc/iptables/rules.v4
--'  76  0  /etc/iptables/rules.v4
--'  66  51  ~/bin/ipacct.sh
--'  8  0  ~/bin/ipacct.sh
--'  60  59  ~/bin/ipacct.sh
--'  232  3  ~/Downloads/wrtbwmon.sh
--'  84  18  ~/Downloads/wrtbwmon.sh
--'  80  25  ~/Downloads/wrtbwmon.sh
--'  66  12  ~/Downloads/wrtbwmon.sh
--'  64  0  ~/Downloads/wrtbwmon.sh
--'  1  0  ~/Downloads/wrtbwmon.sh
--'  7  17  /etc/bind/named.conf.local
--'  1  0  /etc/bind/named.conf.local
--'  25  9  /tmp/crontab.ZMkhH1/crontab
--'  1  0  /tmp/crontab.ZMkhH1/crontab
--'  25  9  /tmp/crontab.zkxT4g/crontab
--'  1  0  /tmp/crontab.zkxT4g/crontab
--'  1  17  /etc/apache2/sites-available/openwrt-proxy.conf
--'  11  9  /etc/apache2/sites-available/openwrt-proxy.conf
--'  7  1  /etc/apache2/sites-available/kodi-webserver.conf
--'  10  19  /etc/apache2/sites-available/kodi-webserver.conf
--'  51  27  /etc/iptables/rules.v4
--'  21  0  /etc/iptables/rules.v4
--'  9  12  /etc/apache2/sites-available/kodi-webserver.conf
--'  1  0  /etc/apache2/sites-available/kodi-webserver.conf
--'  31  0  /etc/apache2/sites-available/000-default.conf
--'  1  0  /etc/apache2/sites-available/000-default.conf
--'  5  13  /etc/hosts
--'  4  28  /etc/hosts
--'  20  0  ~/bin/dbback.sh
--'  11  14  ~/bin/dbback.sh
--'  136  0  ~/.bashrc
--'  1  7  ~/.bashrc
--'  152  78  ~/Downloads/newapple.ldif
--'  157  79  ~/Downloads/newapple.ldif
--'  204  79  ~/Downloads/newapple.ldif
--'  71  0  ~/Downloads/newapple.ldif
--'  21  0  ~/Downloads/newapple.ldif
--'  1  0  ~/Downloads/newapple.ldif
--'  69  0  ~/Downloads/apple.ldif
--'  68  0  ~/Downloads/apple.ldif
--'  67  0  ~/Downloads/apple.ldif
--'  66  0  ~/Downloads/apple.ldif
--'  65  0  ~/Downloads/apple.ldif
--'  64  0  ~/Downloads/apple.ldif
--'  63  0  ~/Downloads/apple.ldif
--'  62  0  ~/Downloads/apple.ldif
--'  61  0  ~/Downloads/apple.ldif
--'  60  0  ~/Downloads/apple.ldif
--'  59  0  ~/Downloads/apple.ldif
--'  58  0  ~/Downloads/apple.ldif
--'  57  0  ~/Downloads/apple.ldif
--'  56  0  ~/Downloads/apple.ldif
--'  55  0  ~/Downloads/apple.ldif
--'  54  0  ~/Downloads/apple.ldif
--'  53  0  ~/Downloads/apple.ldif
--'  52  0  ~/Downloads/apple.ldif
--'  51  0  ~/Downloads/apple.ldif
--'  50  0  ~/Downloads/apple.ldif
--'  49  0  ~/Downloads/apple.ldif
--'  48  0  ~/Downloads/apple.ldif
--'  47  0  ~/Downloads/apple.ldif
--'  46  0  ~/Downloads/apple.ldif
--'  45  0  ~/Downloads/apple.ldif
--'  44  0  ~/Downloads/apple.ldif
--'  43  0  ~/Downloads/apple.ldif
--'  42  0  ~/Downloads/apple.ldif
--'  41  0  ~/Downloads/apple.ldif
--'  40  0  ~/Downloads/apple.ldif
--'  39  0  ~/Downloads/apple.ldif
--'  38  0  ~/Downloads/apple.ldif
--'  37  0  ~/Downloads/apple.ldif
--'  36  0  ~/Downloads/apple.ldif
--'  35  0  ~/Downloads/apple.ldif
--'  34  0  ~/Downloads/apple.ldif
--'  33  0  ~/Downloads/apple.ldif
--'  32  0  ~/Downloads/apple.ldif
--'  31  0  ~/Downloads/apple.ldif
--'  30  0  ~/Downloads/apple.ldif
--'  29  0  ~/Downloads/apple.ldif
--'  28  0  ~/Downloads/apple.ldif
--'  27  0  ~/Downloads/apple.ldif
--'  26  0  ~/Downloads/apple.ldif
--'  25  0  ~/Downloads/apple.ldif
--'  24  0  ~/Downloads/apple.ldif
--'  23  0  ~/Downloads/apple.ldif
--'  22  0  ~/Downloads/apple.ldif
--'  21  0  ~/Downloads/apple.ldif
--'  20  0  ~/Downloads/apple.ldif
--'  19  0  ~/Downloads/apple.ldif
--'  70  1  ~/Downloads/apple.ldif
--'  18  0  ~/Downloads/apple.ldif
--'  17  0  ~/Downloads/apple.ldif
+-'  18  18  ~/bin/ifcheck.sh
+-'  17  87  ~/bin/ifcheck.sh
+-'  11  0  ~/bin/ifcheck.sh
+-'  10  11  ~/bin/ifcheck.sh
+-'  13  0  ~/bin/ifcheck.sh
+-'  1  6  ~/bin/ifcheck.sh
+-'  16  35  ~/bin/ifcheck.sh
+-'  20  5  ~/bin/ifcheck.sh
+-'  5  6  ~/bin/ifcheck.sh
+-'  2  0  ~/bin/ifcheck.sh
+-'  7  0  ~/bin/ifcheck.sh
+-'  2  0  ~/bin/ifcheck
+-'  1  0  ~/bin/ifcheck
+-'  98  9  /etc/iptables/rules.v4
+-'  35  35  /etc/iptables/rules.v4
+-'  93  14  /etc/group
+-'  1  0  /etc/group
+-'  55  27  /etc/rsyslog.d/50-default.conf
+-'  68  29  /etc/rsyslog.d/50-default.conf
+-'  60  0  /etc/rsyslog.conf
+-'  234  0  ~/.bashrc
+-'  230  0  ~/.bashrc
+-'  166  37  ~/.bashrc
+-'  57  85  ~/.config/conky/conky.conf
+-'  58  39  ~/.config/conky/conky.conf
+-'  102  0  ~/.config/conky/conky.conf
+-'  106  24  ~/.config/conky/conky.conf
+-'  41  17  ~/bin/conky-rss.sh
+-'  1  0  ~/bin/conky-rss.sh
+-'  40  18  ~/bin/conky-rss.sh
+-'  18  0  ~/xml
+-'  46  5  ~/xml
+-'  38  23  ~/xml
+-'  37  68  ~/xml
+-'  17  68  ~/xml
+-'  3  86  ~/xml
+-'  1  0  ~/xml
+-'  117  0  ~/xml
+-'  101  0  ~/.config/conky/conky.conf
+-'  103  24  ~/.config/conky/conky.conf
+-'  104  47  ~/.config/conky/conky.conf
+-'  45  20  ~/.config/conky/conky.conf
+-'  69  22  /etc/sysctl.conf
+-'  65  22  /etc/sysctl.conf
+-'  125  0  ~/Documents/iprules/rules.owt~
+-'  1  0  ~/Documents/iprules/rules.owt~
+-'  27  0  ~/blah
+-'  80  0  ~/blah
+-'  6  0  ~/Documents/iprules/rules.v4
+-'  1  17  ~/Documents/iprules/rules.v4
+-'  100  0  ~/Documents/iprules/rules.owt
+-'  133  0  ~/Documents/iprules/rules.owt
+-'  98  0  ~/Documents/iprules/rules.owt
+-'  99  0  ~/Documents/iprules/rules.owt
+-'  91  15  ~/Documents/iprules/rules.owt
+-'  89  0  ~/Documents/iprules/rules.owt
+-'  145  6  ~/Documents/iprules/rules.owt
+-'  102  32  ~/blah
+-'  104  26  ~/blah
+-'  97  0  ~/blah
+-'  100  0  ~/blah
+-'  1  0  ~/blah
+-'  128  0  ~/Documents/iprules/rules.owt
+-'  71  1  ~/Documents/iprules/rules.owt
+-'  1  1  ~/Documents/iprules/rules.owt
+-'  23  0  ~/Documents/iprules/rules.owt
+-'  75  0  ~/Documents/iprules/rules.owt
+-'  56  98  ~/Documents/iprules/rules.owt
+-'  45  0  ~/Documents/iprules/rules.owt
+-'  68  1  ~/Documents/iprules/rules.owt
+-'  10  0  /etc/hosts
+-'  31  28  /etc/hosts
+-'  10  87  /etc/samba/smb.conf
+-'  256  15  /etc/samba/smb.conf
+-'  14  0  /etc/network/interfaces
+-'  1  0  /etc/network/interfaces
+-'  1  16  /etc/modprobe.d/cfg80211.conf
+-'  1  59  /etc/modprobe.d/ath9k.conf
+-'  1  0  ~/.config/user-dirs.conf
+-'  194  20  ~/.bashrc
+-'  12  0  ~/.config/user-dirs.dirs
+-'  1  0  ~/.config/user-dirs.dirs
+-'  20  0  ~/.ssh/config
+-'  18  1  ~/.ssh/config
+-'  4  91  ~/.bash_aliases
+-'  24  0  ~/.bash_aliases
+-'  2  0  ~/.bash_aliases
+-'  9  0  ~/.bash_aliases
+-'  12  0  ~/.bash_aliases
+-'  32  21  ~/.bash_aliases
+-'  95  72  ~/Documents/iprules/rules.owt
+-'  101  27  ~/Documents/iprules/rules.owt
+-'  136  0  ~/Documents/iprules/rules.owt
+-'  1  0  ~/Documents/iprules/rules
+-'  138  0  ~/Documents/iprules/rules.v4
+-'  1  0  ~/firewall
+-'  1  61  ~/cfg80211
 
 # History of marks within files (newest to oldest):
 
+> ~/bin/ifcheck.sh
+	"	18	18
+	^	17	88
+	.	17	87
+	+	2	20
+	+	2	18
+	+	2	6
+	+	4	62
+	+	5	20
+	+	7	0
+	+	2	0
+	+	8	0
+	+	3	0
+	+	4	6
+	+	5	6
+	+	15	6
+	+	16	88
+	+	16	4
+	+	16	92
+	+	20	5
+	+	10	49
+	+	12	13
+	+	13	0
+	+	10	3
+	+	18	5
+	+	16	35
+	+	10	3
+	+	1	7
+	+	10	4
+	+	5	8
+	+	4	8
+	+	10	31
+	+	10	17
+	+	10	11
+	+	18	7
+	+	10	0
+	+	17	213
+	+	17	87
+
+> ~/.bashrc
+	"	23	0
+	^	229	26
+	.	229	25
+	+	207	8
+	+	209	1
+	+	209	0
+	+	209	24
+	+	210	35
+	+	209	0
+	+	400	32
+	+	400	0
+	+	204	10
+	+	400	0
+	+	211	15
+	+	207	1
+	+	208	1
+	+	209	1
+	+	207	6
+	+	208	6
+	+	209	6
+	+	211	0
+	+	399	16
+	+	205	18
+	+	204	7
+	+	205	37
+	+	206	0
+	+	207	1
+	+	208	1
+	+	209	1
+	+	210	1
+	+	399	1
+	+	399	0
+	+	211	4
+	+	399	0
+	+	136	9
+	+	137	31
+	+	127	0
+	+	137	38
+	+	399	0
+	+	213	5
+	+	399	56
+	+	214	46
+	+	215	33
+	+	214	2
+	+	215	40
+	+	216	0
+	+	223	79
+	+	224	9
+	+	223	80
+	+	225	45
+	+	224	64
+	+	223	81
+	+	224	74
+	+	225	50
+	+	236	0
+	+	219	20
+	+	227	0
+	+	219	10
+	+	232	1
+	+	219	15
+	+	232	11
+	+	399	0
+	+	217	58
+	+	218	0
+	+	217	56
+	+	228	30
+	+	231	0
+	+	232	35
+	+	233	35
+	+	232	13
+	+	235	0
+	+	220	22
+	+	222	23
+	+	223	14
+	+	237	0
+	+	219	23
+	+	204	8
+	+	226	7
+	+	223	0
+	+	219	4
+	+	232	30
+	+	219	24
+	+	226	0
+	+	198	0
+	+	204	0
+	+	198	0
+	+	198	0
+	+	198	0
+	+	198	0
+	+	198	0
+	+	238	0
+	+	239	0
+	+	223	45
+	+	228	9
+	+	230	0
+	+	228	29
+	+	189	0
+	+	194	21
+	+	166	37
+	+	228	13
+	+	229	19
+	+	228	20
+	+	229	25
+
+> ~/bin/ifcheck
+	"	2	0
+	^	2	0
+	.	1	9
+	+	1	9
+
 > /etc/iptables/rules.v4
-	"	73	42
-	^	74	15
-	.	74	14
-	+	55	74
-	+	56	74
-	+	66	0
-	+	59	0
+	"	98	9
+	^	98	10
+	.	98	9
+	+	57	74
+	+	58	74
+	+	68	0
+	+	61	0
 	+	4	19
 	+	5	18
 	+	15	0
 	+	16	0
 	+	18	54
-	+	70	22
-	+	71	17
-	+	72	18
-	+	72	23
-	+	50	27
-	+	51	27
-	+	76	0
-	+	75	0
-	+	76	0
-	+	76	0
-	+	75	0
-	+	75	0
+	+	72	22
+	+	73	17
+	+	74	18
+	+	74	23
+	+	52	27
+	+	53	27
+	+	78	0
 	+	77	0
+	+	78	0
+	+	78	0
+	+	77	0
+	+	77	0
+	+	79	0
 	+	17	15
+	+	74	0
+	+	74	0
+	+	74	0
+	+	75	74
+	+	76	14
+	+	61	12
+	+	62	14
+	+	34	25
+	+	50	82
+	+	35	25
+	+	37	0
+	+	38	0
+	+	39	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	43	0
+	+	44	0
+	+	45	0
+	+	46	0
+	+	47	0
+	+	48	0
+	+	49	0
+	+	50	0
+	+	51	0
+	+	52	0
+	+	53	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	64	0
+	+	65	0
+	+	66	0
+	+	67	0
+	+	68	0
+	+	69	0
+	+	70	0
+	+	71	0
 	+	72	0
+	+	73	0
+	+	74	0
+	+	75	0
+	+	76	0
+	+	77	0
+	+	78	0
+	+	79	0
+	+	80	0
+	+	81	0
+	+	82	0
+	+	83	0
+	+	84	0
+	+	85	0
+	+	86	0
+	+	87	0
+	+	89	0
+	+	93	11
+	+	35	35
+	+	98	0
+	+	98	9
+
+> /etc/group
+	"	93	14
+	^	93	15
+	.	6	28
+	+	6	28
+
+> /etc/rsyslog.d/50-default.conf
+	"	55	27
+	^	55	28
+	.	55	27
+	+	68	0
+	+	67	0
+	+	66	0
+	+	65	0
+	+	52	0
+	+	53	0
+	+	54	0
+	+	55	27
+
+> /etc/rsyslog.conf
+	"	60	0
+	.	61	0
+	+	62	4
+	+	61	0
+
+> /etc/snmp/snmpd.conf
+	"	124	8
+	^	19	9
+	.	19	8
+	+	73	6
+	+	119	16
+	+	124	16
+	+	125	0
+	+	40	0
+	+	91	19
+	+	19	8
+
+> /etc/networks
+	"	1	0
+
+> /etc/snmp/snmp.conf
+	"	7	17
+	^	40	20
+	.	40	17
+	+	41	0
+	+	40	12
+	+	41	0
+	+	40	17
+
+> ~/.config/conky/conky.conf
+	"	57	85
+	^	57	86
+	.	57	86
+	+	62	27
+	+	62	1
+	+	54	89
+	+	62	24
+	+	63	16
+	+	62	39
+	+	51	14
+	+	53	19
+	+	54	67
+	+	62	0
+	+	61	27
+	+	62	0
+	+	68	22
+	+	69	0
+	+	70	0
+	+	69	16
+	+	70	16
+	+	68	38
+	+	62	74
+	+	75	75
+	+	74	73
+	+	76	128
+	+	74	86
+	+	75	88
+	+	74	84
+	+	75	86
+	+	76	179
+	+	75	121
+	+	74	115
+	+	45	20
+	+	104	47
+	+	106	0
+	+	104	0
+	+	106	100
+	+	103	0
+	+	102	0
+	+	103	24
+	+	106	24
+	+	98	0
+	+	99	0
+	+	100	0
+	+	101	0
+	+	106	24
+	+	103	0
+	+	105	0
+	+	102	0
+	+	58	39
+	+	57	86
+	+	58	0
+	+	57	145
+	+	57	115
+	+	57	133
+	+	57	102
+	+	57	101
+	+	57	133
+	+	57	135
+	+	57	102
+	+	57	86
+
+> ~/bin/cpu.sh
+	"	17	1
+	^	21	1
+	.	17	0
+	+	23	0
+	+	22	0
+	+	22	0
+	+	21	0
+	+	20	0
+	+	20	0
+	+	19	0
+	+	18	0
+	+	17	0
+	+	17	0
+	+	16	0
+	+	15	0
+	+	14	0
+	+	13	0
+	+	12	0
+	+	11	0
+	+	10	0
+	+	9	0
+	+	8	0
+	+	7	0
+	+	6	0
+	+	5	0
+	+	4	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	21	0
+	+	20	0
+	+	17	0
+
+> ~/bin/conky-rss.sh
+	"	41	17
+	^	41	18
+	.	41	17
+	+	40	22
+	+	41	17
+
+> ~/xml
+	"	18	0
+
+> /etc/sysctl.conf
+	"	69	22
+	^	65	23
+	.	65	22
+	+	61	0
+	+	68	17
+	+	70	23
+	+	71	0
+	+	68	16
+	+	65	22
+
+> ~/Documents/iprules/rules.owt~
+	"	125	0
+
+> ~/blah
+	"	27	0
+	^	93	33
+	.	93	32
+	+	12	0
+	+	24	0
+	+	46	1
+	+	47	0
+	+	105	0
+	+	94	11
+	+	105	0
+	+	95	0
+	+	100	100
+	+	103	36
+	+	103	76
+	+	104	75
+	+	103	41
+	+	103	0
+	+	102	0
+	+	103	0
+	+	99	0
+	+	98	32
+	+	100	15
+	+	101	26
+	+	101	32
+	+	93	32
+
+> ~/Documents/iprules/rules.v4
+	"	6	0
+	^	6	24
+	.	6	23
+	+	138	39
+	+	139	0
+	+	5	18
+	+	6	23
+
+> ~/Documents/iprules/rules.owt
+	"	100	0
+	^	100	1
+	.	31	0
+	+	27	0
+	+	41	0
+	+	61	0
+	+	101	0
+	+	117	0
+	+	125	0
+	+	23	0
+	+	19	0
+	+	19	0
+	+	19	3
+	+	19	3
+	+	20	3
+	+	19	14
+	+	20	14
+	+	19	21
+	+	20	22
+	+	19	0
+	+	19	38
+	+	20	39
+	+	21	0
+	+	21	3
+	+	22	0
+	+	21	3
+	+	22	3
+	+	21	15
+	+	21	15
+	+	22	15
+	+	21	0
+	+	19	0
+	+	21	42
+	+	22	28
+	+	21	21
+	+	22	22
+	+	23	0
+	+	93	0
+	+	91	0
+	+	96	0
+	+	93	32
+	+	94	18
+	+	98	0
+	+	117	18
+	+	90	19
+	+	89	0
+	+	91	15
+	+	98	0
+	+	99	0
+	+	104	0
+	+	110	0
+	+	119	0
+	+	122	0
+	+	125	0
+	+	130	0
+	+	135	0
+	+	141	0
+	+	21	0
+	+	24	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	31	0
+
+> /etc/hosts
+	"	10	0
+	^	31	29
+	.	31	28
+	+	3	11
+	+	2	0
+	+	3	21
+	+	5	12
+	+	37	20
+	+	5	0
+	+	3	0
+	+	2	14
+	+	1	18
+	+	5	0
+	+	1	26
+	+	5	0
+	+	1	18
+	+	2	0
+	+	5	0
+	+	2	0
+	+	5	12
+	+	4	28
+	+	5	35
+	+	6	28
+	+	7	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	7	13
+	+	8	13
+	+	9	13
+	+	10	13
+	+	11	28
+	+	10	28
+	+	9	28
+	+	8	28
+	+	7	28
+	+	12	13
+	+	13	13
+	+	14	13
+	+	15	13
+	+	16	13
+	+	17	15
+	+	12	28
+	+	13	28
+	+	14	28
+	+	15	28
+	+	16	28
+	+	17	28
+	+	18	13
+	+	19	13
+	+	20	13
+	+	21	13
+	+	22	13
+	+	23	13
+	+	24	13
+	+	25	13
+	+	26	13
+	+	27	13
+	+	28	13
+	+	18	28
+	+	19	28
+	+	20	28
+	+	21	28
+	+	22	28
+	+	23	28
+	+	24	28
+	+	25	28
+	+	26	28
+	+	27	28
+	+	28	28
+	+	29	13
+	+	30	13
+	+	31	13
+	+	29	28
+	+	30	28
+	+	31	28
+
+> /etc/samba/smb.conf
+	"	10	87
+	^	10	88
+	.	10	87
+	+	156	18
+	+	46	0
+	+	33	0
+	+	11	0
+	+	77	21
+	+	80	0
+	+	80	0
+	+	92	0
+	+	127	0
+	+	186	19
+	+	274	22
+	+	264	22
+	+	10	52
+	+	296	28
+	+	47	21
+	+	10	87
+
+> /etc/network/interfaces
+	"	14	0
+	.	13	53
+	+	13	53
+
+> ~/Documents/openwrt/network
+	"	43	0
+
+> /etc/modprobe.d/cfg80211.conf
+	"	1	16
+	.	1	8
+	+	1	8
+
+> /etc/modprobe.d/ath9k.conf
+	"	1	59
+	^	1	60
+	.	1	59
+	+	1	59
+
+> ~/.config/user-dirs.conf
+	"	1	0
+
+> ~/.config/user-dirs.dirs
+	"	12	0
+	^	14	34
+	.	12	0
+	+	10	34
+	+	14	33
+	+	10	0
+	+	12	0
+
+> ~/.ssh/config
+	"	20	0
+	^	20	0
+	.	19	21
+	+	19	20
+	+	16	9
+	+	18	0
+	+	24	20
+	+	18	12
+	+	19	19
+	+	17	11
+	+	19	21
+
+> ~/.bash_aliases
+	"	4	91
+	^	4	92
+	.	4	91
+	+	19	35
+	+	24	52
+	+	24	56
+	+	24	32
+	+	24	38
+	+	24	64
+	+	25	11
+	+	24	11
+	+	25	68
+	+	24	51
+	+	26	72
+	+	27	20
+	+	28	72
+	+	30	182
+	+	30	12
+	+	30	182
+	+	30	49
+	+	29	58
+	+	32	0
+	+	30	0
+	+	32	21
+	+	12	55
+	+	12	47
+	+	12	0
+	+	12	47
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	9	0
+	+	9	0
+	+	13	0
+	+	2	52
+	+	4	67
+	+	21	29
+	+	24	0
+	+	14	0
+	+	19	0
+	+	12	0
+	+	24	0
+	+	12	0
+	+	24	0
+	+	16	0
+	+	24	0
+	+	22	0
+	+	18	28
+	+	12	0
+	+	33	0
+	+	23	9
+	+	1	10
+	+	2	0
+	+	35	0
+	+	9	0
+	+	38	0
+	+	7	0
+	+	2	0
+	+	3	0
+	+	12	0
+	+	39	0
+	+	29	1
+	+	40	0
+	+	31	0
+	+	4	91
+
+> ~/Documents/iprules/rules
+	"	1	0
+
+> ~/firewall
+	"	1	0
+
+> ~/cfg80211
+	"	1	61
+	^	1	62
+	.	1	61
+	+	1	61
+
+> ~/mac80211
+	"	1	16
+	^	1	17
+	.	1	17
+	+	1	17
+
+> ~/Documents/ethers
+	"	11	31
+	^	11	32
+	.	11	31
+	+	11	31
+
+> /etc/host
+	"	1	0
+
+> ~/Documents/comcast.txt
+	"	5	16
+	^	5	17
+	.	5	0
+	+	5	0
+
+> ~/ethers
+	"	1	0
+	^	2	0
+	.	1	0
+	+	3	0
+	+	1	0
+	+	1	0
+
+> /etc/mpd/mpd.conf
+	"	421	0
+
+> /etc/default/mpd
+	"	9	0
+	^	9	1
+	.	9	0
+	+	9	0
+
+> /etc/mpd.conf
+	"	218	1
+
+> ~/rules.v4
+	"	56	0
+	^	80	24
+	.	73	0
+	+	4	19
+	+	5	18
+	+	77	22
+	+	78	17
+	+	79	18
+	+	80	23
+	+	71	0
+	+	73	0
+
+> ~/.config/pianobar/config
+	"	23	0
+	^	57	96
+	.	57	95
+	+	9	0
+	+	9	0
+	+	9	32
+	+	9	18
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	24	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	32	0
+	+	34	0
+	+	35	0
+	+	38	0
+	+	44	0
+	+	47	44
+	+	54	0
+	+	55	0
+	+	58	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	63	0
 	+	72	0
-	+	72	0
-	+	73	74
-	+	74	14
+	+	54	40
+	+	55	33
+	+	58	14
+	+	59	14
+	+	60	15
+	+	61	37
+	+	54	0
+	+	54	0
+	+	31	0
+	+	44	21
+	+	45	21
+	+	55	44
+	+	64	0
+	+	63	0
+	+	64	31
+	+	61	44
+	+	60	0
+	+	45	20
+	+	55	27
+	+	55	115
+	+	55	44
+	+	56	0
+	+	55	0
+	+	56	43
+	+	45	20
+	+	56	0
+	+	58	0
+	+	56	87
+	+	56	0
+	+	58	0
+	+	56	137
+	+	63	0
+	+	62	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	62	74
+	+	56	118
+	+	62	76
+	+	64	70
+	+	56	95
+	+	64	76
+	+	36	0
+	+	37	0
+	+	56	0
+	+	56	138
+	+	6	21
+	+	6	33
+	+	7	0
+	+	46	51
+	+	56	148
+	+	46	30
+	+	47	21
+	+	56	138
+	+	58	0
+	+	56	0
+	+	56	117
+	+	56	0
+	+	58	0
+	+	56	146
+	+	58	0
+	+	56	120
+	+	56	0
+	+	56	115
+	+	56	0
+	+	56	132
+	+	56	0
+	+	57	0
+	+	57	93
+	+	57	0
+	+	57	95
+
+> /usr/share/vim/vim74/syntax/colortest.vim
+	"	52	0
+
+> ~/dupes.txt
+	"	1	0
+
+> /usr/share/vim/vim74/doc/pattern.txt
+	"	980	6
+
+> /media/bjohnston/Acer/Users/bjohnston/Music/Music/file
+	"	3	0
+	^	2	0
+	.	1	11
+	+	1	3
+	+	1	96
+	+	4	0
+	+	5	0
+	+	1	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	14	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	1	0
+	+	1	0
+	+	1	11
+
+> /media/bjohnston/Acer/Users/bjohnston/Music/Music/bak.sh
+	"	40	0
+	.	2	0
+	+	2	0
+
+> /usr/share/vim/vim74/doc/scroll.txt
+	"	182	7
+
+> /usr/share/vim/vim74/doc/motion.txt
+	"	310	10
+
+> /media/bjohnston/Acer/Users/bjohnston/Music/Music/bak.txt
+	"	2	0
+	^	2	0
+	.	1	11
+	+	1	11
+
+> ~/.moc/config
+	"	555	21
+	^	555	22
+	.	555	21
+	+	480	46
+	+	120	0
+	+	118	0
+	+	120	25
+	+	119	0
+	+	120	16
+	+	119	0
+	+	120	0
+	+	188	22
+	+	120	15
+	+	408	24
+	+	438	21
+	+	121	0
+	+	120	0
+	+	121	38
+	+	555	21
+
+> ~/Downloads/status
+	"	1	0
+
+> ~/.moc/mocp.conf
+	"	684	0
+	^	418	22
+	.	549	0
+	+	64	0
+	+	72	54
+	+	77	0
+	+	90	0
+	+	96	0
+	+	100	0
+	+	105	0
+	+	118	0
+	+	179	0
+	+	185	0
+	+	188	0
+	+	193	0
+	+	209	0
+	+	210	0
+	+	221	0
+	+	227	34
+	+	236	0
+	+	252	0
+	+	252	0
+	+	269	0
+	+	273	0
+	+	405	33
+	+	418	21
+	+	432	0
+	+	477	0
+	+	478	0
+	+	483	0
+	+	489	0
+	+	541	0
+	+	549	0
+
+> /etc/init/control-alt-delete.conf
+	"	14	49
+	^	14	50
+	.	14	49
+	+	14	0
+	+	13	0
+	+	14	49
+
+> ~/bin/cowsay_random
+	"	41	74
+
+> ~/.config/pianobar/scrobble.py
+	"	73	20
+	^	45	21
+	.	45	20
+	+	39	37
+	+	41	12
+	+	42	0
+	+	63	0
+	+	46	3
+	+	47	3
+	+	49	3
+	+	50	3
+	+	52	0
+	+	53	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	53	3
+	+	54	3
+	+	55	0
+	+	57	3
+	+	59	3
+	+	60	3
+	+	66	39
+	+	57	33
+	+	42	43
+	+	43	46
+	+	44	21
+	+	45	20
+
+> ~/git-repos/lastfm-tools/scrobble.py
+	"	5	0
+
+> ~/hash.py
+	"	31	0
+	^	32	5
+	.	28	4
+	+	1	0
+	+	24	31
+	+	26	54
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	26	4
+	+	27	4
+	+	28	59
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	28	4
+	+	26	4
+	+	27	4
+	+	26	4
+	+	27	4
+	+	28	4
+	+	26	4
+	+	27	4
+	+	28	4
+
+> ~/git-repos/pianobar/contrib/eventcmd-examples/eventcmd.sh
+	"	30	0
+
+> ~/.scrobbler-helper.conf
+	"	4	0
+	^	3	25
+	.	4	0
+	+	3	0
+	+	1	0
+	+	2	0
+	+	3	0
+	+	2	0
+	+	3	0
+	+	2	18
+	+	4	0
+	+	3	10
+	+	4	0
+
+> /etc/bind/named.conf.local
+	"	18	1
+	^	18	2
+	.	18	1
+	+	29	17
+	+	50	18
+	+	50	0
+	+	20	0
+	+	26	0
+	+	26	0
+	+	4	0
+	+	5	0
+	+	9	1
+	+	20	0
+	+	50	0
+	+	11	0
+	+	52	0
+	+	28	14
+	+	31	0
+	+	32	39
+	+	27	28
+	+	34	2
+	+	26	13
+	+	47	25
+	+	47	33
+	+	41	37
+	+	47	35
+	+	33	0
+	+	31	9
+	+	31	0
+	+	31	0
+	+	21	0
+	+	39	3
+	+	24	2
+	+	34	2
+	+	41	27
+	+	47	26
+	+	41	20
+	+	41	31
+	+	47	0
+	+	47	1
+	+	47	0
+	+	41	31
+	+	47	0
+	+	46	35
+	+	42	0
+	+	41	29
+	+	42	24
+	+	47	0
+	+	43	47
+	+	45	45
+	+	44	35
+	+	47	0
+	+	37	39
+	+	16	0
+	+	17	0
+	+	18	1
+
+> /etc/bind/named.conf.options
+	"	10	1
+	^	10	46
+	.	10	0
+	+	20	2
+	+	21	2
+	+	22	2
+	+	17	2
+	+	4	4
+	+	20	2
+	+	21	2
+	+	17	3
+	+	18	2
+	+	19	2
+	+	22	3
+	+	4	1
+	+	36	0
+	+	32	0
+	+	33	3
+	+	34	3
+	+	35	20
+	+	10	23
+	+	10	50
+	+	10	0
+
+> ~/git-repos/pianobar/contrib/config-example
+	"	54	0
+
+> ~/.Xresources
+	"	1	70
+	^	1	71
+	.	1	70
+	+	1	70
+
+> /etc/bind/named.conf.o
+	"	1	0
+
+> ~/git-repos/Pi-hole/cameleon.hosts
+	"	20630	0
+	.	1	0
+	+	1	0
+
+> ~/git-repos/Pi-hole/domain-blocklist
+	"	375	0
+	.	1	0
+	+	1	0
+
+> ~/git-repos/Pi-hole/hosts
+	"	60780	0
+	.	60781	0
+	+	11	0
+	+	60781	0
+
+> ~/git-repos/Pi-hole/just.domains
+	"	23	0
+
+> ~/git-repos/Pi-hole/simple_ad
+	"	2703	0
+	.	1	0
+	+	1	0
+
+> ~/git-repos/Pi-hole/newtracking
+	"	34	0
+	.	1	0
+	+	1	0
+
+> ~/git-repos/Pi-hole/tracking
+	"	1	0
+
+> ~/git-repos/Pi-hole/ad_servers.txt
+	"	133	36
+	.	6	0
+	+	6	0
+
+> /etc/bind/zone.ads
+	"	2916	52
+	.	2916	51
+	+	2916	51
 
 > ~/bin/ipacct.sh
-	"	3	0
-	^	66	52
-	.	3	0
-	+	71	0
-	+	12	34
+	"	72	5
+	^	72	6
+	.	72	5
+	+	73	0
+	+	13	34
+	+	27	0
+	+	15	90
+	+	20	27
 	+	26	0
-	+	14	90
-	+	19	27
-	+	25	0
-	+	71	0
-	+	28	0
-	+	29	9
-	+	36	81
-	+	71	0
-	+	71	0
-	+	39	23
-	+	71	0
-	+	40	60
-	+	43	42
-	+	36	13
-	+	21	0
-	+	36	0
-	+	36	0
-	+	36	10
-	+	36	55
+	+	73	0
+	+	29	0
+	+	30	9
+	+	37	81
+	+	73	0
+	+	73	0
+	+	40	23
+	+	73	0
+	+	41	60
+	+	44	42
+	+	37	13
+	+	22	0
 	+	37	0
-	+	38	1
+	+	37	0
+	+	37	10
+	+	37	55
+	+	38	0
 	+	39	1
 	+	40	1
-	+	41	2
-	+	42	1
-	+	43	0
-	+	38	41
-	+	41	45
-	+	41	50
-	+	36	11
-	+	36	74
-	+	36	1
+	+	41	1
+	+	42	2
+	+	43	1
+	+	44	0
+	+	39	41
+	+	42	45
+	+	42	50
+	+	37	11
+	+	37	74
 	+	37	1
 	+	38	1
 	+	39	1
 	+	40	1
 	+	41	1
 	+	42	1
-	+	43	0
-	+	36	64
-	+	41	51
-	+	43	53
-	+	43	53
-	+	71	0
-	+	36	57
-	+	38	43
-	+	71	0
-	+	71	0
-	+	46	68
-	+	48	43
-	+	51	52
-	+	53	25
-	+	57	9
-	+	58	0
-	+	29	9
-	+	30	0
-	+	60	107
+	+	43	1
+	+	44	0
+	+	37	64
+	+	42	51
+	+	44	53
+	+	44	53
+	+	73	0
+	+	37	57
+	+	39	43
+	+	73	0
+	+	73	0
+	+	47	68
+	+	49	43
+	+	52	52
+	+	54	25
+	+	58	9
+	+	59	0
+	+	30	9
+	+	31	0
+	+	61	107
+	+	63	0
 	+	62	0
-	+	61	0
-	+	63	53
-	+	66	34
-	+	63	33
-	+	65	43
-	+	66	45
+	+	64	53
+	+	67	34
+	+	64	33
+	+	66	43
+	+	67	45
+	+	73	0
 	+	71	0
-	+	70	0
+	+	4	5
+	+	10	24
+	+	6	9
+	+	10	0
+	+	6	17
+	+	8	9
+	+	1	9
+	+	9	2
+	+	10	0
+	+	10	1
+	+	1	9
+	+	10	0
+	+	4	0
+	+	10	0
+	+	64	39
+	+	61	59
+	+	64	39
+	+	66	50
+	+	67	51
+	+	64	33
+	+	66	43
+	+	67	44
+	+	4	0
+	+	5	0
+	+	5	6
+	+	8	0
+	+	5	0
 	+	3	5
-	+	9	24
-	+	5	9
-	+	9	0
-	+	5	17
-	+	7	9
-	+	1	9
-	+	8	2
-	+	9	0
-	+	9	1
-	+	1	9
-	+	9	0
-	+	3	0
-	+	9	0
-	+	63	39
-	+	60	59
-	+	63	39
-	+	65	50
-	+	66	51
-	+	63	33
-	+	65	43
-	+	66	44
-	+	3	0
+	+	72	5
+
+> ~/.LESS_TERMCAP
+	"	16	61
+	^	16	62
+	.	16	0
+	+	3	35
+	+	16	0
+
+> ~/Downloads/xcol.sh
+	"	29	0
+	^	29	0
+	.	29	0
+	+	29	0
 
 > ~/Downloads/wrtbwmon.sh
 	"	232	3
@@ -322,70 +1622,6 @@ $
 	+	22	81
 	+	68	0
 	+	66	12
-
-> ~/.bashrc
-	"	137	0
-	^	137	0
-	.	136	22
-	+	78	0
-	+	78	0
-	+	78	0
-	+	12	6
-	+	12	6
-	+	12	6
-	+	127	0
-	+	131	26
-	+	127	18
-	+	122	13
-	+	124	29
-	+	18	0
-	+	124	31
-	+	127	22
-	+	124	26
-	+	131	26
-	+	143	0
-	+	128	29
-	+	12	0
-	+	12	0
-	+	12	0
-	+	129	0
-	+	138	0
-	+	138	0
-	+	131	26
-	+	132	78
-	+	5	0
-	+	70	4
-	+	112	0
-	+	134	15
-	+	133	16
-	+	134	17
-	+	132	11
-	+	144	0
-	+	154	0
-	+	144	0
-	+	109	23
-	+	111	26
-	+	132	46
-	+	18	0
-	+	70	0
-	+	70	0
-	+	69	0
-	+	78	0
-	+	111	0
-	+	140	0
-	+	141	0
-	+	142	0
-	+	143	45
-	+	157	0
-	+	143	79
-	+	135	35
-	+	136	22
-
-> /etc/bind/named.conf.local
-	"	7	17
-	^	7	18
-	.	7	17
-	+	7	17
 
 > /tmp/crontab.ZMkhH1/crontab
 	"	25	9
@@ -435,30 +1671,6 @@ $
 
 > /etc/apache2/sites-available/000-default.conf
 	"	31	0
-
-> /etc/hosts
-	"	5	13
-	^	5	14
-	.	5	13
-	+	3	11
-	+	2	0
-	+	3	21
-	+	5	12
-	+	11	20
-	+	5	0
-	+	3	0
-	+	2	14
-	+	1	18
-	+	5	0
-	+	1	26
-	+	5	0
-	+	1	18
-	+	2	0
-	+	5	0
-	+	2	0
-	+	5	12
-	+	4	28
-	+	5	13
 
 > ~/bin/dbback.sh
 	"	20	0
@@ -804,24 +2016,8 @@ $
 	+	326	56
 	+	161	58
 
-> /etc/modprobe.d/ath9k.conf
-	"	1	59
-	^	1	60
-	.	1	59
-	+	1	59
-
 > /etc/modules
 	"	1	0
-
-> /etc/bind/named.conf.options
-	"	4	3
-	^	4	4
-	.	4	4
-	+	18	2
-	+	19	2
-	+	20	2
-	+	15	2
-	+	4	4
 
 > /etc/bind/zones.rfc1918
 	"	2	0
@@ -831,499 +2027,3 @@ $
 
 > ~/.git/config
 	"	4	1
-
-> ~/Documents/router
-	"	1	9
-	^	1	10
-	.	1	9
-	+	1	9
-
-> ~/kodi_crashlog-20180208_143757.log
-	"	32	0
-
-> ~/.bashr
-	"	1	0
-
-> ~/.config/conky/conky.conf
-	"	45	20
-	^	45	21
-	.	45	20
-	+	62	27
-	+	62	1
-	+	54	89
-	+	62	24
-	+	63	16
-	+	62	39
-	+	51	14
-	+	53	19
-	+	54	67
-	+	62	0
-	+	61	27
-	+	62	0
-	+	68	22
-	+	69	0
-	+	70	0
-	+	69	16
-	+	70	16
-	+	68	38
-	+	62	74
-	+	75	75
-	+	74	73
-	+	76	128
-	+	74	86
-	+	75	88
-	+	74	84
-	+	75	86
-	+	76	179
-	+	75	121
-	+	74	115
-	+	45	20
-
-> ~/bin/whatsmyip.pl
-	"	12	4
-	^	12	5
-	.	12	4
-	+	7	36
-	+	13	38
-	+	6	10
-	+	13	0
-	+	6	54
-	+	3	10
-	+	7	72
-	+	8	36
-	+	13	0
-	+	12	4
-
-> /etc/resolv.conf
-	"	2	21
-	^	2	22
-	.	2	21
-	+	9	17
-	+	8	23
-	+	1	10
-	+	7	19
-	+	6	19
-	+	5	23
-	+	3	21
-	+	2	21
-
-> /etc/resolv.bak
-	"	2	19
-	^	2	20
-	.	2	19
-	+	3	19
-	+	2	19
-
-> ~/bin/gdrive.py
-	"	26	18
-	^	1	17
-	.	1	16
-	+	34	32
-	+	44	0
-	+	42	23
-	+	43	23
-	+	42	29
-	+	43	30
-	+	38	6
-	+	39	6
-	+	40	6
-	+	41	6
-	+	42	7
-	+	43	7
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	34	0
-	+	25	4
-	+	26	4
-	+	27	4
-	+	37	4
-	+	38	4
-	+	39	4
-	+	40	4
-	+	41	4
-	+	42	4
-	+	43	4
-	+	37	4
-	+	38	4
-	+	39	4
-	+	40	4
-	+	41	4
-	+	42	4
-	+	43	4
-	+	44	0
-	+	1	0
-	+	2	0
-	+	1	16
-
-> ~/.vimrc
-	"	113	0
-	^	14	0
-	.	113	0
-	+	49	1
-	+	50	1
-	+	51	1
-	+	113	27
-	+	13	30
-	+	12	238
-	+	13	0
-	+	12	118
-	+	13	54
-	+	113	0
-
-> ~/.bash_profile
-	"	22	0
-
-> ~/bin/directory.py
-	"	8	26
-	^	8	27
-	.	8	26
-	+	11	0
-	+	8	26
-
-> /etc/samba/smb.conf
-	"	256	16
-	^	296	29
-	.	47	21
-	+	156	18
-	+	46	0
-	+	33	0
-	+	11	0
-	+	77	21
-	+	80	0
-	+	80	0
-	+	92	0
-	+	127	0
-	+	186	19
-	+	274	22
-	+	264	22
-	+	10	52
-	+	296	28
-	+	47	21
-
-> ~/bin/wiload.sh
-	"	1	10
-	^	31	62
-	.	31	61
-	+	37	0
-	+	38	0
-	+	35	82
-	+	35	0
-	+	24	0
-	+	25	0
-	+	34	0
-	+	25	0
-	+	37	0
-	+	51	80
-	+	51	0
-	+	25	0
-	+	9	22
-	+	11	7
-	+	14	32
-	+	17	0
-	+	16	0
-	+	17	0
-	+	16	32
-	+	2	0
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	2	0
-	+	9	0
-	+	54	0
-	+	55	0
-	+	58	0
-	+	19	0
-	+	47	0
-	+	19	0
-	+	31	61
-
-> /etc/aliases
-	"	3	15
-	^	3	16
-	.	3	15
-	+	3	15
-
-> /etc/sysctl.conf
-	"	67	16
-	^	67	17
-	.	67	16
-	+	61	0
-	+	67	17
-	+	69	23
-	+	70	0
-	+	67	16
-
-> ~/bin/3kerns.sh
-	"	7	0
-	^	7	0
-	.	6	18
-	+	1	11
-	+	3	36
-	+	6	18
-
-> ~/.bashre
-	"	1	0
-
-> /media/bjohnston/Acer/Users/bjohnston/Videos/Insidious (2010)/Insidious.2010.720p.BrRip.x264.YIFY.nfo
-	"	107	0
-
-> /etc/host
-	"	1	0
-
-> ~/.bash_aliases
-	"	18	33
-	^	18	34
-	.	18	33
-	+	18	33
-
-> /etc/mdm/mdm.conf
-	"	88	0
-
-> /usr/share/mdm/distro.conf
-	"	1	0
-
-> /usr/share/mdm/defaults.conf
-	"	294	0
-
-> ~/.kodi/addons/script.xbmcbackup/default.py
-	"	1	0
-
-> ~/bin/iface.py
-	"	26	42
-	^	26	43
-	.	26	42
-	+	1	17
-	+	10	39
-	+	3	24
-	+	13	17
-	+	11	66
-	+	21	0
-	+	21	0
-	+	18	30
-	+	21	0
-	+	20	11
-	+	21	20
-	+	26	42
-
-> /etc/network/interfaces
-	"	13	30
-	.	13	30
-	+	13	30
-
-> /etc/networks
-	"	5	20
-	^	5	21
-	.	5	20
-	+	4	19
-	+	6	15
-	+	5	20
-
-> /etc/avahi/avahi-daemon.conf
-	"	28	20
-	^	28	21
-	.	28	20
-	+	28	20
-
-> /etc/avahi/hosts
-	"	1	0
-
-> ~/Videos/TV/Stranger Things/Stranger Things.nfo
-	"	4	10
-	^	4	11
-	.	4	10
-	+	3	31
-	+	4	18
-	+	5	19
-	+	7	7
-	+	2	6
-	+	7	7
-	+	6	14
-	+	4	10
-
-> ~/Videos/TV/Stranger Things/Stranger Things
-	"	1	0
-
-> ~/.kodi/userdata/advancedsettings.xml
-	"	74	18
-	^	55	18
-	.	55	17
-	+	40	0
-	+	40	46
-	+	40	26
-	+	4	21
-	+	32	26
-	+	3	30
-	+	16	21
-	+	14	0
-	+	30	0
-	+	18	16
-	+	19	16
-	+	21	20
-	+	28	0
-	+	23	7
-	+	22	0
-	+	23	24
-	+	24	28
-	+	25	23
-	+	26	23
-	+	27	15
-	+	15	10
-	+	16	8
-	+	17	6
-	+	18	4
-	+	19	8
-	+	30	19
-	+	30	0
-	+	30	51
-	+	30	0
-	+	60	0
-	+	61	11
-	+	62	11
-	+	61	10
-	+	63	11
-	+	63	12
-	+	63	10
-	+	30	0
-	+	19	23
-	+	27	18
-	+	63	0
-	+	71	0
-	+	32	0
-	+	71	0
-	+	40	0
-	+	38	0
-	+	56	0
-	+	49	8
-	+	57	0
-	+	57	7
-	+	39	33
-	+	32	26
-	+	33	46
-	+	34	20
-	+	46	21
-	+	9	16
-	+	2	28
-	+	63	0
-	+	49	0
-	+	57	0
-	+	50	24
-	+	54	0
-	+	51	31
-	+	51	31
-	+	48	5
-	+	52	37
-	+	53	22
-	+	55	17
-
-> ~/.config/mpd/mpd.conf
-	"	45	0
-	^	101	1
-	.	101	0
-	+	159	22
-	+	164	0
-	+	101	0
-
-> /etc/rygel.conf
-	"	164	0
-
-> ~/etc/default/useradd
-	"	36	0
-	^	20	0
-	.	36	0
-	+	8	12
-	+	20	0
-	+	32	0
-	+	36	0
-
-> ~/etc/default/nss
-	"	37	0
-
-> ~/etc/default/networking
-	"	8	22
-	^	8	23
-	.	8	22
-	+	8	22
-
-> /etc/dnsmasq.conf
-	"	677	0
-	^	669	0
-	.	676	0
-	+	656	17
-	+	415	0
-	+	662	0
-	+	646	0
-	+	668	0
-	+	653	0
-	+	676	0
-
-> /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice League Dark.nfo
-	"	1	27
-	.	1	27
-	+	1	27
-
-> /media/bjohnston/Acer/Users/bjohnston/Videos/Justice League Dark 2017/Justice.League.Dark.2017.nfo
-	"	1	29
-	^	1	30
-	.	1	29
-	+	1	29
-
-> ~/.bash_history
-	"	1	0
-
-> ~/t
-	"	1	45
-	^	1	46
-	.	1	45
-	+	1	45
-
-> ~/.kodi/userdata/ad
-	"	1	0
-
-> ~/.ssh/config
-	"	13	21
-	^	13	22
-	.	13	21
-	+	10	15
-	+	7	8
-	+	14	19
-	+	11	9
-	+	8	0
-	+	14	20
-	+	8	10
-	+	9	23
-	+	9	16
-	+	14	0
-	+	12	5
-	+	9	0
-	+	9	0
-	+	4	0
-	+	5	0
-	+	13	21
-
-> ~/.ssh/confif
-	"	1	0
-
-> ~/.kodi/userdata/profiles.xml
-	"	1	0
-
-> ~/.kodi/userdata/favourites.xml
-	"	1	0
-
-> ~/.kodi/userdata/guisettings.xml
-	"	8	0
-
-> ~/.git/MERGE_MSG
-	"	3	0
-	^	3	0
-	.	2	13
-	+	2	13
-
-> ~/.xinitrc
-	"	1	27
-	^	1	28
-	.	1	27
-	+	1	27

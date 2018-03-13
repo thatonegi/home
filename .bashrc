@@ -163,6 +163,7 @@ export LPDEST=PDF
 export PRINTER=PDF
 export APT_CONFIG=/etc/apt/apt.conf
 export SUDO_EDITOR=/usr/bin/vim
+export XDG_CONFIG_HOME=${HOME}/.config
 
 # Android settings
 export ADB_HOME=${HOME}/android/platform-tools
@@ -224,7 +225,8 @@ music() {
 		echo -e "\target directory contains spaces.\n\n"
 	fi
 
-	LOCAL ((_MFILE _MDIR))="${@}"
+	LOCAL _MFILE=${@[1]}
+       	LOCAL _MDIR=${@[2]}
 
 
 	if [[ !-d "${_DEST}${_MDIR}" ]]; then
