@@ -1,0 +1,36 @@
+%packager 'Brett Johnston'
+
+%_topdir %(echo $HOME)/rpmbuild
+
+#%_smp_mflags -l4
+%_smp_mflags %( \
+    [ -z "$RPM_BUILD_NCPUS" ] \\\
+        && RPM_BUILD_NCPUS="`/usr/bin/nproc 2>/dev/null || \\\
+                             /usr/bin/getconf _NPROCESSORS_ONLN`"; \\\
+    if [ "$RPM_BUILD_NCPUS" -gt 16 ]; then \\\
+        echo "-j16"; \\\
+    elif [ "$RPM_BUILD_NCPUS" -gt 3 ]; then \\\
+        echo "-j$RPM_BUILD_NCPUS"; \\\
+    else \\\
+        echo "-j3"; \\\
+    fi )
+
+%__arch_install_post \
+    [ "%{buildarch}" = "noarch" ] || QA_CHECK_RPATHS=1 ; \
+    case "${QA_CHECK_RPATHS:-}" in [1yY]*) /usr/lib/rpm/check-rpaths ;; esac \
+    /usr/lib/rpm/check-buildroot
+
+%_tmppath %{_topdir}/tmp
+%debug_package %{nil}
+%{_prefix} /usr
+%{_sysconfdir} /etc
+%{_localstatedir} /var
+%{_var} /var
+%{_usr} /usr
+%{_bindir} /usr/bin
+%{_sbindir} /usr/sbin
+%{_mandir} /usr/share/man
+%{_infodir} /usr/share/info
+%{_initrddir} %{_sysconfdir}/init.d
+%{_defaultdocdir} %{_usr}/share/doc
+
