@@ -210,31 +210,31 @@ generate() {
 	return ${COLOR}
 }
 
-music() {
-	#Moves music <file> to predefined directory
-	#and creates diretory <dir> if missing.
+#music() {
+#	#Moves music <file> to predefined directory
+#	#and creates diretory <dir> if missing.
 
-	LOCAL _DEST=/media/bjohnston/Acer/Users/bjohnston/Music/
+#	LOCAL _DEST=/media/bjohnston/Acer/Users/bjohnston/Music/
 
-	if [ $# != 2 || !-f $1 ]; then
-		echo -e "Usage:\n\n"
-		echo -e "\tmusic <filename> <directory>\n"
-		echo -e "Example:\n\n"
-		echo -e "\t\tmusic \"01 - My Music Filename.mp3\" \"Artist Name\/Album Title\"\n"
-		echo -e "\tEither enclose in quotes or Esape the spaces if your file or\n"
-		echo -e "\target directory contains spaces.\n\n"
-	fi
+#	if [ $# != 2 || !-f $1 ]; then
+#		echo -e "Usage:\n\n"
+#		echo -e "\tmusic <filename> <directory>\n"
+#		echo -e "Example:\n\n"
+#		echo -e "\t\tmusic \"01 - My Music Filename.mp3\" \"Artist Name\/Album Title\"\n"
+#		echo -e "\tEither enclose in quotes or Esape the spaces if your file or\n"
+#		echo -e "\target directory contains spaces.\n\n"
+#	fi
 
-	LOCAL _MFILE=${@[1]}
-       	LOCAL _MDIR=${@[2]}
+#	LOCAL _MFILE=${@[1]}
+#      	LOCAL _MDIR=${@[2]}
 
 
-	if [[ !-d "${_DEST}${_MDIR}" ]]; then
-		echo -e "Creating directory ...\n"
-		mkdir -p "${_DEST}${_MDIR}"
-	fi
+#	if [[ !-d "${_DEST}${_MDIR}" ]]; then
+#		echo -e "Creating directory ...\n"
+#		mkdir -p "${_DEST}${_MDIR}"
+#	fi
 
-}
+#}
 
 # Simple colorize for bash by means of sed
 #
